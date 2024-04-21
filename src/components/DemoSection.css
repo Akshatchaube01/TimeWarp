@@ -1,0 +1,68 @@
+body{
+    text-align: center;
+}
+.demo-container {
+    text-align: center;
+  }
+  
+  .demo-title {
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    margin-top: 50px;
+  }
+  
+  .video-container {
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  .demo-description {
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .technology-explanation,
+  .resource-column {
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+  }
+  
+  .technology-explanation h3,
+  .resource-column h3 {
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .technology-explanation p,
+  .resource-column ul {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .resource-column ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .resource-column li {
+    text-align: center;
+    margin-bottom: 10px;
+    
+  }
+  
