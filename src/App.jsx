@@ -15,6 +15,7 @@ const App = () => {
       <DemoSection />
       <ContactUs />
       <AboutUs />
+      <Models/>
     </div>
   );
 }
