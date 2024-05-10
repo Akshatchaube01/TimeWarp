@@ -102,8 +102,9 @@ const Home = () => {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   return (
+    <>
     <div className="container">
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <ul className="navbar-list">
           <li><a href="/">Home</a></li>
           <li><a href="/AboutUs">About Us</a></li>
@@ -111,7 +112,7 @@ const Home = () => {
           <li><a href="/Models">Models</a></li>
           <li><a href="/ContactUs">Contact Us</a></li>
         </ul>
-      </nav>
+      </nav> */}
       <div ref={containerRef} className="canvas-container" />
       <div style={newTextStyles} className='main-text'>
         <p style={{ ...newTextStyles, margin: 0 }}>TimeWarp</p>
@@ -129,6 +130,7 @@ const Home = () => {
         </button>
       </a>
     </div>
+    </>
   );
 }
 

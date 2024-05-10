@@ -1,13 +1,12 @@
 /* Home.css */
 .navbar {
     background-color: black; /* Black background color */
-    
-    position: fixed;
     top: 0;
     left: 0;
     right:10;
     width: 100%;
     padding: 10px 20px ; /* Padding around navbar */
+    display: flex; /* Make navbar items display in a row */
   }
   
   .navbar-list {
@@ -62,7 +61,6 @@
   }
   
   .container {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

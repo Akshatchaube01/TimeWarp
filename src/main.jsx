@@ -8,6 +8,7 @@ import DemoSection from './components/DemoSection';
 import ContactUs from './components/ContactUs';
 import Navbar from './components/Navbar';
 import Models from './components/Models';
+import Footer from './components/Footer';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
@@ -17,8 +18,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route exact path="/AboutUs" element={<AboutUs />} />
       <Route exact path="/DemoSection" element={<DemoSection />} />
       <Route exact path="/ContactUs" element={<ContactUs />} />
-      <Route exact path="/Models" element={<Models/>}/>
+      <Route exact path="/Models" element={<Models />} />
     </Routes>
+    <Footer />
   </Router>
 );
 
