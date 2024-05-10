@@ -20,7 +20,7 @@
 .navbar-list li {
   padding: 5px;
   font-size: 20px;
-  margin: 0 40px; /* Add space between list items */
+  margin: 0 40px;
 }
 
 .navbar-list li a {
@@ -30,8 +30,8 @@
 
 .navbar-list li a:hover,
 .navbar-list li:hover {
-  color: lightblue;
   text-decoration: underline; /* Underline on hover */
+  color: lightblue;
   cursor: pointer; /* Change cursor to pointer on hover */
 }
 
