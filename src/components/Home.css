@@ -18,9 +18,7 @@
   align-items: center !important; /* Center items vertically */
 }
 .navbar-list li {
-  border: 2px solid white;
   padding: 5px;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   margin: 0 40px; /* Add space between list items */
 }
@@ -35,9 +33,6 @@
   color: lightblue;
   text-decoration: underline; /* Underline on hover */
   cursor: pointer; /* Change cursor to pointer on hover */
-}
-.navbar-list li:hover{
-  background-color: #A91D3A;
 }
 
 /* Responsive Styles */
