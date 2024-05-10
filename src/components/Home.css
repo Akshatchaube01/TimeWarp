@@ -9,6 +9,7 @@
     display: flex; /* Make navbar items display in a row */
   }
   
+  
   .navbar-list {
     list-style: none; /* Remove bullet points */
     margin: 0; /* Remove default margin */
