@@ -7,29 +7,29 @@
   
   .navbar-list {
     background-color: black;
-    list-style: none; /* Remove bullet points */
-    margin: 0; /* Remove default margin */
-    padding: 10px 20px; /* Padding around navbar */
-    display: flex; /* Make navbar items display in a row */
-    justify-content: flex-end; /* Align items to the extreme right */
+    list-style: none; /*Remove bullet points*/
+    margin: 0; /*Remove default margin*/
+    padding: 10px 20px; /*Padding around navbar*/
+    display: flex; /*Make navbar items display in a row*/
+    justify-content: flex-end; /*Align items to the extreme right*/
     
   }
   
   .navbar-list li {
-    margin-left: 20px; 
+    margin-left: 20px;
   }
   
   .navbar-list li:first-child {
-    margin-left: 0; 
+    margin-left: 0;
   }
   
   .navbar-list li a {
     color: white; 
-    text-decoration: none; 
+    text-decoration: none;
   }
   
   .navbar-list li a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
   }
   
   
