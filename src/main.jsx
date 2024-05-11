@@ -8,6 +8,7 @@ import DemoSection from './components/DemoSection';
 import ContactUs from './components/ContactUs';
 import Navbar from './components/Navbar';
 import Models from './components/Models';
+import './main.css'; 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
