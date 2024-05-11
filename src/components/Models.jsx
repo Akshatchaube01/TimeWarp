@@ -4,8 +4,8 @@ import './Models.css';
 
 const Models = () => {
   return (
-    <div>
-      <h2>Models</h2>
+    <div className='m-8'>
+      <h2 className='text-5xl font-bold'>Models</h2>
     </div>
   );
 }
