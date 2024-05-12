@@ -3,6 +3,7 @@ import { lines } from "./option.js";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import ParticleRing from "./ParticleRing.jsx";
 
 const Home = () => {
   useEffect(() => {
@@ -61,30 +62,12 @@ const Home = () => {
   return (
     <div className="container">
       {/* keep particles at top */}
-      <Particles id="tsparticles" options={useMemo(() => lines)} />
-      <nav className="navbar">
-        <ul className="navbar-list">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/AboutUs">About Us</a>
-          </li>
-          <li>
-            <a href="/DemoSection">Demo Section</a>
-          </li>
-          <li>
-            <a href="/Models">Models</a>
-          </li>
-          <li>
-            <a href="/ContactUs">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
+      {/* <Particles id="tsparticles" options={useMemo(() => lines)} /> */}
+      <ParticleRing className="z-20"/>
       <div style={newTextStyles} className="main-text">
         <p style={{ ...newTextStyles, margin: 0 }}>TimeWarp</p>
       </div>
-      <p style={paragraphStyles}>
+      <p style={paragraphStyles} className="text-xl w-screen">
         Understanding history, embracing the present, and envisioning the future
       </p>
       <a href="/AboutUs" style={{ textDecoration: "none" }}>
