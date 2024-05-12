@@ -47,7 +47,7 @@ Before installation, please ensure you have the following tools installed:
 - [Git](https://git-scm.com/downloads) - Learn Git step-by-step by following the instructions provided [here](https://recodehive.com/how-to-install-git-git-tutorial/).
 
 ## How to Contribute
-If you think that you can add a new feature or want to fix a bug, we invite you to contribute to Online Book Sales and make this project better. To contribute:
+If you think that you can add a new feature or want to fix a bug, we invite you to contribute to Timewarp and make this project better. To contribute:
 
 1. Create a folder at your desire location (usually at your desktop).
 
