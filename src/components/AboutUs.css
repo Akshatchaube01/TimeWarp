@@ -3,6 +3,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* .about-container {
@@ -17,15 +18,21 @@ body {
 .text-container {
     flex: 1;
 } */
-
-.about-title {
+/* Hover effects for About Us */
+.about-content .about-title {
     /* font-style: italic; */
     /* font-size: 32px; */
     /* font-weight: bold; */
     /* margin-bottom: 20px; */
     /* margin-top: 100px; */
     /* margin-left: 35%; */
+    transition: all 0.3s ease;
 }
+
+.about-content .about-title:hover {
+    font-size: 2.6em;
+}
+
 
 .about-text {
     /* font-style: italic; */
@@ -48,7 +55,7 @@ body {
 }
 
 .about-image:hover {
-    /* transform: scale(1.1);  */
+    transform: scale(1.1);
 }
 
 .our-vision {
@@ -68,6 +75,12 @@ body {
 
 .our-vision .about-title {
     /* margin-top: 0; */
+    transition: font-size 0.3s ease;
+}
+
+
+.our-vision .about-title:hover {
+     font-size:2.6em;
 }
 
 .our-vision .about-text {
@@ -105,22 +118,86 @@ body {
     /* margin-bottom: 20px;  */
     transition: transform 0.3s ease;
 }
-
-.team-member img {
-    /* width: 80%; */
-    /* height: 60%; */
-    /* border-radius: 50%; */
-    /* transition: transform 0.3s ease */
+.middle-boy {
+    text-align: center;
+    margin-bottom: 70px;
+    font-style: italic;
 }
+/* Hover effects for headings */
+h1::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    
+  }
+  
+  h1::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+  h1 {
+    position: relative;
+   
+    
+  }
 
-/* .team-member:hover {
-    transform: scale(1.1); 
-} */
+  /* hover effects for our team */
 
+  .our-team-section .our-team-heading:hover {
+    font-size:1.5em;
+}
+  .our-team-section .our-team-heading {
+    transition:font-size 0.3s ease;
+    
+  }
+
+
+  img:hover{
+    transform:scale(1.1);
+  }
+   img{
+    transition:all 0.3s ease;
+  }
+  
+  
+  
+  @media (orientation: landscape) {
+    body {
+      grid-auto-flow: column;
+    }
+  }
+  
+ 
 .team-member p {
     /* margin-top: 10px; 
     font-size: 20px;
     font-weight: bold; */
+}
+
+#tsparticles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+
+.about-container {
+    position: relative; /*  positioning context */
+    overflow-x: hidden;
+ 
 }
 
 @media screen and (max-width: 1198px) {
@@ -146,11 +223,4 @@ body {
     }
 }
 
-.middle-boy {
-    text-align: center;
-    margin-bottom: 70px;
-    font-style: italic;
-}
-.team-member:hover {
-    transform: scale(1.1) rotate(3deg);
-}
+
