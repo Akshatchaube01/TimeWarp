@@ -5,17 +5,25 @@
   .carousel-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px 0; 
   }
   
   .carousel-wrapper {
-    margin-bottom: 20px;
+    width: 95%;
+    max-width: 800px;
+    margin: 1.5em auto;
+    overflow: hidden;
   }
+
   
-  .model-image {
-    max-width: auto;
-    height: 300px;
+
+  .carousel-title{
+    font-size: 1.6rem;
+  }
+
+  .model-image{
+    width: 80%;
   }
   
   .carousel-button {
