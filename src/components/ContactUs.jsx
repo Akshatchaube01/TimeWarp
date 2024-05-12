@@ -1,16 +1,25 @@
 // components/ContactUs.jsx
-import React from 'react';
+import React, {useState} from 'react';
 import aboutImage from '../assets/cartoon.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faFemale, faMobilePhone} from "@fortawesome/free-solid-svg-icons";
 
 
-const Container = {
-    height : '200px'
-}
-
-
 const ContactUs = () => {
+
+    const [email, setEmail] = useState("")
+    const [message, setMessage] = useState("")
+    const [name, setName] = useState("")
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(!name.trim() || !message.trim() || !email.trim()){
+            alert("Fill all the fields")
+        }
+        alert("Message sent successfully")
+    }
+
+
   return (
 
       <div className="h-screen place-content-center">
@@ -43,12 +52,18 @@ const ContactUs = () => {
                           <div className=" mt-5 flex gap-5 justify-center items-center flex-col">
                               <h6 >Get a quote</h6>
                               <div className="grid gap-3 place-content-center text-black">
-                                  <input className="rounded-xl h-10 w-72 p-3 " placeholder="Name: eg- Elon Mask"/>
-                                  <input className="rounded-xl h-10 w-72 p-3" placeholder="Email: eg- Elon@gmail.com"/>
-                                  <input className="rounded-xl h-10 w-72 p-3" placeholder="Phone no.: eg- 65654-56554"/>
-                                  <textarea rows={10} cols={4} className="rounded-xl h-10 w-72 p-3" placeholder="Message: eg- Dear"/>
+                                  <input required={true} type="text" value={name} onChange={(e)=> {
+                                      setName(e.target.value)
+                                  }} className="rounded-xl h-10 w-72 p-3 " placeholder="Name: eg- Elon Mask"/>
+                                  <input required={true} type="email" value={email} onChange={(e)=> {
+                                      setEmail(e.target.value)
+                                  }} className="rounded-xl h-10 w-72 p-3" placeholder="Email: eg- Elon@gmail.com"/>
+                                  <input required={true} type="number" className="rounded-xl h-10 w-72 p-3" placeholder="Phone no.: eg- 65654-56554"/>
+                                  <textarea required={true} value={message} onChange={(e)=> {
+                                      setMessage(e.target.value)
+                                  }} rows="3" cols="4" className="rounded-xl  w-72 p-3" placeholder="Message: eg- Dear admin , I am intersted in your website. I want to collaborate..."/>
                               </div>
-                              <button className="border-4 p-2 rounded-xl w-fit ">Send Message</button>
+                              <button onClick={handleSubmit} type="submit" className="border-4 p-2 rounded-xl w-fit ">Send Message</button>
                           </div>
                       </div>
                   </div>
