@@ -171,7 +171,7 @@ With innovation as our compass and authenticity as our guide, we are committed t
 
 ## ✍️ Feedback and Support
 
-If you encounter any issues with the SuperSpeechSaga or have any feedback or suggestions, please open an issue in the Issues section of this repository. We appreciate your feedback and will respond as soon as possible.
+If you encounter any issues or have any feedback or suggestions, please open an issue in the Issues section of this repository. We appreciate your feedback and will respond as soon as possible.
 
 
 ## 🛡️ License
