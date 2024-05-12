@@ -18,7 +18,7 @@
     "@tsparticles/react": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3",
+    "react-router-dom": "^6.23.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "three": "^0.163.0",
