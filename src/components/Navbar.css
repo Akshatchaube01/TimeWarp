@@ -1,76 +1,56 @@
 .navbar {
-    background-color: rgb(0, 0, 0); /* Black background color */
-    margin-right: 20px;
-    padding-right: 20px;
-}
-
-.navbar-list {
-    background-color: black;
-    list-style: none; /*Remove bullet points*/
-    margin: 0; /*Remove default margin*/
-    padding: 10px 20px; /*Padding around navbar*/
-    display: flex; /*Make navbar items display in a row*/
-    justify-content: center; /*Align items horizontally to center*/
-    align-items: center; /*Align items vertically to center*/
-    gap: 40px;
-}
-
-.navbar-list li a {
-    color: white;
-    text-decoration: none;
-}
-
-.navbar-list li a:hover {
-    text-decoration: underline;
-}
-
-.active-link {
-    text-decoration: underline;
-    color: #00bfff;
-}
-
-.navbar-list a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
-}
-
-.navbar__toggle::before {
-    display: none;
-    content: "\f0c9";
-    font-family: "FontAwesome";
-    font-size: 2rem;
+    background-color: hsla(0, 0%, 0%, 0);
+    padding: 10px 20px;
     top: 0;
-    right: 0;
-    margin: 0.5em;
+    width: 100%;
+    font-size: 1.7rem;
+    z-index: 1000;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+    color: hsl(0, 0%, 90%);
+  }
+  
+  .active {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  .active:hover{
+    color: hsl(211, 110%, 70%);
+  }
+  .menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .navbar-list {
-        flex-direction: column; /* Stack items vertically for smaller screens */
-        font-size: 0.8rem; /* reduce font size on mobile*/
-        gap: 0;
-    }
-
-    .navbar__toggle::before {
-        display: block;
-    }
-
-    .navbar-list {
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
         display: none;
     }
-    .navbar-list-active {
+
+    .nav-links.open {
         display: flex;
     }
-}
 
-@media screen and (min-width: 1900px) {
-    .navbar-list {
-        font-size: 30px;
-    }
-    .main-text {
-        font-size: 60px;
+    .menu-icon {
+        display: block;
     }
 }
+  

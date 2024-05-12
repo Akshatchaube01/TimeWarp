@@ -1,35 +1,36 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css'; 
 
 const Navbar = () => {
-    const location = useLocation();
+    const [isOpen, setIsOpen] = useState(false);
 
-    const isActive = (path) => location.pathname === path ? 'text-[#00bfff] underline' : 'text-white';
+    const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav className="z-50 h-16 flex justify-center sticky top-0 w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4">
-            <ul className="flex flex-col md:flex-row justify-center items-center list-none m-0 p-4 gap-x-0 md:gap-x-10 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-3xl">
-                <li className="hover:underline block md:hidden">
-                    <span className="fa fa-bars"></span>
+        <nav className="navbar">
+            <div className="menu-icon" onClick={toggleMenu}>
+                &#9776; 
+            </div>
+            <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+                <li>
+                    <NavLink to="/" exact className="nav-link" activeClassName="active">Home</NavLink>
                 </li>
-                <li className="hover:underline hidden md:block">
-                    <NavLink to="/" className={isActive('/')}>Home</NavLink>
+                <li>
+                    <NavLink to="/aboutus" className="nav-link" activeClassName="active">About Us</NavLink>
                 </li>
-                <li className="hover:underline hidden md:block">
-                    <NavLink to="/AboutUs" className={isActive('/AboutUs')}>About Us</NavLink>
+                <li>
+                    <NavLink to="/demosection" className="nav-link" activeClassName="active">Demo Section</NavLink>
                 </li>
-                <li className="hover:underline hidden md:block">
-                    <NavLink to="/DemoSection" className={isActive('/DemoSection')}>Demo Section</NavLink>
+                <li>
+                    <NavLink to="/models" className="nav-link" activeClassName="active">Models</NavLink>
                 </li>
-                <li className="hover:underline hidden md:block">
-                    <NavLink to="/Models" className={isActive('/Models')}>Models</NavLink>
-                </li>
-                <li className="hover:underline hidden md:block">
-                    <NavLink to="/ContactUs" className={isActive('/ContactUs')}>Contact Us</NavLink>
+                <li>
+                    <NavLink to="/contactus" className="nav-link" activeClassName="active">Contact Us</NavLink>
                 </li>
             </ul>
         </nav>
-
     );
 };
+
 export default Navbar;
