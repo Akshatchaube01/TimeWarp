@@ -15,13 +15,13 @@ import TimepicImage from "../assets/cartoon.png";
 
 const Models = () => {
     // Define images for each carousel
-    const carouselImages = [
-        [AkshatImage, HimankImage, ShreyaImage, NamanImage],
-        [AkshatImage, CartoonImage, ShreyaImage, TimepicImage],
-        [CartoonImage, NamanImage, ShreyaImage, HimankImage],
-        [HimankImage, CartoonImage, AkshatImage, TimepicImage],
-        [HimankImage, CartoonImage, AkshatImage, TimepicImage],
-    ];
+    const carouselImages = {
+        "Model1":[AkshatImage, HimankImage, ShreyaImage, NamanImage],
+        "Model2":[AkshatImage, CartoonImage, ShreyaImage, TimepicImage],
+        "Model3":[CartoonImage, NamanImage, ShreyaImage, HimankImage],
+        "Model4":[HimankImage, CartoonImage, AkshatImage, TimepicImage],
+        "Model5":[HimankImage, CartoonImage, AkshatImage, TimepicImage]
+    }
 
     const Carousel = ({ images }) => {
         const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -52,14 +52,15 @@ const Models = () => {
     };
 
     return (
-        <div className="m-8">
+        <div className="text-center m-8">
             <h2 className="text-5xl font-bold text-center">AR Models</h2>
             {/* Render five carousels */}
-            {carouselImages.map((images, index) => (
-                <div key={index} className="carousel-wrapper">
-                    <Carousel images={images} />
-                </div>
-            ))}
+            {Object.keys(carouselImages).map((key, index)=>{
+                return(<div key={index} className="carousel-wrapper">
+                    <h2 className="carousel-title">{key}</h2>
+                    <Carousel images={carouselImages[`${key}`]} />
+                </div>)
+            })}
         </div>
     );
 };
