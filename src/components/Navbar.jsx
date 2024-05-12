@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import "./Navbar.css";
+import { Link, Outlet } from "react-router-dom";
 
 const Navbar = () => {
     const listRef = useRef();
@@ -8,26 +9,19 @@ const Navbar = () => {
         listRef.current.classList.toggle("navbar-list-active");
     };
     return (
-        <nav>
-            <button className="navbar__toggle" onClick={onToggle}></button>
-            <ul className="navbar-list" ref={listRef}>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/AboutUs">About Us</a>
-                </li>
-                <li>
-                    <a href="/DemoSection">Demo Section</a>
-                </li>
-                <li>
-                    <a href="/Models">Models</a>
-                </li>
-                <li>
-                    <a href="/ContactUs">Contact Us </a>
-                </li>
-            </ul>
-        </nav>
+        <>
+            <nav className="navbar">
+                <button className="navbar__toggle" onClick={onToggle}></button>
+                <ul className="navbar-list" ref={listRef}>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/AboutUs">About Us</Link></li>
+                    <li><Link to="/DemoSection">Demo Section</Link></li>
+                    <li><Link to="/Models">Models</Link></li>
+                    <li><Link to="/ContactUs">Contact Us</Link></li>
+                </ul>
+            </nav>
+            <Outlet />
+        </>
     );
 };
 export default Navbar;
