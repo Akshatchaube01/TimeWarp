@@ -55,8 +55,8 @@ const Home = () => {
     color: "#fff", // White font color on hover
   };
 
-  // State to manage button hover
-  const [isButtonHovered, setIsButtonHovered] = useState(false);
+    // State to manage button hover
+    const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   return (
     <div className="container">
