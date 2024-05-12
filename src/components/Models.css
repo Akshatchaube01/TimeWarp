@@ -1,0 +1,40 @@
+.text-5xl {
+    margin-bottom: 100px; 
+  }
+  
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0; 
+  }
+  
+  .carousel-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .model-image {
+    max-width: auto;
+    height: 300px;
+  }
+  
+  .carousel-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+  }
+  
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel-button svg {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  
+  
+  
