@@ -64,25 +64,6 @@ const Home = () => {
       {/* keep particles at top */}
       {/* <Particles id="tsparticles" options={useMemo(() => lines)} /> */}
       <ParticleRing className="z-20"/>
-      <nav className="z-50 h-16 flex place-content-center absolute top-0 w-screen backdrop-filter backdrop-blur-lg bg-opacity-40">
-        <ul className="navbar-list bg-transparent">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/AboutUs">About Us</a>
-          </li>
-          <li>
-            <a href="/DemoSection">Demo Section</a>
-          </li>
-          <li>
-            <a href="/Models">Models</a>
-          </li>
-          <li>
-            <a href="/ContactUs">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
       <div style={newTextStyles} className="main-text">
         <p style={{ ...newTextStyles, margin: 0 }}>TimeWarp</p>
       </div>

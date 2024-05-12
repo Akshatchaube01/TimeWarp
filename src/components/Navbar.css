@@ -24,6 +24,18 @@
     text-decoration: underline;
 }
 
+.active-link {
+    text-decoration: underline;
+    color: #00bfff;
+}
+
+.navbar-list a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
 .navbar__toggle::before {
     display: none;
     content: "\f0c9";
