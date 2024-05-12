@@ -1,68 +1,77 @@
-body{
-    text-align: center;
-}
 .demo-container {
     text-align: center;
-  }
-  
-  .demo-title {
+    width: 50%;
+    margin-inline: auto;
+}
+
+.demo-title {
     text-align: center;
     color: #fff;
     font-size: 36px;
     margin-top: 50px;
-  }
-  
-  .video-container {
-    margin-left: 100px;
-    margin-right: 100px;
+}
+
+.video-container {
     text-align: center;
     margin: 20px auto;
-  }
-  
-  .demo-description {
-    margin-left: 100px;
-    margin-right: 100px;
-    text-align: center;
+    width: 100%;
+}
+
+.video-container > iframe {
+    aspect-ratio: 16/9;
+    width: 100% !important;
+    height: auto;
+}
+
+.demo-description {
     color: #fff;
     font-size: 18px;
     margin-bottom: 30px;
-  }
-  
-  .technology-explanation,
-  .resource-column {
-    margin-left: 100px;
-    margin-right: 100px;
+}
+
+.technology-explanation,
+.resource-column {
     text-align: center;
     margin-bottom: 50px;
     padding-bottom: 20px;
-  }
-  
-  .technology-explanation h3,
-  .resource-column h3 {
+}
+
+.technology-explanation h3,
+.resource-column h3 {
     margin-left: 100px;
     margin-right: 100px;
     text-align: center;
     color: #fff;
     font-size: 24px;
-  }
-  
-  .technology-explanation p,
-  .resource-column ul {
+}
+
+.technology-explanation p,
+.resource-column ul {
     text-align: center;
     color: #fff;
     font-size: 16px;
     text-align: left;
-  }
-  
-  .resource-column ul {
+}
+
+.resource-column ul {
     text-align: center;
     list-style: none;
     padding: 0;
-  }
-  
-  .resource-column li {
+}
+
+.resource-column li {
     text-align: center;
     margin-bottom: 10px;
-    
-  }
-  
+}
+
+@media screen and (max-width: 1198px) {
+    .demo-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 598px) {
+    .demo-container {
+        width: 90%;
+    }
+}

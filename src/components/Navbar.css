@@ -1,36 +1,64 @@
-
 .navbar {
     background-color: rgb(0, 0, 0); /* Black background color */
     margin-right: 20px;
     padding-right: 20px;
-  }
-  
-  .navbar-list {
+}
+
+.navbar-list {
     background-color: black;
     list-style: none; /*Remove bullet points*/
     margin: 0; /*Remove default margin*/
     padding: 10px 20px; /*Padding around navbar*/
     display: flex; /*Make navbar items display in a row*/
-    justify-content: flex-end; /*Align items to the extreme right*/
-    
-  }
-  
-  .navbar-list li {
-    margin-left: 20px;
-  }
-  
-  .navbar-list li:first-child {
-    margin-left: 0;
-  }
-  
-  .navbar-list li a {
-    color: white; 
+    justify-content: center; /*Align items horizontally to center*/
+    align-items: center; /*Align items vertically to center*/
+    gap: 40px;
+}
+
+.navbar-list li a {
+    color: white;
     text-decoration: none;
-  }
-  
-  .navbar-list li a:hover {
+}
+
+.navbar-list li a:hover {
     text-decoration: underline;
-  }
-  
-  
-  
+}
+
+.navbar__toggle::before {
+    display: none;
+    content: "\f0c9";
+    font-family: "FontAwesome";
+    font-size: 2rem;
+    top: 0;
+    right: 0;
+    margin: 0.5em;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar-list {
+        flex-direction: column; /* Stack items vertically for smaller screens */
+        font-size: 0.8rem; /* reduce font size on mobile*/
+        gap: 0;
+    }
+
+    .navbar__toggle::before {
+        display: block;
+    }
+
+    .navbar-list {
+        display: none;
+    }
+    .navbar-list-active {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .navbar-list {
+        font-size: 30px;
+    }
+    .main-text {
+        font-size: 60px;
+    }
+}
