@@ -12,8 +12,21 @@ const Home = () => {
     });
   }, []);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const newTextStyles = {
-    fontSize: "100px",
+    fontSize: windowWidth < 768 ? "80px" : "100px",
     textAlign: "center",
     position: "absolute",
     top: "50%",
