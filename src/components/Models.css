@@ -1,5 +1,5 @@
 .text-5xl {
-    margin-bottom: 100px; 
+    margin-bottom: 70px; 
   }
   
   .carousel-container {
@@ -7,23 +7,27 @@
     align-items: center;
     justify-content: center;
     padding: 10px 0; 
+    border-radius: 12px;
   }
   
   .carousel-wrapper {
     width: 95%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 1.5em auto;
     overflow: hidden;
+    
   }
 
   
 
   .carousel-title{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
   }
 
   .model-image{
-    width: 80%;
+    width: 70%;
+    border-radius: 16px;
   }
   
   .carousel-button {
@@ -45,4 +49,4 @@
   
   
   
-  
+
