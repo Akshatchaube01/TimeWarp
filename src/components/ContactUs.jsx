@@ -18,7 +18,7 @@ const ContactUs = () => {
             return
         }
 
-        if(!name.match(/^[a-z]/i)){
+        if(!name.match(/^[a-z]+$/i)){
             alert("Only alphabets are allowed in name")
             return
         }
