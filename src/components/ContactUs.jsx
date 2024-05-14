@@ -10,13 +10,20 @@ const ContactUs = () => {
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
     const [name, setName] = useState("")
+    const [number, setNumber] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(!name.trim() || !message.trim() || !email.trim()){
+        if(!name.trim() || !message.trim() || !email.trim() || !number.trim()){
             alert("Fill all the fields")
         }
-        alert("Message sent successfully")
+        else if(name.trim() || message.trim() || email.trim() || number.trim()){
+            alert("Message sent successfully")
+            setName("")
+            setMessage("")
+            setEmail("")
+            setNumber("")
+        }
     }
 
 
@@ -58,7 +65,9 @@ const ContactUs = () => {
                                   <input required={true} type="email" value={email} onChange={(e)=> {
                                       setEmail(e.target.value)
                                   }} className="rounded-xl h-10 w-72 p-3" placeholder="Email: eg- Elon@gmail.com"/>
-                                  <input required={true} type="number" className="rounded-xl h-10 w-72 p-3" placeholder="Phone no.: eg- 65654-56554"/>
+                                  <input required={true} type="number"  value={number} onChange={(e)=> {
+                                      setNumber(e.target.value)
+                                  }} className="rounded-xl h-10 w-72 p-3" placeholder="Phone no.: eg- 65654-56554"/>
                                   <textarea required={true} value={message} onChange={(e)=> {
                                       setMessage(e.target.value)
                                   }} rows="3" cols="4" className="rounded-xl  w-72 p-3" placeholder="Message: eg- Dear admin , I am intersted in your website. I want to collaborate..."/>
