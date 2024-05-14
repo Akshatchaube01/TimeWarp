@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const location = useLocation();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
 
     const isActive = (path) => location.pathname === path ? 'text-[#00bfff] underline' : 'text-white';
 
     return (
         <nav className="z-50 h-16 flex justify-center sticky top-0 w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4">
+
             <style>
                   @import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');
             </style>
@@ -31,8 +41,9 @@ const Navbar = () => {
                     <NavLink to="/ContactUs" className={isActive('/ContactUs')}><i class="ri-customer-service-2-fill"></i> Contact Us</NavLink>
                 </li>
             </ul>
-        </nav>
 
+        </nav>
     );
 };
+
 export default Navbar;
