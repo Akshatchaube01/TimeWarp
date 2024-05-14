@@ -15,7 +15,14 @@ const ContactUs = () => {
         e.preventDefault()
         if(!name.trim() || !message.trim() || !email.trim()){
             alert("Fill all the fields")
+            return
         }
+
+        if(!name.match(/^[a-z]/i)){
+            alert("Only alphabets are allowed in name")
+            return
+        }
+
         alert("Message sent successfully")
     }
 
@@ -51,19 +58,19 @@ const ContactUs = () => {
                           <h6 >Contact us for a quote</h6>
                           <div className=" mt-5 flex gap-5 justify-center items-center flex-col">
                               <h6 >Get a quote</h6>
-                              <div className="grid gap-3 place-content-center text-black">
-                                  <input required={true} type="text" value={name} onChange={(e)=> {
+                              <form className="grid gap-3 place-content-center text-black" onSubmit={(e)=>handleSubmit(e)}>
+                                  <input required type="text" value={name} minLength={3} onChange={(e)=> {
                                       setName(e.target.value)
                                   }} className="rounded-xl h-10 w-72 p-3 " placeholder="Name: eg- Elon Mask"/>
-                                  <input required={true} type="email" value={email} onChange={(e)=> {
+                                  <input required type="email"  value={email} onChange={(e)=> {
                                       setEmail(e.target.value)
                                   }} className="rounded-xl h-10 w-72 p-3" placeholder="Email: eg- Elon@gmail.com"/>
-                                  <input required={true} type="number" className="rounded-xl h-10 w-72 p-3" placeholder="Phone no.: eg- 65654-56554"/>
-                                  <textarea required={true} value={message} onChange={(e)=> {
+                                  <input required type="tel" pattern="[0-9]{10}" title="Only 10 digit numbers are allowed" className="rounded-xl h-10 w-72 p-3"  placeholder="Phone no.: eg- 65654-56554"/>
+                                  <textarea required value={message} onChange={(e)=> {
                                       setMessage(e.target.value)
                                   }} rows="3" cols="4" className="rounded-xl  w-72 p-3" placeholder="Message: eg- Dear admin , I am intersted in your website. I want to collaborate..."/>
-                              </div>
-                              <button onClick={handleSubmit} type="submit" className="border-4 p-2 rounded-xl w-fit ">Send Message</button>
+                                  <button type="submit"  className="border-4 p-2 rounded-xl w-fit text-white justify-self-center">Send Message</button>
+                              </form>
                           </div>
                       </div>
                   </div>
