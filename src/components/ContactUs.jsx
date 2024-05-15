@@ -10,10 +10,11 @@ const ContactUs = () => {
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
     const [name, setName] = useState("")
+    const [number, setNumber] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(!name.trim() || !message.trim() || !email.trim()){
+        if(!name.trim() || !message.trim() || !email.trim() || !number.trim()){
             alert("Fill all the fields")
             return
         }
@@ -22,8 +23,12 @@ const ContactUs = () => {
             alert("Only alphabets are allowed in name")
             return
         }
-
+        
         alert("Message sent successfully")
+        setName("")
+        setMessage("")
+        setEmail("")
+        setNumber("")
     }
 
 
@@ -42,11 +47,11 @@ const ContactUs = () => {
                               <div className="grid grid-cols-2">
                                   <div className="flex flex-col">
                                       <div><span className="me-2 "><FontAwesomeIcon icon={faEnvelope}/></span>Email</div>
-                                      <div>info@timewarp.com</div>
+                                      <a href="mailto:info@timewarp.com">info@timewarp.com</a>
                                   </div>
                                   <div className="flex flex-col">
                                       <div><span className="me-2 "><FontAwesomeIcon icon={faMobilePhone}/></span>Phone</div>
-                                      <div>+1 (555) 123-4567</div>
+                                      <a href="tel:+15551234567">+1 (555) 123-4567</a>
                                   </div>
                               </div>
 
