@@ -70,7 +70,7 @@ const ContactUs = () => {
                                   <input required type="email"  value={email} onChange={(e)=> {
                                       setEmail(e.target.value)
                                   }} className="rounded-xl h-10 w-72 p-3" placeholder="Email: eg- Elon@gmail.com"/>
-                                  <input required type="tel" pattern="[0-9]{10}" title="Only 10 digit numbers are allowed" className="rounded-xl h-10 w-72 p-3"  placeholder="Phone no.: eg- 65654-56554"/>
+                                  <input required type="tel" value={number} onChange={(e)=>setNumber(e.target.value)} pattern="[0-9]{10}" title="Only 10 digit numbers are allowed" className="rounded-xl h-10 w-72 p-3"  placeholder="Phone no.: eg- 65654-56554"/>
                                   <textarea required value={message} onChange={(e)=> {
                                       setMessage(e.target.value)
                                   }} rows="3" cols="4" className="rounded-xl  w-72 p-3" placeholder="Message: eg- Dear admin , I am intersted in your website. I want to collaborate..."/>
