@@ -42,11 +42,11 @@ const ContactUs = () => {
                               <div className="grid grid-cols-2">
                                   <div className="flex flex-col">
                                       <div><span className="me-2 "><FontAwesomeIcon icon={faEnvelope}/></span>Email</div>
-                                      <div>info@timewarp.com</div>
+                                      <a href="mailto:info@timewarp.com">info@timewarp.com</a>
                                   </div>
                                   <div className="flex flex-col">
                                       <div><span className="me-2 "><FontAwesomeIcon icon={faMobilePhone}/></span>Phone</div>
-                                      <div>+1 (555) 123-4567</div>
+                                      <a href="tel:+15551234567">+1 (555) 123-4567</a>
                                   </div>
                               </div>
 
