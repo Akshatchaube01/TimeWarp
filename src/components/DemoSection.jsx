@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import "./DemoSection.css";
 
 const DemoSection = () => {
@@ -62,18 +62,23 @@ const DemoSection = () => {
                 </p>
             </div>
             <div className="resource-column">
-                <h2>* Resources *</h2>
+                <p><b>Resources</b></p>
                 <ul>
                     <li>
-                        <a href="https://docs.unity3d.com/Manual/index.html">Unity Docs</a>
+                        <span className="logos--unity"></span>
+                        <a href="https://docs.unity3d.com/Manual/index.html">Unity
+                        Docs</a>
                     </li>
                     <li>
+                        <span className="mdi--script"></span>
                         <a href="https://docs.unity3d.com/ScriptReference/">Script Reference</a>
                     </li>
                     <li>
+                    <span className="icon-park-outline--api"></span>
                         <a href="http://www.google.com">API Reference</a>
                     </li>
                     <li>
+                    <span className="logos--unity"></span>
                         <a href="https://unity.com/learn/get-started">Unity Learning</a>
                     </li>
                 </ul>
