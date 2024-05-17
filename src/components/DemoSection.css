@@ -1,6 +1,6 @@
 .demo-container {
     text-align: center;
-    width: 50%;
+    /* width: 50%; */
     margin-inline: auto;
 }
 
@@ -45,7 +45,6 @@
     font-size: 24px;
 }
 
-.technology-explanation p,
 .resource-column ul {
     text-align: center;
     color: #fff;
