@@ -45,7 +45,7 @@ const DemoSection = () => {
         {/* Technology Used */}
         <h2 className="font-bold text-4xl mb-6 pt-6">Technology Used</h2>
 
-        <div className="md:grid grid-cols-1 lg:grid-cols-2 md:gap-10 lg:w-[2/3] mx-auto md:px-2 px-4 max-w-[69rem]">
+        <div className="mx-auto px-4 max-w-[69rem] grid grid-cols-1 md:gap-10 md:px-2 lg:grid-cols-2 lg:w-[2/3]">
           {/* Mapping Data from DemoConstant.js into cards */}
           {technologyExplanations.map((explanation, index) => (
             // Cards
