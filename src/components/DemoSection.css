@@ -105,6 +105,30 @@
 }
 
 
+
+/* New classes for card content */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify; /* Justify text */
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #555;
+    text-align: justify; /* Justify text */
+}
+
+
 @media screen and (max-width: 1198px) {
     .demo-container {
         width: 95%;

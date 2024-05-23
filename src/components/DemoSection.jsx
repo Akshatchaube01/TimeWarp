@@ -58,11 +58,11 @@ const DemoSection = () => {
               <div className="flex items-center justify-center bg-sky-700 py-4">
                 <div className="text-3xl text-neutral-200">{icons[index]}</div>
               </div>
-              <div className="px-6 py-4">
-                <h1 className="font-bold text-xl text-gray-800 mb-2">
-                  {explanation.title}
-                </h1>
-                <p className="text-gray-700">{explanation.context}</p>
+              <div className="card-content px-6 py-4">
+                {/* Title with card-title class */}
+                <h1 className="card-title">{explanation.title}</h1>
+                {/* Context with card-text class */}
+                <p className="card-text">{explanation.context}</p>
               </div>
             </div>
           ))}
