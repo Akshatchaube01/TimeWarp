@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import AnimatedCursor from "react-animated-cursor";
 import AboutUs from "./components/AboutUs";
 import DemoSection from "./components/DemoSection";
 import ContactUs from "./components/ContactUs";
@@ -12,6 +13,28 @@ import Custom404 from "./components/Custom404";
 import "./main.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<Router>
+	<AnimatedCursor 
+        innerSize={8}
+        outerSize={30}
+        color="256, 256, 256"
+        outerAlpha={.2}
+        innerScale={0.7}
+        outerScale={3}
+        clickables={[
+          'a',
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          'label[for]',
+          'select',
+          'textarea',
+          'button',
+          '.link'
+        ]}
+      />
+    
 		<Navbar />{" "}
 		{/* Place Navbar outside of Routes to ensure it's always visible */}
 		<Routes>
