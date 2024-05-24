@@ -19,6 +19,7 @@
     "@tsparticles/all": "^3.3.0",
     "@tsparticles/react": "^3.0.0",
     "framer-motion": "^11.2.5",
+    "rc-slider": "^10.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
