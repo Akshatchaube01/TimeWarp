@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Models.css";
 import Footer from './Footer';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,6 +25,16 @@ const Models = () => {
         "Model4":[HimankImage, CartoonImage, AkshatImage, TimepicImage],
         "Model5":[HimankImage, CartoonImage, AkshatImage, TimepicImage]
     }
+    const [selectedYear, setSelectedYear] = useState(1800);
+    const handleSliderChange = (value) => {
+        setSelectedYear(value);
+        setCurrentImageIndex(0); // Reset the carousel index when the year changes
+    };
+    const marks = {};
+    for (let year = 1000; year <= 2000; year += 100) {
+        marks[year] = year.toString();
+    }
+
 
     const Carousel = ({ images }) => {
         const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -62,6 +74,19 @@ const Models = () => {
                     <Carousel images={carouselImages[`${key}`]} />
                 </div>)
             })}
+            <div className="timeline-slider">
+                <h3 className="timeline-title mt-[10rem] mb-[3rem]">Choose Timeline</h3>
+            <Slider
+                    min={1000}
+                    max={2000}
+                    step={50}
+                    marks={marks}
+                    onChange={handleSliderChange}
+                    value={selectedYear}
+                />
+                </div>
+            <h2 className="text-2xl font-bold mb-[10rem] text-[#00bfff] mt-[3rem]">{selectedYear}</h2>
+              
             <Footer/>
         </div>
     );
