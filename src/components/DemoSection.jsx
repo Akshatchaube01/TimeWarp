@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { Fragment } from "react";
 import "./DemoSection.css";
 import { technologyExplanations } from "./DemoConstants";
@@ -5,6 +6,7 @@ import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandThreejs } from "react-icons/tb";
 import { FaUnity, FaVrCardboard } from "react-icons/fa";
 import { SiWebgl } from "react-icons/si";
+import Footer from './Footer';
 
 const DemoSection = () => {
   const icons = [
@@ -93,6 +95,7 @@ const DemoSection = () => {
           </li>
         </ul>
       </div>
+      <Footer/>
     </div>
   );
 };
