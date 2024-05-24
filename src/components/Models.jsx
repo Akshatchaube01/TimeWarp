@@ -23,7 +23,8 @@ const Models = () => {
         "Model2":[AkshatImage, CartoonImage, ShreyaImage, TimepicImage],
         "Model3":[CartoonImage, NamanImage, ShreyaImage, HimankImage],
         "Model4":[HimankImage, CartoonImage, AkshatImage, TimepicImage],
-        "Model5":[HimankImage, CartoonImage, AkshatImage, TimepicImage]
+        "Model5":[HimankImage, CartoonImage, AkshatImage, TimepicImage],
+        "Model6":[AkshatImage, CartoonImage, ShreyaImage, TimepicImage],
     }
     const [selectedYear, setSelectedYear] = useState(1800);
     const handleSliderChange = (value) => {
@@ -68,12 +69,14 @@ const Models = () => {
         <div className="text-center m-8">
             <h2 className="text-5xl font-bold text-center">AR Models</h2>
             {/* Render five carousels */}
+            <div className="flex flex-wrap justify-center">
             {Object.keys(carouselImages).map((key, index)=>{
-                return(<div key={index} className="carousel-wrapper">
+                return(<div key={index} className="carousel-wrapper lg:w-1/3 md:w-1/2 sm:w-full">
                     <h2 className="carousel-title">{key}</h2>
                     <Carousel images={carouselImages[`${key}`]} />
                 </div>)
             })}
+            </div>
             <div className="timeline-slider">
                 <h3 className="timeline-title mt-[10rem] mb-[3rem]">Choose Timeline</h3>
             <Slider
