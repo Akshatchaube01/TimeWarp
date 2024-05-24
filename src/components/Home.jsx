@@ -71,7 +71,6 @@ const Home = () => {
 
     // State to manage button hover
     const [isButtonHovered, setIsButtonHovered] = useState(false);
-
   return (
     <div className="container">
       {/* keep particles at top */}
@@ -95,6 +94,7 @@ const Home = () => {
           Know more
         </button>
       </a>
+
     </div>
   );
 };
