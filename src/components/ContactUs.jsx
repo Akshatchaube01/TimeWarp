@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import axios from "axios"; 
 import { styles } from "../style";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "./hoc";
@@ -26,14 +27,14 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        'service_pmgfekv',
-        'template_envuc98',
+    try {
+      await emailjs.send(
+        'service_pmgfekv',//write service id here 
+        'template_envuc98',//write templet id here
         {
           from_name: form.name,
           to_name: "TimeWarp",
@@ -41,26 +42,23 @@ const Contact = () => {
           to_email: "info@timewarp.com",
           message: form.message,
         },
-        '/* in emailjs website the owner would require to generate their particular idenetity code with the assigned mail address */'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Something went Wrong!");
-        }
+        'YOUR_EMAILJS_USER_ID'  //write public_id here
       );
+
+      setLoading(false);
+      alert("Thank you. I will get back to you as soon as possible.");
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+
+      alert("Sorry, something went wrong while sending your message. Please try again later.");
+    }
   };
 
   return (
@@ -76,7 +74,7 @@ const Contact = () => {
 
         <form
           ref={formRef}
-          onSubmit={handleSubmit}
+          onSubmit={handleEmailSubmit}
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
@@ -113,14 +111,14 @@ const Contact = () => {
             />
           </label>
 
-          <label className="flex flex-col">
-          <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary bg-cyan-800 hover:scale-[1.1]'
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
-          </label>
+          <div className='flex flex-col'>
+            <button
+              type='submit'
+              className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary bg-cyan-800 hover:scale-[1.1]'
+            >
+              {loading ? "Sending..." : "Send Mail"}
+            </button>
+          </div>
         </form>
       </motion.div>
 
