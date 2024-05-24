@@ -46,7 +46,56 @@
     font-size: 24px;
     color: #333;
   }
+
+  .timeline-slider {
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 45rem;
+}
+.timeline-title{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
   
+
+/* Customize the rc-slider */
+.rc-slider {
+  margin: 1rem 0;
+}
+
+.rc-slider-rail {
+  height: 8px;
+  background-color: #ddd;
+}
+
+.rc-slider-track {
+  background-color: #007bff;
+}
+
+.rc-slider-handle {
+  border: 2px solid #007bff;
+  width: 24px;
+  height: 24px;
+  margin-top: -9px;
+  background-color: #fff;
+  cursor: grab;
+}
+
+.rc-slider-handle:hover {
+  border-color: #0056b3;
+}
+
+.rc-slider-mark {
+  font-size: 16px;
+}
+
+.rc-slider-mark-text {
+  color: #333;
+}
+
+.rc-slider-mark-text-active {
+  color: #007bff;
+}
   
   
 
