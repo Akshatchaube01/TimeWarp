@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Models.css";
+import Footer from './Footer';
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,6 +62,7 @@ const Models = () => {
                     <Carousel images={carouselImages[`${key}`]} />
                 </div>)
             })}
+            <Footer/>
         </div>
     );
 };

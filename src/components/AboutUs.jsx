@@ -7,7 +7,7 @@ import Himank from "../assets/Himank.jpg";
 import Akshat from "../assets/Akshat.jpg";
 import Shreya from "../assets/Shreya.jpg";
 import Naman from "../assets/Naman.jpg";
-
+import Footer from './Footer';
 // Necessary imports for particle effect
 import { useEffect, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -133,6 +133,8 @@ const AboutUs = () => {
             </div>
           </section>
         </div>
+
+        <Footer />
       </div>
     
   );
