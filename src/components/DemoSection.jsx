@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { Fragment } from "react";
 import "./DemoSection.css";
 import { technologyExplanations } from "./DemoConstants";
@@ -5,6 +6,8 @@ import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandThreejs } from "react-icons/tb";
 import { FaUnity, FaVrCardboard } from "react-icons/fa";
 import { SiWebgl } from "react-icons/si";
+import Footer from './Footer';
+import Tilty from 'react-tilty';
 
 const DemoSection = () => {
   const icons = [
@@ -28,7 +31,7 @@ const DemoSection = () => {
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
             className="mx-auto rounded-2xl"
           ></iframe>
         </div>
@@ -49,22 +52,23 @@ const DemoSection = () => {
           {/* Mapping Data from DemoConstant.js into cards */}
           {technologyExplanations.map((explanation, index) => (
             // Cards
-            <div
+            <Tilty
               key={index}
               className={`max-w-lg mx-auto my-16 md:my-8 overflow-hidden
-            bg-neutral-100 rounded-lg hover:scale-105 transition
-            ${index === 4 ? "lg:mx-[55%] md:w-full " : ""}`}
+              bg-neutral-100 rounded-lg hover:scale-105 transition
+              ${index === 4 ? "lg:mx-[55%] md:w-full " : ""}`}
+              glare scale={1.05} maxGlare={0.5}
             >
               <div className="flex items-center justify-center bg-sky-700 py-4">
                 <div className="text-3xl text-neutral-200">{icons[index]}</div>
               </div>
-              <div className="px-6 py-4">
-                <h1 className="font-bold text-xl text-gray-800 mb-2">
-                  {explanation.title}
-                </h1>
-                <p className="text-gray-700">{explanation.context}</p>
+              <div className="card-content px-6 py-4">
+                {/* Title with card-title class */}
+                <h1 className="card-title">{explanation.title}</h1>
+                {/* Context with card-text class */}
+                <p className="card-text">{explanation.context}</p>
               </div>
-            </div>
+            </Tilty>
           ))}
         </div>
       </div>
@@ -93,6 +97,7 @@ const DemoSection = () => {
           </li>
         </ul>
       </div>
+      <Footer/>
     </div>
   );
 };
