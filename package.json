@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -27,6 +28,7 @@
     "react-router-dom": "^6.23.1",
     "react-slick": "^0.30.2",
     "react-tilty": "^3.0.0",
+    "react-use": "^17.5.0",
     "slick-carousel": "^1.8.1",
     "three": "^0.163.0",
     "tsparticles": "^3.3.0"
