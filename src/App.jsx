@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs';
 import DemoSection from './components/DemoSection';
 import ContactUs from './components/ContactUs';
 import Models from './components/Models';
+import GoToTop from './components/GoToTop';
 
 const App = () => {
   return (

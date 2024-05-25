@@ -5,6 +5,7 @@ import { styles } from "../style";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "./hoc";
 import { slideIn } from "../utils/motions";
+import GoToTop from "./GoToTop";
 
 const Contact = () => {
   const formRef = useRef();
@@ -130,6 +131,8 @@ const Contact = () => {
       >
         <EarthCanvas />
       </motion.div>
+
+     <GoToTop/>
     </div>
   );
 };

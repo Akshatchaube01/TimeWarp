@@ -8,6 +8,7 @@ import Akshat from "../assets/Akshat.jpg";
 import Shreya from "../assets/Shreya.jpg";
 import Naman from "../assets/Naman.jpg";
 import Footer from './Footer';
+import GoToTop from "./GoToTop.jsx";
 // Necessary imports for particle effect
 import { useEffect, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -133,7 +134,7 @@ const AboutUs = () => {
             </div>
           </section>
         </div>
-
+        <GoToTop/>
         <Footer />
       </div>
     

@@ -7,6 +7,7 @@ import { TbBrandThreejs } from "react-icons/tb";
 import { FaUnity, FaVrCardboard } from "react-icons/fa";
 import { SiWebgl } from "react-icons/si";
 import Footer from './Footer';
+import GoToTop from "./GoToTop";
 
 const DemoSection = () => {
   const icons = [
@@ -95,6 +96,7 @@ const DemoSection = () => {
           </li>
         </ul>
       </div>
+      <GoToTop/>
       <Footer/>
     </div>
   );

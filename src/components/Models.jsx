@@ -3,6 +3,7 @@ import "./Models.css";
 import Footer from './Footer';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import GoToTop from "./GoToTop";
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -89,7 +90,8 @@ const Models = () => {
                 />
                 </div>
             <h2 className="text-2xl font-bold mb-[10rem] text-[#00bfff] mt-[3rem]">{selectedYear}</h2>
-              
+            
+            <GoToTop/>
             <Footer/>
         </div>
     );
