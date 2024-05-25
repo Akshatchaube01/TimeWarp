@@ -26,7 +26,6 @@ const Contact = () => {
       [name]: value,
     });
   };
-
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -51,6 +50,7 @@ const Contact = () => {
       setLoading(false);
       alert("Thank you. I will get back to you as soon as possible.");
 
+
       setForm({
         name: "",
         email: "",
@@ -59,6 +59,7 @@ const Contact = () => {
     } catch (error) {
       setLoading(false);
       console.error(error);
+
 
       alert("Sorry, something went wrong while sending your message. Please try again later.");
     }
@@ -85,6 +86,8 @@ const Contact = () => {
       alert("Sorry, something went wrong while saving your message to the database. Please try again later.");
     }
   };
+  
+  
 
   return (
     <div
@@ -135,6 +138,7 @@ const Contact = () => {
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]'
             />
           </label>
+
 
           <div className='flex gap-8'>
             <button
