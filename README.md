@@ -182,6 +182,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Thanks to all contributors for helping this project grow! 🍻
 
+<a href="https://github.com/Akshatchaube01/TimeWarp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Akshatchaube01/TimeWarp" />
+</a>
+
 ## 🙏 Support
 
 Don't forget to leave a star ⭐️ for this project!

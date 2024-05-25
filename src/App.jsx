@@ -8,6 +8,7 @@ import Models from './components/Models';
 
 const App = () => {
   return (
+    
     <div>
       <Navbar />
       <Home />
