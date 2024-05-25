@@ -1,9 +1,8 @@
-// src/components/Calendar.js
 
 import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-// import './EventsCalendar.css';
+import './EventsCalendar.css';
 
 const Calendar = () => {
   const [events, setEvents] = useState([]);
@@ -32,16 +31,26 @@ const Calendar = () => {
 
   return (
     <div className=" p-4 max-w-md">
-    <div className="bg-black shadow-md rounded-lg p-4">
-      <FullCalendar
-        plugins={[dayGridPlugin]}
-        initialView="dayGridMonth"
-        events={events}
-        height="auto"
-      />
+      <div className="bg-black shadow-md rounded-lg p-4">
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          initialView="dayGridMonth"
+          events={events}
+          height="auto"
+          dayCellContent={renderDay} // Custom render function for day cell content
+        />
+      </div>
     </div>
-  </div>
   );
+};
+
+const renderDay = ({ date }) => {
+  const today = new Date(); 
+  const isToday = date.getFullYear() === today.getFullYear() && date.getMonth() === today.getMonth() && date.getDate() === today.getDate();
+  if (isToday) {
+    return <span style={{ color: 'blue', }}>{date.getDate()}</span>; // Change color to blue for today's date
+  }
+  return <span>{date.getDate()}</span>;
 };
 
 export default Calendar;
