@@ -15,6 +15,7 @@ import NamanImage from "../assets/Timepic.jpg";
 import ShreyaImage from "../assets/cartoon.png";
 import CartoonImage from "../assets/Timepic.jpg";
 import TimepicImage from "../assets/cartoon.png";
+import Calendar from "./EventsCalendar";
 
 const Models = () => {
     // Define images for each carousel
@@ -90,6 +91,12 @@ const Models = () => {
                 </div>
             <h2 className="text-2xl font-bold mb-[10rem] text-[#00bfff] mt-[3rem]">{selectedYear}</h2>
               
+              {/* calendar */}
+              <div className="flex justify-center mb-10">
+              <Calendar />
+              </div>
+              
+
             <Footer/>
         </div>
     );
