@@ -16,6 +16,7 @@ import ShreyaImage from "../assets/cartoon.png";
 import CartoonImage from "../assets/Timepic.jpg";
 import TimepicImage from "../assets/cartoon.png";
 import Calendar from "./EventsCalendar";
+import ComparePlaces from "./ComparePlaces";
 
 const Models = () => {
     // Define images for each carousel
@@ -111,10 +112,11 @@ const Models = () => {
                    </div>
                  )}
               </div>
-              
-
-
+              <div className="mb-[8rem]">
+               <ComparePlaces/>
+              </div>  
             <Footer/>
+            
         </div>
     );
 };
