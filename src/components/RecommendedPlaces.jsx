@@ -80,7 +80,7 @@ function Latitude() {
 
     function fetchImages(city) {
         // Replace 'ACCESS_KEY' with your Unsplash access key
-        const accessKey = '1wKSrYCMbn8UDTUbrhqhlxnhIluHoE573xItr-V2lMA';
+        const accessKey = 'UNSPLASH ACCESS_KEY';
         const places = `${city} landmark `;
         const url = `https://api.unsplash.com/search/photos?query=${places}&client_id=${accessKey}&per_page=6`;
         fetch(url)
