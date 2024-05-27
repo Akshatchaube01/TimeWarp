@@ -27,7 +27,7 @@ const DemoSection = () => {
                 rounded-2xl shadow-[0px_5px_25px_2px_#2a4365] "
         >
           <iframe
-            src="https://www.youtube.com/embed/o9pNopC1BMU?autoplay=1&loop=1&playlist=o9pNopC1BMU&rel=0"
+            src="https://www.youtube.com/embed/o9pNopC1BMU?autoplay=0&loop=1&playlist=o9pNopC1BMU&rel=0"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
