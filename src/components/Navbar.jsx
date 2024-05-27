@@ -13,7 +13,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="z-50 h-16 flex items-center justify-between sticky top-0 w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4 navbar">
+        <nav className="z-50 lg:h-[7rem] flex items-center justify-between sticky top-0 w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4 navbar">
             <style>
                 @import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');
             </style>
