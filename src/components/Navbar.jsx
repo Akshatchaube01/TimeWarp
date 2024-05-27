@@ -22,7 +22,7 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(!isMenuOpen)}
                 aria-label="Toggle navigation menu"
             >
-                { !isMenuOpen ? <i className="ri-menu-line text-white text-2xl"></i> : <i class="fa-solid fa-xmark"></i>}
+            { !isMenuOpen ? <i className="ri-menu-line text-white text-2xl"></i> : <i class="fa-solid fa-xmark"></i>}
             </button>
             <ul className={`absolute bg-black opacity-80 gap-5 md:relative top-full left-0 md:left-auto md:top-auto w-full md:flex md:items-center md:justify-center  md:bg-transparent transition-all duration-300 ease-in-out ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row list-none m-0 p-4 gap-x-10 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-3xl`}>
                 <li className="hover:underline text-white md:text-black text-center md:text-left">

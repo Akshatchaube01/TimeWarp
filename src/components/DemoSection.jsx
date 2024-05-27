@@ -19,7 +19,6 @@ const DemoSection = () => {
 
   return (
     <div className="demo-container md:px-32">
-      
       <h2 className="text-5xl font-bold my-16">Demo Section</h2>
       <div className="md:w-2/3 mx-auto">
         <div
