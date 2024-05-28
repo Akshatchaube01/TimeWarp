@@ -121,6 +121,7 @@ const Models = () => {
                 <Latitude/>
               </div>
                 <Footer/>
+               
             
             
         </div>
