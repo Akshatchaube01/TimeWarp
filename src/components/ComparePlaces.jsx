@@ -3,7 +3,7 @@ import UnsplashImageGallery from './Unsplash';
 
 const ComparePlaces = () => {
   // Replace 'ACCESS_KEY' with your actual Unsplash API Access Key
-  const accessKey = '1wKSrYCMbn8UDTUbrhqhlxnhIluHoE573xItr-V2lMA';
+  const accessKey = 'ACCESS_KEY';
   const count = 1;
 
   return (
