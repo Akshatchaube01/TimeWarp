@@ -91,7 +91,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={`xl:mt-1  flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
@@ -106,7 +106,7 @@ const Contact = () => {
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+            <span className='text-purple-800 text-xl font-medium mb-4'>Your Name</span>
             <input
               type='text'
               name='name'
@@ -117,7 +117,7 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-purple-800 text-xl font-medium mb-4'>Your email</span>
             <input
               type='email'
               name='email'
@@ -128,7 +128,7 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+            <span className='text-purple-800 text-xl font-medium mb-4'>Your Message</span>
             <textarea
               rows={7}
               name='message'

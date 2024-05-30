@@ -20,9 +20,9 @@ const ThemeToggle = () => {
     return (
         <button 
             onClick={toggleTheme} 
-            className="p-2 text-gray-900 dark:text-gray-100"
+            className="p-2 text-black bg-white dark:text-white dark:bg-black"
             aria-label="Toggle theme"
-            style={{ backgroundColor: 'transparent', border: 'none' }}
+            
         >
             {theme === 'light' ? (
                 <i className="ri-sun-fill text-2xl"></i>
