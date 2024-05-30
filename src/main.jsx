@@ -7,7 +7,7 @@ import AnimatedCursor from "react-animated-cursor";
 import AboutUs from "./components/AboutUs";
 import DemoSection from "./components/DemoSection";
 import ContactUs from "./components/ContactUs";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.jsx";
 import Models from "./components/Models";
 import Custom404 from "./components/Custom404";
 import "./main.css";
