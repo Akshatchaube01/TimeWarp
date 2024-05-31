@@ -111,7 +111,7 @@ const AboutUs = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
             {teamMembers.map((member, index) => (
-              <Tilty key={index} className="w-full bg-gray-900 rounded-lg shadow-lg p-12 flex flex-col justify-center items-center" glare scale={1.05} maxGlare={0.5}>
+              <Tilty key={index} className="w-full bg-sky-900/50 backdrop-blur-sm shadow-sky-100 rounded-lg shadow-lg p-12 flex flex-col justify-center items-center" glare scale={1.05} maxGlare={0.5}>
                 <div className="mb-8">
                   <img className="object-center object-cover rounded-full h-36 w-36" src={member.imgSrc} alt={member.alt} />
                 </div>
