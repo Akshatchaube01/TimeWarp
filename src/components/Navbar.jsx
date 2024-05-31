@@ -12,9 +12,9 @@ const Navbar = () => {
         setMenuOpen(false);
     };
 
-    return (
-        <nav className="z-50 lg:h-[7rem] flex items-center justify-between sticky top-0 w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4 navbar">
-            <style>
+  return (
+    <nav className="z-50 lg:h-[7rem] flex items-center justify-between sticky top-0 w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4 navbar">
+      <style>
                 @import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');
             </style>
             <button 
@@ -23,9 +23,9 @@ const Navbar = () => {
                 aria-label="Toggle navigation menu"
             >
  
-            { !isMenuOpen ? <i className="ri-menu-line text-white text-2xl"></i> : <i class="fa-solid fa-xmark"></i>}                 
+            { !isMenuOpen ? <i className="ri-menu-line text-white text-2xl"></i> : <i class="fa-solid fa-xmark text-2xl"></i>}                 
             </button>
-            <ul className={`absolute bg-black opacity-80 gap-5 md:relative top-full left-0 md:left-auto md:top-auto w-full md:flex md:items-center md:justify-center md:bg-transparent transition-all duration-300 ease-in-out ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row list-none m-0 p-4 gap-x-10 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-3xl`}>
+            <ul className={`absolute bg-black opacity-80 gap-5 md:relative top-full left-0 md:left-auto md:top-auto w-full md:flex md:items-center md:justify-center md:bg-transparent transition-all duration-500 ease-in-out flex ${isMenuOpen ? 'h-auto ' : 'h-0 p-0 overflow-hidden'} flex-col md:flex-row list-none m-0 p-4 gap-x-10 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-3xl`}>
                 <li className="hover:underline text-center md:text-left">
                     <NavLink to="/" className={isActive('/')} onClick={handleLinkClick}><i className="ri-home-fill"></i> Home</NavLink>
                 </li>
