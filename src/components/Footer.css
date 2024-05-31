@@ -1,12 +1,13 @@
 /* Footer.css */
 .footer {
-    background-color: #3e4d5b;
-    color: #657b8f;
+    background-color: #0ea5e9;
+    color: #ffffff;
     padding: 40px 20px;
     width: 100%;
     position: relative;
     bottom: 0;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .footer-content {
@@ -16,21 +17,89 @@
     justify-content: space-around;
     max-width: 1200px;
     margin: auto;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .footer-section {
     flex: 1;
     padding: 20px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.footer-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-section:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
 .footer-section h4 {
-    text-decoration: underline;
+    text-decoration: none;
     margin-bottom: 10px;
     font-size: 1.5em;
     color: #fff;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
 }
-
+/* Footer.css */
+.footer-section h4 {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-section h4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transform: translateX(-101%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .footer-section h4:hover {
+    color: #212121;
+  }
+  
+  .footer-section h4:hover::before {
+    transform: translateX(0);
+    animation: glitchEffect 0.8s steps(8) infinite;
+  }
+  
+  @keyframes glitchEffect {
+    0% {
+      background-color: rgb(255, 255, 255);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    25% {
+      background-color: rgba(0, 81, 255, 0.773);
+      clip-path: polygon(0 0, 100% 0, 100% 25%, 0% 25%);
+    }
+    50% {
+      background-color: rgba(0, 255, 0, 0.356);
+      clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0% 100%);
+    }
+    75% {
+      background-color: rgba(0, 0, 255, 0.659);
+      clip-path: polygon(0 50%, 100% 50%, 100% 75%, 0% 75%);
+    }
+    100% {
+      background-color: rgba(255, 255, 255, 0.647);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
 
 .footer-section p,
 .footer-section ul {
@@ -42,18 +111,42 @@
 
 .footer-section ul li {
     margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.footer-section ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-section ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-section ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.footer-section ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.footer-section ul li:nth-child(5) {
+    animation-delay: 0.5s;
 }
 
 .footer-section ul li a,
 .footer-section p a {
     color: #ddd;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .footer-section ul li a:hover,
 .footer-section p a:hover {
     color: #90a9bb;
+    transform: scale(1.1);
 }
 
 .smedia {
@@ -65,8 +158,13 @@
     color: white;
 }
 
-.smedia a:hover{
+.smedia a {
+    transition: color 0.3s, transform 0.3s;
+}
+
+.smedia a:hover {
     color: #90a9bb;
+    transform: scale(1.2);
 }
 
 .footer-section .social-media {
@@ -78,15 +176,19 @@
 }
 
 .footer-section .social-media a:hover {
-    color: #90a9bb;
+    color: #0ea5e9;
 }
 
 .footer-bottom {
     border-top: 1px solid #444;
     padding-top: 10px;
     text-align: center;
-    color: #aaa;
+    color: white;
     margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.6s;
 }
 
 @media (min-width: 768px) {
@@ -96,5 +198,26 @@
 
     .footer-section {
         text-align: left;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

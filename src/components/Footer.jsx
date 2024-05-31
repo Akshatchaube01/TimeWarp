@@ -14,11 +14,11 @@ const Footer = () => {
                 <div className="footer-section navigation">
                     <h4><strong>Navigation</strong></h4>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/AboutUs">About Us</a></li>
-                        <li><a href="/DemoSection">Services</a></li>
-                        <li><a href="/ContactUs">Contact</a></li>
-                        <li><a href="/Models">Models</a></li>
+                        <li><a href="/"> <i className="fas fa-home"></i>&nbsp;&nbsp;Home</a></li>
+                        <li><a href="/AboutUs"><i className="fas fa-user"></i>&nbsp;&nbspAbout Us</a></li>
+                        <li><a href="/DemoSection"><i className="fas fa-cogs"></i>&nbsp;&nbsp;Services</a></li>
+                        <li><a href="/ContactUs"> <i className="fas fa-envelope"></i>&nbsp;&nbsp;Contact</a></li>
+                        <li><a href="/Models"><i className="fas fa-database"></i>&nbsp;&nbsp;Models</a></li>
                     </ul>
                 </div>
                 <div className="footer-section quote">
@@ -51,3 +51,5 @@ const Footer = () => {
 }
 
 export default Footer;
+
+
