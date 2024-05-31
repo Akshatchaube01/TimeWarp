@@ -78,7 +78,7 @@ const Footer = () => {
             </li>
             <li style={footerStyle}>
               <a style={footerStyle} href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter"></i>&nbsp;&nbsp; Twitter
+               <i className="fa-brands fa-x-twitter"></i>&nbsp;&nbsp; Twitter
               </a>
             </li>
             <li style={footerStyle}>
