@@ -86,33 +86,4 @@
   .navbar a.active::before {
     content: none; /* Remove the underline effect */
   }
-  /* Navbar.css */
-/* Navbar.css */
-.btn.btn-1 a {
-    
-    position: relative;
-    text-decoration: none;
-  }
-  
-  .btn.btn-1 a::before {
-    background: #0ea5e9 ;
-    content: "";
-    inset: 0;
-    position: absolute;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s ease-in-out;
-    z-index: -1;
-  }
-  
-  .btn.btn-1 a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  
-  /* Presentational styles */
-  
-  .btn.btn-1 a:hover,
-.btn.btn-1 a.active:hover {
-  color: #fff;
-}
+
