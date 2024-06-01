@@ -204,20 +204,30 @@ const Contact = () => {
 
 
           <div className='flex gap-8'>
-            <button
-              type='submit'
-              className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary bg-cyan-800 hover:scale-[1.1]'
-            >
-              {loading ? "Sending..." : "Send_Mail"}
-            </button>
-            <button
-              type='button'
-              onClick={handleSaveToDB}
-              className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary bg-cyan-800 hover:scale-[1.1]'
-            >
-              {loading ? "Saving..." : "Submit"}
-            </button>
-          </div>
+  <button
+    type='submit'
+    className={`py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:scale-[1.1] ${
+      savedTheme === 'light'
+        ? 'bg-black text-white shadow-md'
+        : 'bg-white text-black shadow-md'
+    }`}
+ 
+  >
+    {loading ? 'Sending...' : 'Send Mail'}
+  </button>
+  <button
+    type='button'
+    onClick={handleSaveToDB}
+    className={`py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:scale-[1.1] ${
+      savedTheme === 'light'
+        ? 'bg-black text-white shadow-md'
+        : 'bg-white text-black shadow-md'
+    }`}
+   
+  >
+    {loading ? 'Saving...' : 'Submit'}
+  </button>
+</div>
         </form>
       </motion.div>
 
