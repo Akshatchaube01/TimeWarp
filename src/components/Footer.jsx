@@ -17,6 +17,7 @@ const Footer = () => {
     setFooterStyle({
       color: savedTheme == 'light' ? 'white' : 'white',
       backgroundColor: savedTheme === 'light' ? '#0ea5e9' : '',
+      
   }, [savedTheme]);
   } );
   return (

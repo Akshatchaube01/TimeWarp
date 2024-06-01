@@ -43,7 +43,7 @@ const Navbar = () => {
                     <NavLink to="/ContactUs" className={isActive('/ContactUs')} onClick={handleLinkClick}><i className="ri-customer-service-2-fill"></i> Contact Us</NavLink>
                 </li>
                 <li className=" text-center md:text-left colour:none">
-                    <ThemeToggle /> {/* Add ThemeToggle component here */}
+                    <ThemeToggle /> 
                 </li>
             </ul>
         </nav>
