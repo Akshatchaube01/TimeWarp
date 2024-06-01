@@ -46,6 +46,16 @@
     margin: 0.5em;
 }
 
+.nav-link {
+    display: flex;
+    align-items: center;
+  }
+  .nav-link i,
+  .nav-link font {
+    display: flex;
+    align-items: center;
+  }
+  
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .navbar-list {
