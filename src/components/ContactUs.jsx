@@ -17,7 +17,8 @@ export const styles = {
   },
 };
 const s={
-  fontSize:40
+  fontSize:40,
+  fontWeight:800
 }
 const Contact = () => {
   const formRef = useRef();
@@ -115,10 +116,11 @@ const Contact = () => {
               ? styles.sectionSubText
               : styles.sectionSubTextWhite
           }
+          style={{fontWeight:650}}
         >
           Get in touch
         </p>
-        <h3
+        <h2
           className={
             savedTheme === 'light'
               ? styles.sectionHeadText
@@ -127,7 +129,7 @@ const Contact = () => {
           style={s}
         >
           Contact Us.
-        </h3>
+        </h2>
 
         <form
           ref={formRef}
@@ -141,6 +143,8 @@ const Contact = () => {
                   ? styles.labelText
                   : styles.labelTextWhite
               }
+          style={{fontWeight:650}}
+
             >
               Your Name
             </span>
@@ -161,6 +165,8 @@ const Contact = () => {
                   ? styles.labelText
                   : styles.labelTextWhite
                 }
+          style={{fontWeight:650}}
+
             >
               Your email
             </span>
@@ -181,10 +187,11 @@ const Contact = () => {
                   ? styles.labelText
                   : styles.labelTextWhite
               }
+          style={{fontWeight:650}}
+
             >
               Your Message
             </span>
-                <br />
             <textarea
               rows={7}
               name='message'
