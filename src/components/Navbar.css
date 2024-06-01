@@ -52,17 +52,25 @@
         flex-direction: column;
         font-size: 0.8rem; 
         gap: 0;
+        height:0;
+        display: block;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
     }
 
     .navbar__toggle::before {
         display: block;
     }
 
-    .navbar-list {
-        display: none;
-    }
     .navbar-list-active {
+        height: auto;
+    }
+    .navbar-list li {
+        display: none;
         display: flex;
+    }
+    .navbar-list-active li {
+        display: block;
     }
 }
 
