@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, {useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
@@ -6,93 +6,129 @@ import axios from "axios";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "./hoc";
 import { slideIn } from "../utils/motions";
-let savedTheme = localStorage.getItem('theme') || 'light';
-export const styles = {
-  // ... other styles
-  sectionHeadText: {
-    color: 'black', // or any other color you want
-  },
-  sectionHeadTextWhite: {
-    color: 'white', // or any other color you want
-  },
-};
-const s={
-  fontSize:40,
-  fontWeight:800
-}
-const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
-  const [loading, setLoading] = useState(false);
+// const Contact = () => {
+//   const formRef = useRef();
+//   const [form, setForm] = useState({
+//     name: "",
+//     email: "",
+//     message: "",
+//   });
 
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+  const Contact=()=>{
+    const [name,setName]=useState('')
+    const [email,setEmail]=useState('')
+    const [message,setMessage]=useState('')
+    const [loading, setLoading] = useState(false);
 
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-  const handleEmailSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
 
-    try {
-      await emailjs.send(
-        'service_qfep0u4',//write service id here 
-        'template_te2r09e',//write templet id here
-        {
-          from_name: form.name,
-          to_name: "TimeWarp",
-          from_email: form.email,
-          to_email: "info@timewarp.com",
-          message: form.message,
-        },
-        '2L1ir1kGrUHNlXEjH'  //write public_id here
-      );
+    const handleEmailSubmit=(e)=>{
+      e.preventDefault();
+      setLoading(true);
+      
+      const service_id=process.env.REACT_APP_SERVICE_ID;
+      const template_id=process.env.REACT_APP_TEMPLATE_ID;
+      const public_key=process.env.REACT_APP_PUBLIC_KEY;
+
+      const templateParams={
+        from_name: name,
+        from_email:email,
+        to_name:"TimeWarp",
+        message: message,
+      }
+
+      emailjs.send("service_qfep0u4","template_te2r09e",templateParams,"2L1ir1kGrUHNlXEjH")
+      .then((response)=>{
+        console.log("email sent",response)
+        alert("Your message has been sent successfully! Will get back to you as soon as possible.")
+        setName('')
+        setEmail('')
+        setMessage('')        
+      })
+      .catch((err)=>{
+        setLoading(false);
+        console.log("error",err)
+        alert("Sorry, something went wrong while sending your message. Please try again later.");
+      })
+    }
+    
+    let savedTheme = localStorage.getItem('theme') || 'light';
+    const styles = {
+    // ... other styles
+    sectionHeadText: {
+      color: 'black', // or any other color you want
+    },
+    sectionHeadTextWhite: {
+      color: 'white', // or any other color you want
+    },
+    };
+    const s={
+    fontSize:40,
+    fontWeight:800
+    }
+  
+  // const handleChange = (e) => {
+  //   const { target } = e;
+  //   const { name, value } = target;
+
+  //   setForm({
+  //     ...form,
+  //     [name]: value,
+  //   });
+  // };
+  // const handleEmailSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+
+  //   try {
+  //     await emailjs.send(
+  //       'service_qfep0u4',//write service id here 
+  //       'template_te2r09e',//write templet id here
+  //       {
+  //         from_name: form.name,
+  //         to_name: "TimeWarp",
+  //         from_email: form.email,
+  //         to_email: "info@timewarp.com",
+  //         message: form.message,
+  //       },
+  //       '2L1ir1kGrUHNlXEjH'  //write public_id here
+  //     );
+
     
    
 
 
-      setLoading(false);
-      alert("Thank you. I will get back to you as soon as possible.");
+  //     setLoading(false);
+  //     alert("Thank you. I will get back to you as soon as possible.");
 
 
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (error) {
-      setLoading(false);
-      console.error(error);
+  //     setForm({
+  //       name: "",
+  //       email: "",
+  //       message: "",
+  //     });
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.error(error);
 
 
-      alert("Sorry, something went wrong while sending your message. Please try again later.");
-    }
-  };
+  //     alert("Sorry, something went wrong while sending your message. Please try again later.");
+  //   }
+  // };
   const handleSaveToDB = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
       // Save to MongoDB
-      await axios.post('http://localhost:5000/api/contact', form);
+      await axios.post('http://localhost:5000/api/contact',{name,email,message});
 
       setLoading(false);
       alert("Your message has been saved to the database.");
 
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
+      setName('');
+      setEmail('');
+      setMessage('');
     } catch (error) {
       setLoading(false);
       console.error(error);
@@ -132,7 +168,6 @@ const Contact = () => {
         </h2>
 
         <form
-          ref={formRef}
           onSubmit={handleEmailSubmit}
           className='mt-12 flex flex-col gap-8'
         >
@@ -152,8 +187,8 @@ const Contact = () => {
             <input
               type='text'
               name='name'
-              value={form.name}
-              onChange={handleChange}
+              value={name}
+              onChange={(e)=>setName(e.target.value)}
               placeholder="What's your good name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]'
             />
@@ -174,8 +209,8 @@ const Contact = () => {
             <input
               type='email'
               name='email'
-              value={form.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
               placeholder="What's your web address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]'
             />
@@ -195,8 +230,8 @@ const Contact = () => {
             <textarea
               rows={7}
               name='message'
-              value={form.message}
-              onChange={handleChange}
+              value={message}
+              onChange={(e)=>setMessage(e.target.value)}
               placeholder='What you want to say?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]'
             />
