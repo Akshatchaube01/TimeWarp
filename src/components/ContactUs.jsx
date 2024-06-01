@@ -2,7 +2,7 @@ import React, {useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
-import { styles } from "../style";
+// import { styles } from "../style";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "./hoc";
 import { slideIn } from "../utils/motions";
@@ -51,6 +51,21 @@ import { slideIn } from "../utils/motions";
         alert("Sorry, something went wrong while sending your message. Please try again later.");
       })
     }
+    
+    let savedTheme = localStorage.getItem('theme') || 'light';
+    const styles = {
+    // ... other styles
+    sectionHeadText: {
+      color: 'black', // or any other color you want
+    },
+    sectionHeadTextWhite: {
+      color: 'white', // or any other color you want
+    },
+    };
+    const s={
+    fontSize:40,
+    fontWeight:800
+    }
   
   // const handleChange = (e) => {
   //   const { target } = e;
@@ -78,6 +93,7 @@ import { slideIn } from "../utils/motions";
   //       },
   //       '2L1ir1kGrUHNlXEjH'  //write public_id here
   //     );
+
     
    
 
@@ -130,15 +146,44 @@ import { slideIn } from "../utils/motions";
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact Us.</h3>
+        <p
+          className={
+            savedTheme === 'light'
+              ? styles.sectionSubText
+              : styles.sectionSubTextWhite
+          }
+          style={{fontWeight:650}}
+        >
+          Get in touch
+        </p>
+        <h2
+          className={
+            savedTheme === 'light'
+              ? styles.sectionHeadText
+              : styles.sectionHeadTextWhite
+          }
+          style={s}
+        >
+          Contact Us.
+        </h2>
 
         <form
           onSubmit={handleEmailSubmit}
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+            <span
+              className={
+                savedTheme === 'light'
+                  ? styles.labelText
+                  : styles.labelTextWhite
+              }
+          style={{fontWeight:650}}
+
+            >
+              Your Name
+            </span>
+            <br />
             <input
               type='text'
               name='name'
@@ -149,7 +194,18 @@ import { slideIn } from "../utils/motions";
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span
+              className={
+                savedTheme === 'light'
+                  ? styles.labelText
+                  : styles.labelTextWhite
+                }
+          style={{fontWeight:650}}
+
+            >
+              Your email
+            </span>
+                <br />
             <input
               type='email'
               name='email'
@@ -160,7 +216,17 @@ import { slideIn } from "../utils/motions";
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+            <span
+              className={
+                savedTheme === 'light'
+                  ? styles.labelText
+                  : styles.labelTextWhite
+              }
+          style={{fontWeight:650}}
+
+            >
+              Your Message
+            </span>
             <textarea
               rows={7}
               name='message'
@@ -173,20 +239,30 @@ import { slideIn } from "../utils/motions";
 
 
           <div className='flex gap-8'>
-            <button
-              type='submit'
-              className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary bg-cyan-800 hover:scale-[1.1]'
-            >
-              {loading ? "Sending..." : "Send_Mail"}
-            </button>
-            <button
-              type='button'
-              onClick={handleSaveToDB}
-              className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary bg-cyan-800 hover:scale-[1.1]'
-            >
-              {loading ? "Saving..." : "Submit"}
-            </button>
-          </div>
+  <button
+    type='submit'
+    className={`py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:scale-[1.1] ${
+      savedTheme === 'light'
+        ? 'bg-black text-white shadow-md'
+        : 'bg-white text-black shadow-md'
+    }`}
+ 
+  >
+    {loading ? 'Sending...' : 'Send Mail'}
+  </button>
+  <button
+    type='button'
+    onClick={handleSaveToDB}
+    className={`py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:scale-[1.1] ${
+      savedTheme === 'light'
+        ? 'bg-black text-white shadow-md'
+        : 'bg-white text-black shadow-md'
+    }`}
+   
+  >
+    {loading ? 'Saving...' : 'Submit'}
+  </button>
+</div>
         </form>
       </motion.div>
 

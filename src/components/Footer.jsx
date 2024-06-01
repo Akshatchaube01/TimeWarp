@@ -4,6 +4,9 @@ import './Footer.css';
 // import '';
 
 const Footer = () => {
+
+ 
+
   const [footerStyle, setFooterStyle] = useState({
     color: 'black' // Default color
   });
@@ -12,10 +15,11 @@ const Footer = () => {
   useEffect(() => {
    savedTheme = localStorage.getItem('theme') || 'light'; // Retrieve theme from localStorage
     setFooterStyle({
-      color: savedTheme == 'light' ? 'black' : 'white' // Update footer color based on theme
-    });
+      color: savedTheme == 'light' ? 'white' : 'white',
+      backgroundColor: savedTheme === 'light' ? '#0ea5e9' : '',
+      
   }, [savedTheme]);
-
+  } );
   return (
     <footer className="footer" style={footerStyle}>
       <div className="footer-content">
@@ -101,4 +105,7 @@ const Footer = () => {
   );
 };
 
+
 export default Footer;
+
+
