@@ -61,6 +61,7 @@ const UnsplashImageGallery = ({ accessKey, count }) => {
             <input 
               type="text" 
               value={selectedYear} 
+              style={{color:'black'}}
               onChange={handleYearChange} 
               className="px-4 py-2 border rounded-md"
               placeholder="Enter year"
