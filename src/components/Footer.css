@@ -9,7 +9,10 @@
     border-radius: 10px;
     overflow: hidden;
 }
-
+a:hover {
+    color: #00bfff !important; /* Change the color to your desired hover color */
+  }
+  
 
 .footer-content {
     display: flex;
