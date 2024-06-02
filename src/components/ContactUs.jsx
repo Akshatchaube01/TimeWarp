@@ -140,7 +140,7 @@ import { slideIn } from "../utils/motions";
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={` flex xl:flex-row flex-col-reverse  overflow-hidden`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
@@ -169,7 +169,7 @@ import { slideIn } from "../utils/motions";
 
         <form
           onSubmit={handleEmailSubmit}
-          className='mt-12 flex flex-col gap-8'
+          className='mt-7 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
             <span
@@ -183,7 +183,6 @@ import { slideIn } from "../utils/motions";
             >
               Your Name
             </span>
-            <br />
             <input
               type='text'
               name='name'
@@ -205,7 +204,6 @@ import { slideIn } from "../utils/motions";
             >
               Your email
             </span>
-                <br />
             <input
               type='email'
               name='email'
