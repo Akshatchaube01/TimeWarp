@@ -176,30 +176,6 @@ With innovation as our compass and authenticity as our guide, we are committed t
 
 If you encounter any issues or have any feedback or suggestions, please open an issue in the Issues section of this repository. We appreciate your feedback and will respond as soon as possible.
 
-<hr>
-<!-- Open Source Programs -->
-  <div>
-    <h2><img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Hand%20gestures/Flexed%20Biceps.png?raw=true" width="35" height="35" > Open Source Programs</h2>
-  </div>
-
-  <table border="1" cellpadding="10">
-        <tr>
-            <td rowspan="2">
-                <img src="https://github.com/Akshatchaube01/TimeWarp/assets/133582566/046da180-af40-458d-8fac-a0ca6b0ac168" alt="GSSOC Logo" width="100" height="55">
-            </td>
-            <td>
-                <strong>GSSOC 2024</strong>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                As part of the GirlScript Summer of Code, we enthusiastically invite community contributions to elevate Time Warp. Your support and involvement are greatly appreciated!
-            </td>
-        </tr>
-    </table>
-
-<hr>
-
 <!-- Code of conduct -->
 <div>
 <h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
@@ -213,7 +189,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <hr>
 
- <!-- Cotributors -->
+ <!-- Contributors -->
 <div>
   <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Contributors</h2>
 </div>
