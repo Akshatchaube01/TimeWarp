@@ -10,6 +10,7 @@ import Akshat from "../assets/Akshat.jpg";
 import Shreya from "../assets/Shreya.jpg";
 import Naman from "../assets/Naman.jpg";
 import Footer from './Footer';
+// import Tilty from "react-tilty";
 import { particles } from "./Particles.jsx";
 
 const AboutUs = () => {
@@ -73,21 +74,22 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="image-container image-container-one mr-8">
-          <img
+         <Tilty> <img
             src={aboutImage}
             alt="About us"
-            className="ml-8 shadow-sm shadow-sky-200 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
+            className="ml-8 shadow-sm shadow-sky-600 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
           />
+          </Tilty>
         </div>
       </div>
 
       <div className="our-vision flex mb-28">
         <div className="image-container image-container-two">
-          <img
+          <Tilty><img
             src={carImage}
             alt="About us"
-            className=" shadow-sm shadow-sky-200 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
-          />
+            className=" shadow-sm shadow-sky-600 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
+          /></Tilty>
         </div>
         <div className="text-container mx-auto flex-1 text-left">
           <h1 className="about-title rounded-md text-4xl text-center italic font-bold p-2  mb-8 bg-gradient-to-l from-sky-500">
