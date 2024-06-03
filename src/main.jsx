@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 	<AnimatedCursor 
         innerSize={8}
         outerSize={30}
-        color="254, 254, 254"
+        color="0,0,280"
         outerAlpha={.2}
         innerScale={0.7}
         outerScale={3}

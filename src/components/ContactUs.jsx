@@ -6,6 +6,7 @@ import axios from "axios";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "./hoc";
 import { slideIn } from "../utils/motions";
+import FireFliesBackground from "./FireFlies";
 
 // const Contact = () => {
 //   const formRef = useRef();
@@ -142,6 +143,8 @@ import { slideIn } from "../utils/motions";
     <div
       className={` flex xl:flex-row flex-col-reverse  overflow-hidden`}
     >
+    <FireFliesBackground />
+
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
@@ -268,6 +271,7 @@ import { slideIn } from "../utils/motions";
         variants={slideIn("right", "tween", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
+
         <EarthCanvas />
       </motion.div>
     </div>
