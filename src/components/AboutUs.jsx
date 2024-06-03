@@ -45,7 +45,7 @@ const AboutUs = () => {
   ];
 
   const about = {
-    topTxt: `"At Timewarp, we're passionate about understanding history, embracing the present, and envisioning the future. Our team is dedicated to bringing you engaging content that takes you on a journey through time.
+    topTxt: `"At Timewarp, we are passionate about understanding history, embracing the present, and envisioning the future. Our team is dedicated to bringing you engaging content that takes you on a journey through time.
     we're not just enthusiasts; we're fervent believers in the power of history to illuminate our understanding of the world around us. Stemming from our roots at VIT Vellore, our team of four individuals is deeply committed to unraveling the mysteries of the past, navigating the complexities of the present, and charting a course towards a brighter future."`,
 
     bottomTxt: `We believe that history is more than just a series of dates and facts; it's a vibrant tapestry of stories waiting to be discovered. Our mission is to unravel these stories and bring them to life in ways that captivate and inspire audiences of all ages.`,
