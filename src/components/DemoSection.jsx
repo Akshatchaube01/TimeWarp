@@ -9,6 +9,7 @@ import { SiWebgl } from "react-icons/si";
 import Footer from './Footer';
 import Tilty from 'react-tilty';
 import BackToTop from "./BottomToTop"
+import FireFliesBackground from "./FireFlies";
 
 const DemoSection = () => {
   const icons = [
@@ -21,6 +22,7 @@ const DemoSection = () => {
 
   return (
     <div className="demo-container md:px-32">
+      <FireFliesBackground />
       <BackToTop />
       <h2 className="text-5xl font-bold my-16">Demo Section</h2>
       <div className="md:w-2/3 mx-auto">

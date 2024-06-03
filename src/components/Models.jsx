@@ -3,6 +3,7 @@ import "./Models.css";
 import Footer from './Footer';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import FireFliesBackground from "./FireFlies";
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -62,6 +63,7 @@ const Models = () => {
 
         return (
             <div className="carousel-container">
+
                 <button onClick={previousImage} className="carousel-button">
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
@@ -75,6 +77,7 @@ const Models = () => {
 
     return (
         <div className="text-center m-8">
+            <FireFliesBackground />
             <h2 className="text-5xl font-bold text-center">AR Models</h2>
             {/* Render five carousels */}
             <div className="flex flex-wrap justify-center">
