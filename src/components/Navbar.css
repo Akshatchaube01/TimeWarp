@@ -46,13 +46,12 @@
     margin: 0.5em;
 }
 
-/* Responsive Styles */
 @media screen and (max-width: 768px) {
     .navbar-list {
         flex-direction: column;
         font-size: 0.8rem; 
         gap: 0;
-        height:0;
+        height: 0;
         display: block;
         overflow: hidden;
         transition: height 0.5s ease-in-out;
@@ -74,8 +73,40 @@
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 929px) {
+    .navbar-list li a{
+        font-size: 1rem;
+        gap: 20px;
+        padding: 10px 2px;
+    }
+}
+
+@media screen and (min-width: 930px) and (max-width: 1049px) {
+    .navbar-list li a{
+        font-size: 1.2rem;
+        gap: 20px;
+        padding: 10px 8px;
+    }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1366px) {
+    .navbar-list li a {
+        font-size: 1.2rem;
+        gap: 30px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1900px) {
+    .navbar-list li a{
+        font-size: 1.5rem;
+        gap: 35px;
+        padding: 10px 25px;
+    }
+}
+
 @media screen and (min-width: 1900px) {
-    .navbar-list {
+    .navbar-list li a{
         font-size: 30px;
     }
     .main-text {
@@ -83,15 +114,14 @@
     }
 }
 
-
-  .navbar li:last-child i {
+.navbar li:last-child i {
     color: white; 
-  }
-  .navbar a.active {
-    text-decoration: none;
-  }
-  
-  .navbar a.active::before {
-    content: none;
-  }
+}
 
+.navbar a.active {
+    text-decoration: none;
+}
+
+.navbar a.active::before {
+    content: none;
+}
