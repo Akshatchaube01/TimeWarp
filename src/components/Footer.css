@@ -182,13 +182,13 @@ a:hover {
 }
 
 
-.smedia a {
+.social-media a {
     margin: 0 10px;
     padding: 8px;
     transition: color 0.3s, transform 0.3s;
 }
 
-.smedia a:hover {
+.social-media a:hover {
     color: #90a9bb; /* Hover effect for .smedia a */
     transform: scale(1.2);
 }
@@ -216,14 +216,32 @@ a:hover {
 }
 
 
-@media (min-width: 768px) {
+
+@media (min-width: 1053px) {
     .footer-content {
         flex-direction: row;
     }
 
-    .footer-section {
-        text-align: left;
+}
+
+@media (max-width: 1052px ) and (min-width: 949px){
+    .footer-content {
+        flex-direction: row;
     }
+    .footer-section{
+        font-size:small;
+    }
+
+}
+
+@media (max-width: 948px ) and (min-width: 855px){
+    .footer-content {
+        flex-direction: row;
+    }
+    .footer-section{
+        font-size:x-small;
+    }
+
 }
 
 
