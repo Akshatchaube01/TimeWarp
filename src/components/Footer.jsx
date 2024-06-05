@@ -82,7 +82,7 @@ const Footer = () => {
             </li>
             <li style={footerStyle}>
               <a style={footerStyle} href="https://x.com/" target="_blank" rel="noopener noreferrer">
-               <i className="fa-brands fa-x-twitter"></i>&nbsp;&nbsp; X
+               <i className="fa-brands fa-x-twitter"></i>&nbsp;&nbsp; Twitter
               </a>
             </li>
             <li style={footerStyle}>
