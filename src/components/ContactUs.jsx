@@ -324,8 +324,8 @@ const Contact = () => {
                 </div>
                 <div className="mt-4">
                   <h3 className="text-lg font-bold mb-2">Follow Us</h3>
-                  <div className="flex space-x-4">
-                    <a href="#" className="text-blue-500 hover:text-blue-700">
+                  <div className="flex space-x-4 xs:hidden">
+                    <a href="#" className="text-blue-500 hover:text-blue-700 sm:ml-4">
                       <i className="fab fa-facebook"></i>
                     </a>
                     <a href="#" className="text-blue-500 hover:text-blue-700">
