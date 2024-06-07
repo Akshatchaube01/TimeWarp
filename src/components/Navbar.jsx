@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
@@ -6,6 +6,7 @@ import './Navbar.css';
 const Navbar = () => {
     const location = useLocation();
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const menuRef = useRef(null);
 
     const isActive = (path) => location.pathname === path ? 'text-[#00bfff] underline' : '';
 
@@ -13,8 +14,21 @@ const Navbar = () => {
         setMenuOpen(false);
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
   return (
-    <nav className="z-50 lg:h-[7rem] flex items-center justify-between sticky w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4 navbar">
+    <nav ref={menuRef} className="z-50 lg:h-[7rem] flex items-center justify-between sticky w-screen backdrop-filter backdrop-blur-lg bg-opacity-40 p-4 navbar">
         <style>
             {`@import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');`}
         </style>
