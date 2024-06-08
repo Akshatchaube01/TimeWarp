@@ -56,6 +56,9 @@ const Navbar = () => {
                 <NavLink to="/ContactUs" className={isActive('/ContactUs')} onClick={handleLinkClick}><i className="ri-customer-service-2-fill"></i> Contact Us</NavLink>
             </li>
             <li className="text-center md:text-left">
+                <NavLink to="/privacy-policy" className={isActive('/ContactUs')} onClick={handleLinkClick}><i className="ri-lock-fill"></i>Privacy</NavLink>
+            </li>
+            <li className="text-center md:text-left">
                 <ThemeToggle /> 
             </li>
         </ul>
