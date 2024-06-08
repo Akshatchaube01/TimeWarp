@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Models from "./components/Models";
 import Custom404 from "./components/Custom404";
 import "./main.css";
+import Privacy from "./components/Privacy";
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<Router>
 	<AnimatedCursor 
@@ -43,6 +44,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 			<Route exact path='/DemoSection' element={<DemoSection />} />
 			<Route exact path='/ContactUs' element={<ContactUs />} />
 			<Route exact path='/Models' element={<Models />} />
+			<Route exact path='/privacy-policy' element={<Privacy />} />
 			<Route path='*' element={<Custom404 />} />
 		</Routes>
 	</Router>
