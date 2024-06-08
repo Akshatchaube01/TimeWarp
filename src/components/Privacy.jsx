@@ -11,7 +11,6 @@ const Privacy = () => {
                     Welcome to our Privacy Policy page! When you use our web site services, you trust us with your information. This Privacy Policy is meant to help you understand what data we collect, why we collect it, and what we do with it. This is important; we hope you will take time to read it carefully.
 
                     </p>
-                    <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500">Information We Collect</h2>
                     <p className=" mb-4">
                     We collect information to provide better services to all of our users. We collect information in the following ways:
                     </p>
@@ -38,8 +37,8 @@ const Privacy = () => {
                     />
                 </div>
                 <div>
-                    <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500">How We Use Information We Collect</h2>
-                    <p className=" mb-4">
+                    <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500 ">How We Use Information We Collect</h2>
+                    <p className="mt-8 mb-4">
                     We use the information we collect from all of our services to provide, maintain, protect and improve them, to develop new ones, and to protect our users. We also use this information to offer you tailored content – like giving you more relevant search results and ads.
                     </p>
                     <ul className="list-disc list-inside mb-4 ">
@@ -54,7 +53,7 @@ const Privacy = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <div>
-    <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500">
+    <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500 mb-8">
         Information Sharing
     </h2>
     <p className="mb-4">
@@ -66,9 +65,6 @@ const Privacy = () => {
         </li>
         <li>
             <strong>Business Partners:</strong> We collaborate with trusted partners for co-branded services or joint marketing efforts, and may share your information with them for these purposes.
-        </li>
-        <li>
-            <strong>Legal Requirements:</strong> Your information may be disclosed to comply with legal obligations, such as responding to subpoenas, court orders, or other legal processes.
         </li>
         <li>
             <strong>Mergers and Acquisitions:</strong> In the event of a merger, acquisition, or asset sale, your information may be transferred to the new entity.
@@ -99,7 +95,7 @@ const Privacy = () => {
                     />
                 </div>
                 <div>
-                    <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500">Your Rights</h2>
+                    <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500  mb-8">Your Rights</h2>
                     <p className=" mb-4">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat:
                     </p>
@@ -111,7 +107,7 @@ const Privacy = () => {
                 </div>
             </div>
             <div className="mt-8">
-                <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500">Contact Us</h2>
+                <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500  mb-8">Contact Us</h2>
                 <p className=" mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
