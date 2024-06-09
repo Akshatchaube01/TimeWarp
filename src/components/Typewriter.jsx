@@ -18,7 +18,8 @@ const TypewriterEffect = ({ text, speed }) => {
 
   return (
     <div>
-      <h1>{displayedText}</h1>
+      {displayedText}
+      {/* <h1>{displayedText}</h1> */}
     </div>
   );
 };
