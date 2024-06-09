@@ -97,6 +97,27 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        <div className="footer-section social-media">
+          <h4><strong style={footerStyle}>Company</strong></h4>
+          <ul className="social-list">
+            <li style={footerStyle}>
+              <a style={footerStyle} href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+                 Privacy policys
+              </a>
+            </li>
+            <li style={footerStyle}>
+              <a style={footerStyle} href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
+              Terms & conditions
+              </a>
+            </li>
+            <li>
+              <input type="text" placeholder='Enter your email' className='p-1 rounded-md' />
+            </li>
+            <li>
+              <button className='border px-2 py-1 rounded-sm'>subscribe</button>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="footer-bottom">
         <p style={footerStyle}>© 2024 TimeWarp. All rights reserved.</p>
