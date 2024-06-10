@@ -4,6 +4,7 @@ import {
     useState,
     useEffect
 } from 'react';
+import { animateScroll as scroll } from 'react-scroll';
 
 const BackToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -24,20 +25,24 @@ const BackToTop = () => {
     }, []);
 
     const backToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: 'smooth',
+        // });
+        scroll.scrollToTop({
+            duration: 500,
+            smooth: "easeInOutQuad",
         });
     };
 
-    return ( <
-        div className = {
+    return (<
+        div className={
             `scroll-to-top-button ${isVisible ? 'visible' : ''}`
         }
-        onClick = {
+        onClick={
             backToTop
         } >
-        <i class = "ri-arrow-up-s-line" > </i> </div>
+        <i class="ri-arrow-up-s-line" > </i> </div>
     )
 }
 
