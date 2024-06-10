@@ -8,8 +8,8 @@ import { FaUnity, FaVrCardboard } from "react-icons/fa";
 import { SiWebgl } from "react-icons/si";
 import Footer from './Footer';
 import Tilty from 'react-tilty';
-import BackToTop from "./BottomToTop"
 import FireFliesBackground from "./FireFlies";
+import BackToTop from "./BottomToTop";
 
 const DemoSection = () => {
   const icons = [
@@ -101,7 +101,7 @@ const DemoSection = () => {
           </li>
         </ul>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

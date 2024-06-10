@@ -12,6 +12,7 @@ import Naman from "../assets/Naman.jpg";
 import Footer from './Footer';
 // import Tilty from "react-tilty";
 import { particles } from "./Particles.jsx";
+import BackToTop from "./BottomToTop";
 
 const AboutUs = () => {
 
@@ -61,6 +62,7 @@ const AboutUs = () => {
   return (
     <div className="about-container md:m-16 mt-8 p-8">
       <Particles id="tsparticles" options={useMemo(() => particles, [])} />
+      <BackToTop />
       <div className="about-content flex items-center mb-24 gap-x-12">
         <div className="text-container flex-1">
           <h1 className="rounded-md about-title text-4xl text-center italic font-bold p-2 mb-8 mt-[100px] bg-gradient-to-r from-sky-500">
@@ -74,7 +76,7 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="image-container image-container-one mr-8">
-         <Tilty> <img
+          <Tilty> <img
             src={aboutImage}
             alt="About us"
             className="ml-8 shadow-sm shadow-sky-600 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
