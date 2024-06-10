@@ -13,9 +13,9 @@ import BackToTop from "./BottomToTop";
 
 const DemoSection = () => {
   const icons = [
-    <RiReactjsLine key="react" />,
-    <TbBrandThreejs key="three" />,
-    <FaUnity key="unity" />,
+    <RiReactjsLine key="react" className="animate-spin-slow" />,
+    <TbBrandThreejs key="three" className="animate-spin-slow"/>,
+    <FaUnity key="unity" className="animate-spin-slow" />,
     <SiWebgl key="webgl" />,
     <FaVrCardboard key="arvr" />,
   ];
