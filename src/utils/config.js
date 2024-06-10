@@ -1,6 +1,6 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 
-const botName = "Akshat Chaubey";
+const botName = "Akshat Chaube";
 
 const config = {
   botName: botName,
