@@ -111,7 +111,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <input type="text" placeholder='Enter your email' className='p-1 rounded-md' />
+              <input type="text" placeholder='Enter your email' className='p-1 rounded-md text-black' />
             </li>
             <li>
               <button className='border px-2 py-1 rounded-sm'>subscribe</button>
