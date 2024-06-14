@@ -1,154 +1,75 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-import axios from "axios";
-// import { styles } from "../style";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "./hoc";
 import { slideIn } from "../utils/motions";
 import FireFliesBackground from "./FireFlies";
 
-// const Contact = () => {
-//   const formRef = useRef();
-//   const [form, setForm] = useState({
-//     name: "",
-//     email: "",
-//     message: "",
-//   });
-
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleEmailSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = async (event) => {
+    event.preventDefault();
     setLoading(true);
+    setResult("Sending....");
 
-    const service_id = process.env.REACT_APP_SERVICE_ID;
-    const template_id = process.env.REACT_APP_TEMPLATE_ID;
-    const public_key = process.env.REACT_APP_PUBLIC_KEY;
+    const formData = new FormData(event.target);
+    formData.append("access_key", "b31a0b0f-6a98-4f98-a62b-c6c6b05ae9ee");
 
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      to_name: "TimeWarp",
-      message: message,
-    };
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-    emailjs
-      .send(
-        "service_qfep0u4",
-        "template_te2r09e",
-        templateParams,
-        "2L1ir1kGrUHNlXEjH"
-      )
-      .then((response) => {
-        console.log("email sent", response);
-        alert(
-          "Your message has been sent successfully! Will get back to you as soon as possible."
-        );
-        setName("");
-        setEmail("");
-        setMessage("");
-      })
-      .catch((err) => {
-        setLoading(false);
-        console.log("error", err);
-        alert(
-          "Sorry, something went wrong while sending your message. Please try again later."
-        );
-      });
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+
+    setLoading(false);
   };
 
   let savedTheme = localStorage.getItem("theme") || "light";
   const styles = {
-    // ... other styles
     sectionHeadText: {
-      color: "black", // or any other color you want
+      color: "black",
     },
     sectionHeadTextWhite: {
-      color: "white", // or any other color you want
+      color: "white",
+    },
+    sectionSubText: {
+      color: "black",
+    },
+    sectionSubTextWhite: {
+      color: "white",
+    },
+    labelText: {
+      color: "black",
+    },
+    labelTextWhite: {
+      color: "white",
     },
   };
+
   const s = {
     fontSize: 40,
     fontWeight: 800,
   };
 
-  // const handleChange = (e) => {
-  //   const { target } = e;
-  //   const { name, value } = target;
-
-  //   setForm({
-  //     ...form,
-  //     [name]: value,
-  //   });
-  // };
-  // const handleEmailSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-
-  //   try {
-  //     await emailjs.send(
-  //       'service_qfep0u4',//write service id here
-  //       'template_te2r09e',//write templet id here
-  //       {
-  //         from_name: form.name,
-  //         to_name: "TimeWarp",
-  //         from_email: form.email,
-  //         to_email: "info@timewarp.com",
-  //         message: form.message,
-  //       },
-  //       '2L1ir1kGrUHNlXEjH'  //write public_id here
-  //     );
-
-  //     setLoading(false);
-  //     alert("Thank you. I will get back to you as soon as possible.");
-
-  //     setForm({
-  //       name: "",
-  //       email: "",
-  //       message: "",
-  //     });
-  //   } catch (error) {
-  //     setLoading(false);
-  //     console.error(error);
-
-  //     alert("Sorry, something went wrong while sending your message. Please try again later.");
-  //   }
-  // };
-  const handleSaveToDB = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      // Save to MongoDB
-      await axios.post("http://localhost:5000/api/contact", {
-        name,
-        email,
-        message,
-      });
-
-      setLoading(false);
-      alert("Your message has been saved to the database.");
-
-      setName("");
-      setEmail("");
-      setMessage("");
-    } catch (error) {
-      setLoading(false);
-      console.error(error);
-      alert(
-        "Sorry, something went wrong while saving your message to the database. Please try again later."
-      );
-    }
-  };
-
   return (
     <>
-      <div className={` flex xl:flex-row flex-col-reverse  overflow-hidden`}>
+      <div className="flex xl:flex-row flex-col-reverse overflow-hidden">
         <FireFliesBackground />
 
         <motion.div
@@ -176,10 +97,7 @@ const Contact = () => {
             Contact Us.
           </h2>
 
-          <form
-            onSubmit={handleEmailSubmit}
-            className="mt-7 flex flex-col gap-8"
-          >
+          <form onSubmit={onSubmit} className="mt-7 flex flex-col gap-8">
             <label className="flex flex-col">
               <span
                 className={
@@ -198,6 +116,7 @@ const Contact = () => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="What's your good name?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]"
+                required
               />
             </label>
             <label className="flex flex-col">
@@ -218,6 +137,7 @@ const Contact = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="What's your web address?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]"
+                required
               />
             </label>
             <label className="flex flex-col">
@@ -238,6 +158,7 @@ const Contact = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="What you want to say?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]"
+                required
               />
             </label>
 
@@ -250,21 +171,11 @@ const Contact = () => {
                     : "bg-white text-black shadow-md"
                 }`}
               >
-                {loading ? "Sending..." : "Send Mail"}
-              </button>
-              <button
-                type="button"
-                onClick={handleSaveToDB}
-                className={`py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:scale-[1.1] ${
-                  savedTheme === "light"
-                    ? "bg-black text-white shadow-md"
-                    : "bg-white text-black shadow-md"
-                }`}
-              >
-                {loading ? "Saving..." : "Submit"}
+                {loading ? "Sending..." : "Submit Form"}
               </button>
             </div>
           </form>
+          <span>{result}</span>
         </motion.div>
 
         <motion.div
@@ -283,17 +194,16 @@ const Contact = () => {
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
           <div className="md:col-span-1">
-            {/* Static Contact Information */}
             <div className="bg-gray-300 h-64 md:h-full">
               <div className="bg-gray-300 p-6 ">
-                <h2 className=" text-black text-2xl font-bold mb-4">Contact Us</h2>
+                <h2 className="text-black text-2xl font-bold mb-4">Contact Us</h2>
                 <div className="rounded-md border p-4">
                   <div className="flex items-center mb-2">
                     <i className="fas fa-envelope mr-2 text-black"></i>
@@ -310,8 +220,7 @@ const Contact = () => {
                 </div>
                 <div className="mt-4">
                   <p className="text-black">
-                    Feel free to reach out to us for any inquiries or
-                    assistance.
+                    Feel free to reach out to us for any inquiries or assistance.
                   </p>
                 </div>
                 <div className="mt-4">
