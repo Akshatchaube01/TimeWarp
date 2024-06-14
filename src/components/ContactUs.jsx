@@ -293,37 +293,37 @@ const Contact = () => {
             {/* Static Contact Information */}
             <div className="bg-gray-300 h-64 md:h-full">
               <div className="bg-gray-300 p-6 ">
-                <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+                <h2 className=" text-black text-2xl font-bold mb-4">Contact Us</h2>
                 <div className="rounded-md border p-4">
                   <div className="flex items-center mb-2">
-                    <i className="fas fa-envelope mr-2"></i>
-                    <p>contact@example.com</p>
+                    <i className="fas fa-envelope mr-2 text-black"></i>
+                    <p className="text-black">contact@example.com</p>
                   </div>
                   <div className="flex items-center mb-2">
-                    <i className="fas fa-map-marker-alt mr-2"></i>
-                    <p>123 Main Street, City, Country</p>
+                    <i className="fas fa-map-marker-alt mr-2 text-black"></i>
+                    <p className="text-black">123 Main Street, City, Country</p>
                   </div>
                   <div className="flex items-center mb-1">
-                    <i className="fas fa-phone-alt mr-2"></i>
-                    <p>+1 234 567 890</p>
+                    <i className="fas fa-phone-alt mr-2 text-black"></i>
+                    <p className="text-black">+1 234 567 890</p>
                   </div>
                 </div>
                 <div className="mt-4">
-                  <p>
+                  <p className="text-black">
                     Feel free to reach out to us for any inquiries or
                     assistance.
                   </p>
                 </div>
                 <div className="mt-4">
-                  <h3 className="text-lg font-bold mb-2">Opening Hours</h3>
+                  <h3 className="text-lg font-bold mb-2 text-black">Opening Hours</h3>
                   <ul>
-                    <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
-                    <li>Saturday: 10:00 AM - 4:00 PM</li>
-                    <li>Sunday: Closed</li>
+                    <li className="text-black">Monday - Friday: 9:00 AM - 6:00 PM</li>
+                    <li className="text-black">Saturday: 10:00 AM - 4:00 PM</li>
+                    <li className="text-black">Sunday: Closed</li>
                   </ul>
                 </div>
                 <div className="mt-4">
-                  <h3 className="text-lg font-bold mb-2">Follow Us</h3>
+                  <h3 className="text-lg font-bold mb-2 text-black">Follow Us</h3>
                   <div className="flex space-x-4 xs:hidden">
                     <a href="#" className="text-blue-500 hover:text-blue-700 sm:ml-4">
                       <i className="fab fa-facebook"></i>
