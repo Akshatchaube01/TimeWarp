@@ -1,17 +1,17 @@
 .navbar {
-    background-color: rgb(0, 0, 0); /* Black background color */
+    background-color: rgb(0, 0, 0); 
     margin-right: 20px;
     padding-right: 20px;
 }
 
 .navbar-list {
     background-color: black;
-    list-style: none; /*Remove bullet points*/
-    margin: 0; /*Remove default margin*/
-    padding: 10px 20px; /*Padding around navbar*/
-    display: flex; /*Make navbar items display in a row*/
-    justify-content: center; /*Align items horizontally to center*/
-    align-items: center; /*Align items vertically to center*/
+    list-style: none;
+    margin: 0; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
     gap: 40px;
 }
 
@@ -21,11 +21,11 @@
 }
 
 .navbar-list li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .active-link {
-    text-decoration: underline;
+    text-decoration: none;
     color: #00bfff;
 }
 
@@ -46,31 +46,82 @@
     margin: 0.5em;
 }
 
-/* Responsive Styles */
 @media screen and (max-width: 768px) {
     .navbar-list {
-        flex-direction: column; /* Stack items vertically for smaller screens */
-        font-size: 0.8rem; /* reduce font size on mobile*/
+        flex-direction: column;
+        font-size: 0.8rem; 
         gap: 0;
+        height: 0;
+        display: block;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
     }
 
     .navbar__toggle::before {
         display: block;
     }
 
-    .navbar-list {
-        display: none;
-    }
     .navbar-list-active {
+        height: auto;
+    }
+    .navbar-list li {
+        display: none;
         display: flex;
+    }
+    .navbar-list-active li {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 929px) {
+    .navbar-list li a{
+        font-size: 1rem;
+        gap: 20px;
+        padding: 10px 2px;
+    }
+}
+
+@media screen and (min-width: 930px) and (max-width: 1049px) {
+    .navbar-list li a{
+        font-size: 1.2rem;
+        gap: 20px;
+        padding: 10px 8px;
+    }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1366px) {
+    .navbar-list li a {
+        font-size: 1.2rem;
+        gap: 30px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1900px) {
+    .navbar-list li a{
+        font-size: 1.5rem;
+        gap: 35px;
+        padding: 10px 25px;
     }
 }
 
 @media screen and (min-width: 1900px) {
-    .navbar-list {
+    .navbar-list li a{
         font-size: 30px;
     }
     .main-text {
         font-size: 60px;
     }
+}
+
+.navbar li:last-child i {
+    color: white; 
+}
+
+.navbar a.active {
+    text-decoration: none;
+}
+
+.navbar a.active::before {
+    content: none;
 }

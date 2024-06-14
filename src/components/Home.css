@@ -35,6 +35,10 @@
     background-size: cover; /* Set a fixed background size */
     background-repeat: repeat; /* Prevent background from repeating */
     background-position: center; /* Center the background */
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .canvas-container {
