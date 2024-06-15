@@ -8,7 +8,7 @@ import BackToTop from "./BottomToTop";
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faTimes, faExpand } from "@fortawesome/free-solid-svg-icons";
 
 // Import images
 import AkshatImage from "../assets/Timepic.jpg";
@@ -30,14 +30,13 @@ const Models = () => {
         "Model4": [HimankImage, CartoonImage, AkshatImage, TimepicImage],
         "Model5": [HimankImage, CartoonImage, AkshatImage, TimepicImage],
         "Model6": [AkshatImage, CartoonImage, ShreyaImage, TimepicImage],
-    }
+    };
     const [selectedYear, setSelectedYear] = useState(1800);
     const [showCalendar, setShowCalendar] = useState(false);
     const [popupImage, setPopupImage] = useState(null);
 
     const handleSliderChange = (value) => {
         setSelectedYear(value);
-        setCurrentImageIndex(0); // Reset the carousel index when the year changes
     };
 
     const handleToggle = () => {
@@ -73,12 +72,16 @@ const Models = () => {
                 <button onClick={previousImage} className="carousel-button">
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
-                <img
-                    src={images[currentImageIndex]}
-                    alt="Model"
-                    className="model-image"
-                    onClick={() => handleImageClick(images[currentImageIndex])}
-                />
+                <div className="image-container">
+                    <img
+                        src={images[currentImageIndex]}
+                        alt="Model"
+                        className="model-image"
+                    />
+                    <button className="view-icon" onClick={() => handleImageClick(images[currentImageIndex])}>
+                        <FontAwesomeIcon icon={faExpand} />
+                    </button>
+                </div>
                 <button onClick={nextImage} className="carousel-button">
                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>
@@ -141,12 +144,15 @@ const Models = () => {
 
             {/* Popup Image */}
             {popupImage && (
-                <div className="popup-card">
-                    <button className="close-button" onClick={handleClosePopup}>
-                        <FontAwesomeIcon icon={faTimes} />
-                    </button>
-                    <img src={popupImage} alt="Popup Model" className="popup-image" />
-                </div>
+                <>
+                    <div className="popup-overlay" onClick={handleClosePopup}></div>
+                    <div className="popup-card">
+                        <button className="close-button" onClick={handleClosePopup}>
+                            <FontAwesomeIcon icon={faTimes} />
+                        </button>
+                        <img src={popupImage} alt="Popup Model" className="popup-image" />
+                    </div>
+                </>
             )}
         </div>
     );
