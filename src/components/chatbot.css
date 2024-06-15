@@ -39,7 +39,7 @@
 }
 
 /* Ensure the chatbot does not overflow the screen */
-@media (max-width: 420px) {
+@media (max-width: 300px) {
   .chatbot {
     bottom: 60px; /* Adjust based on button size on smaller screens */
     right: 10px; /* Adjust to keep it within the screen */
