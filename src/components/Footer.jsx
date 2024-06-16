@@ -1,25 +1,47 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import './Footer.css';
-// import '';
+
+
+const quotes = [
+  "Innovation distinguishes between a leader and a follower.",
+  "Simplicity is the ultimate sophistication. ",
+  "The secret of getting ahead is getting started.",
+  "All limitations are self-imposed.",
+  "Tough times never last but tough people do. ",
+  "Strive for greatness.",
+  // Add more quotes as needed
+];
+
 
 const Footer = () => {
 
  
 
   const [footerStyle, setFooterStyle] = useState({
-    color: 'black' // Default color
+    color: 'black' 
   });
+  const [quote, setQuote] = useState(quotes[Math.floor(Math.random() * quotes.length)]); 
+  
   let savedTheme;
-  // savedTheme = localStorage.getItem('theme') || 'light'; // Retrieve theme from localStorage
+  
   useEffect(() => {
-   savedTheme = localStorage.getItem('theme') || 'light'; // Retrieve theme from localStorage
+    savedTheme = localStorage.getItem('theme') || 'light'; 
     setFooterStyle({
-      color: savedTheme == 'light' ? 'white' : 'white',
+      color: savedTheme === 'light' ? 'white' : 'white',
       backgroundColor: savedTheme === 'light' ? '#0ea5e9' : '',
-      
+    });
+
+    const intervalId = setInterval(() => {
+      setQuote(prevQuote => {
+        const index = (quotes.indexOf(prevQuote) + 1) % quotes.length;
+        return quotes[index];
+      });
+    }, 10000); // changes every 10 seconds
+
+    return () => clearInterval(intervalId); // cleanup interval on component unmount
   }, [savedTheme]);
-  } );
+
   return (
     <footer className="footer" style={footerStyle}>
       <div className="footer-content">
@@ -69,7 +91,7 @@ const Footer = () => {
         <div className="footer-section quote">
           <h4><strong style={footerStyle}>Quote</strong></h4>
           <p>
-            <cite style={footerStyle}>Innovation distinguishes between a leader and a follower.</cite> - Steve Jobs
+            <cite style={footerStyle}>{quote}</cite>
           </p>
         </div>
         <div className="footer-section social-media">
@@ -100,33 +122,33 @@ const Footer = () => {
         <div className="footer-section social-media">
           <h4><strong style={footerStyle}>Company</strong></h4>
           <ul className="social-list">
-            <li style={footerStyle}>
-              <a style={footerStyle} href="/privacy-policy" target="_blank" rel="noopener noreferrer">
-                 Privacy policys
-              </a>
-            </li>
-            <li style={footerStyle}>
-              <a style={footerStyle} href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
-              Terms & conditions
-              </a>
-            </li>
-            <li>
-              <input type="text" placeholder='Enter your email' className='p-1 rounded-md' />
-            </li>
-            <li>
-              <button className='border px-2 py-1 rounded-sm'>subscribe</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <p style={footerStyle}>© 2024 TimeWarp. All rights reserved.</p>
-      </div>
-    </footer>
-  );
-};
+//             <li style={footerStyle}>
+               <a style={footerStyle} href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+                  Privacy policys
+               </a>
+             </li>
+             <li style={footerStyle}>
+               <a style={footerStyle} href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
+               Terms & conditions
+               </a>
+             </li>
+             <li>
+               <input type="text" placeholder='Enter your email' className='p-1 rounded-md' />
+             </li>
+             <li>
+               <button className='border px-2 py-1 rounded-sm'>subscribe</button>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <div className="footer-bottom">
+         <p style={footerStyle}>© 2024 TimeWarp. All rights reserved.</p>
+       </div>
+     </footer>
+   );
+ };
 
 
-export default Footer;
+ export default Footer;
 
 
