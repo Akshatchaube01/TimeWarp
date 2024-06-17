@@ -1,0 +1,28 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999;
+  }
+  
+.preloader-animation {
+    width: 600px;
+    height: 600px;
+}
+
+.preloader.fade-in {
+    opacity: 1;
+}
+  
+.preloader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
