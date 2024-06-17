@@ -13,6 +13,8 @@ import "./main.css";
 import Privacy from "./components/Privacy";
 import Terms from "./components/Terms";
 import ChatbotComponent from "./components/Chatbot"; // Import Chatbot
+import Preloader from "./components/Preloader";
+import App from './App.jsx';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
@@ -37,7 +39,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           '.link'
         ]}
       />
-    
+    <Preloader />
     <Navbar />{" "}
     {/* Place Navbar outside of Routes to ensure it's always visible */}
     <Routes>

@@ -5,6 +5,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import ParticleRing from "./ParticleRing.jsx";
 import TypewriterEffect from "./Typewriter.jsx";
+import Preloader from "./Preloader.jsx";
 
 
 const Home = () => {
@@ -74,6 +75,7 @@ const Home = () => {
     // State to manage button hover
     const [isButtonHovered, setIsButtonHovered] = useState(false);
   return (
+    <div>
     <div className="container">
       {/* keep particles at top */}
       {/* <Particles id="tsparticles" options={useMemo(() => lines)} /> */}
@@ -98,6 +100,8 @@ const Home = () => {
         </button>
       </a>
 
+    </div>
+    <Preloader />
     </div>
   );
 };
