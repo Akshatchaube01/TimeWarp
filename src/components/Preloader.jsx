@@ -8,20 +8,18 @@ const Preloader = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setFadeIn(true);
-
     const timer = setTimeout(() => {
-      setFadeIn(false);
-      setTimeout(() => setLoading(false), 500);
-    }, 2000);
+      setFadeIn(false); // Fade out animation after 2 seconds
+      setTimeout(() => setLoading(false), 500); // Set loading to false after additional 0.5 seconds
+    }, 2500); // Total delay is 2.5 seconds
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // Clean up timer on component unmount
   }, []);
 
-  if (!loading) return null;
+  if (!loading) return null; // Render nothing if loading is false
 
   return (
-    <div className={`preloader ${fadeIn ? 'fade-in' : 'fade-out'}`}>
+    <div className={`preloader ${fadeIn ? "fade-in" : "fade-out"}`}>
       <Lottie className="preloader-animation" animationData={preloaderAnimation} />
     </div>
   );
