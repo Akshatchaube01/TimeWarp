@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Lottie from "lottie-react";
-import preloaderAnimation from "../assets/Preloader.json"; // Adjust path as needed
+import preloaderAnimation from "../assets/Preloader.json";
 import "./Preloader.css";
 
 const Preloader = () => {
@@ -8,15 +8,16 @@ const Preloader = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setFadeIn(false); // Fade out animation after 2 seconds
-      setTimeout(() => setLoading(false), 500); // Set loading to false after additional 0.5 seconds
-    }, 2500); // Total delay is 2.5 seconds
+    const timeout = setTimeout(async () => {
+      setFadeIn(false);
+      await new Promise(resolve => setTimeout(resolve, 500)); // Wait for animation to complete
+      setLoading(false);
+    }, 2500);
 
-    return () => clearTimeout(timer); // Clean up timer on component unmount
+    return () => clearTimeout(timeout); // Cleanup on component unmount
   }, []);
 
-  if (!loading) return null; // Render nothing if loading is false
+  if (!loading) return null;
 
   return (
     <div className={`preloader ${fadeIn ? "fade-in" : "fade-out"}`}>
