@@ -20,6 +20,7 @@ import TimepicImage from "../assets/cartoon.png";
 import Calendar from "./EventsCalendar";
 import ComparePlaces from "./ComparePlaces";
 import Latitude from "./RecommendedPlaces";
+import Interests from "./Interests";
 
 
 const Models = () => {
@@ -103,7 +104,7 @@ const Models = () => {
             </div>
             <h2 className="text-2xl font-bold mb-[3rem] text-[#00bfff] mt-[3rem]">{selectedYear}</h2>
 
-
+            <Interests/>
 
             {/* calendar */}
             <div className="flex flex-col items-center">
