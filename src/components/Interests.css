@@ -1,0 +1,90 @@
+.interests-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    /* background-color: #0778e1; */
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    margin: 50px auto;
+  }
+  
+.interests-background {
+    background: linear-gradient(to right, rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8)),
+                url('https://source.unsplash.com/random/1600x900?history');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* .interests-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+  } */
+  
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+  }
+  
+  .interest-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .interest-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .interest-item input {
+    display: none;
+  }
+  
+  .interest-item svg {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #007BFF;
+  }
+  
+  .interest-item span {
+    margin-left: 8px;
+    flex-grow: 1;
+    text-align: left;
+    color: #333;
+  }
+  
+  button {
+    margin-top: 20px;
+    margin-right: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
