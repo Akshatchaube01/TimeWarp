@@ -37,6 +37,7 @@
     "react-scroll": "^1.9.0",
     "react-slick": "^0.30.2",
     "react-tilty": "^3.0.0",
+    "react-toastify": "^10.0.5",
     "react-tsparticles": "^2.12.2",
     "react-use": "^17.5.0",
     "slick-carousel": "^1.8.1",

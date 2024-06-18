@@ -4,18 +4,19 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "./hoc";
 import { slideIn } from "../utils/motions";
 import FireFliesBackground from "./FireFlies";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    setResult("Sending....");
+    toast.info("Sending your message...");
 
     const formData = new FormData(event.target);
     formData.append("access_key", "b31a0b0f-6a98-4f98-a62b-c6c6b05ae9ee");
@@ -28,13 +29,12 @@ const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
+      toast.success("Form Submitted Successfully");
       setName("");
       setEmail("");
       setMessage("");
     } else {
-      console.log("Error", data);
-      setResult(data.message);
+      toast.error(`Error: ${data.message}`);
     }
 
     setLoading(false);
@@ -69,6 +69,7 @@ const Contact = () => {
 
   return (
     <>
+      <ToastContainer />
       <div className="flex xl:flex-row flex-col-reverse overflow-hidden">
         <FireFliesBackground />
 
@@ -175,7 +176,6 @@ const Contact = () => {
               </button>
             </div>
           </form>
-          <span>{result}</span>
         </motion.div>
 
         <motion.div
