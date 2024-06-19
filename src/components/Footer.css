@@ -10,7 +10,9 @@
     overflow: hidden;
 }
 a:hover {
-    color: #00bfff !important; /* Change the color to your desired hover color */
+    color: #313131 !important;
+    font-weight: bold;
+    /* Change the color to your desired hover color */
   }
   
 
