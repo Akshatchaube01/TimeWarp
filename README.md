@@ -5,6 +5,9 @@
 </p>
 <br/>
 
+![timewarp](https://github.com/Akshatchaube01/TimeWarp/assets/133582566/d676a08a-f69a-4935-b401-9701664c2194)
+
+
 <p>Time Wrap is an open-source web application that enables users to explore historical versions of their current location virtually. By leveraging augmented reality and historical maps, users can visualize how their surroundings appeared in different time periods and delve into the area's rich history.</p>
 
 ## Features
@@ -173,15 +176,36 @@ With innovation as our compass and authenticity as our guide, we are committed t
 
 If you encounter any issues or have any feedback or suggestions, please open an issue in the Issues section of this repository. We appreciate your feedback and will respond as soon as possible.
 
+<!-- Code of conduct -->
+<div>
+<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
+</div>
+
+Please note that this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 ## 🛡️ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 💪 Thanks to all Contributors
+<hr>
+
+ <!-- Contributors -->
+<div>
+  <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Contributors</h2>
+</div>
 
 Thanks to all contributors for helping this project grow! 🍻
 
-## 🙏 Support
+<a href="https://github.com/Akshatchaube01/TimeWarp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Akshatchaube01/TimeWarp" />
+</a>
 
-Don't forget to leave a star ⭐️ for this project!
+<hr>
+
+<div>
+  <h2><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f64f_1f3fb/512.webp" width="35" height="35"> Support </h2>
+</div>
+
+<div>
+  Don't forget to leave a star<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31f/512.webp" width="35" height="30"> for this project!
+</div>

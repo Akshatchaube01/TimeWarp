@@ -7,18 +7,23 @@ import { TbBrandThreejs } from "react-icons/tb";
 import { FaUnity, FaVrCardboard } from "react-icons/fa";
 import { SiWebgl } from "react-icons/si";
 import Footer from './Footer';
+import Tilty from 'react-tilty';
+import FireFliesBackground from "./FireFlies";
+import BackToTop from "./BottomToTop";
 
 const DemoSection = () => {
   const icons = [
-    <RiReactjsLine key="react" />,
-    <TbBrandThreejs key="three" />,
-    <FaUnity key="unity" />,
+    <RiReactjsLine key="react" className="animate-spin-slow" />,
+    <TbBrandThreejs key="three" className="animate-spin-slow"/>,
+    <FaUnity key="unity" className="animate-spin-slow" />,
     <SiWebgl key="webgl" />,
     <FaVrCardboard key="arvr" />,
   ];
 
   return (
     <div className="demo-container md:px-32">
+      <FireFliesBackground />
+      <BackToTop />
       <h2 className="text-5xl font-bold my-16">Demo Section</h2>
       <div className="md:w-2/3 mx-auto">
         <div
@@ -26,11 +31,11 @@ const DemoSection = () => {
                 rounded-2xl shadow-[0px_5px_25px_2px_#2a4365] "
         >
           <iframe
-            src="https://www.youtube.com/embed/o9pNopC1BMU?autoplay=1&loop=1&playlist=o9pNopC1BMU&rel=0"
+            src="https://www.youtube.com/embed/o9pNopC1BMU?autoplay=0&loop=1&playlist=o9pNopC1BMU&rel=0"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
             className="mx-auto rounded-2xl"
           ></iframe>
         </div>
@@ -51,11 +56,12 @@ const DemoSection = () => {
           {/* Mapping Data from DemoConstant.js into cards */}
           {technologyExplanations.map((explanation, index) => (
             // Cards
-            <div
+            <Tilty
               key={index}
               className={`max-w-lg mx-auto my-16 md:my-8 overflow-hidden
-            bg-neutral-100 rounded-lg hover:scale-105 transition
-            ${index === 4 ? "lg:mx-[55%] md:w-full " : ""}`}
+              bg-neutral-100 rounded-lg hover:scale-105 transition
+              ${index === 4 ? "lg:mx-[55%] md:w-full " : ""}`}
+              glare scale={1.05} maxGlare={0.5}
             >
               <div className="flex items-center justify-center bg-sky-700 py-4">
                 <div className="text-3xl text-neutral-200">{icons[index]}</div>
@@ -66,7 +72,7 @@ const DemoSection = () => {
                 {/* Context with card-text class */}
                 <p className="card-text">{explanation.context}</p>
               </div>
-            </div>
+            </Tilty>
           ))}
         </div>
       </div>
@@ -95,7 +101,7 @@ const DemoSection = () => {
           </li>
         </ul>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -4,6 +4,9 @@ import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import ParticleRing from "./ParticleRing.jsx";
+import TypewriterEffect from "./Typewriter.jsx";
+import Preloader from "./Preloader.jsx";
+
 
 const Home = () => {
   useEffect(() => {
@@ -72,6 +75,7 @@ const Home = () => {
     // State to manage button hover
     const [isButtonHovered, setIsButtonHovered] = useState(false);
   return (
+    <div>
     <div className="container">
       {/* keep particles at top */}
       {/* <Particles id="tsparticles" options={useMemo(() => lines)} /> */}
@@ -80,7 +84,8 @@ const Home = () => {
         <p style={{ ...newTextStyles, margin: 0 }}>TimeWarp</p>
       </div>
       <p style={paragraphStyles} className="text-xl w-screen">
-        Understanding history, embracing the present, and envisioning the future
+        {/* Understanding history, embracing the present, and envisioning the future */}
+        <TypewriterEffect text="Understanding history, embracing the present, and envisioning the future" speed={40} />
       </p>
       <a href="/AboutUs" style={{ textDecoration: "none" }}>
         <button
@@ -95,6 +100,8 @@ const Home = () => {
         </button>
       </a>
 
+    </div>
+    <Preloader />
     </div>
   );
 };
