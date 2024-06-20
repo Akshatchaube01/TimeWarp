@@ -12,6 +12,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -20,6 +21,23 @@ const Contact = () => {
 
     const formData = new FormData(event.target);
     formData.append("access_key", "b31a0b0f-6a98-4f98-a62b-c6c6b05ae9ee");
+
+    
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const validEmailDomains = ["com", "net", "org", "in"]; 
+    const enteredDomain = email.split(".")[1];
+
+    if (!emailPattern.test(email)) {
+      setEmailError("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    } else if (!validEmailDomains.includes(enteredDomain)) {
+      setEmailError("Sorry, we do not support this email domain.");
+      setLoading(false);
+      return;
+    } else {
+      setEmailError("");
+    }
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -137,9 +155,13 @@ const Contact = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="What's your web address?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e]"
+                className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium bg-[#1e1e1e] ${
+                  emailError ? "border-red-500" : "" }`}
                 required
               />
+              {emailError && (
+                <p className="text-red-500 text-sm">{emailError}</p>
+              )}
             </label>
             <label className="flex flex-col">
               <span
