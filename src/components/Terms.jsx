@@ -1,5 +1,6 @@
 import React from "react";
 import './terms.css';
+import Tilty from "react-tilty";
 
 import termsImage from '../assets/terms.png'
 
@@ -22,20 +23,25 @@ const Terms = () => {
                     </ul>
                 </div>
                 <div className="flex flex-col justify-center">
-                    <img
+                    <Tilty>                    <img
                         src={termsImage}
                         alt="Terms"
                         className="rounded-lg"
                     />
+                    </Tilty>
+
+
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
                 <div className="flex flex-col justify-center">
+                <Tilty>
                     <img
                         src="https://d1n03xfl93cx9q.cloudfront.net/wp-content/uploads/2022/09/what-is-the-future-of-IT-managed-services.jpg"
                         alt="Usage"
                         className="rounded-lg shadow-lg"
                     />
+                    </Tilty>
                 </div>
                 <div>
                     <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-green-500">Usage of Service</h2>
@@ -67,20 +73,24 @@ const Terms = () => {
                     </ul>
                 </div>
                 <div className="flex flex-col justify-center">
+                <Tilty>
                     <img
                         src="https://img.freepik.com/premium-photo/business-team-collaboration-showing-unity-with-their-hands-stacked-together_49071-4483.jpg?w=1380"
                         alt="User Responsibilities"
                         className="rounded-lg shadow-lg"
                     />
+                    </Tilty>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <div className="flex flex-col justify-center">
+                <Tilty>
                     <img
                         src="https://termshub.io/v3/assets/images/products/privacy_policy_hero.svg"
                         alt="Changes to Policy"
                         className="rounded-lg"
                     />
+                    </Tilty>
                 </div>
                 <div>
                     <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-green-500 mb-8">Changes to Terms</h2>
