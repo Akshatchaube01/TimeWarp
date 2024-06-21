@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
+import axios from "axios";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import Tilty from "react-tilty";
@@ -17,11 +18,25 @@ import { particles } from "./Particles.jsx";
 import BackToTop from "./BottomToTop";
 
 const AboutUs = () => {
+  const [contributors, setContributors] = useState([]);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadFull(engine);
     });
+  }, []);
+
+  useEffect(() => {
+    const fetchContributors = async () => {
+      try {
+        const response = await axios.get('https://api.github.com/repos/Akshatchaube01/TimeWarp/contributors');
+        setContributors(response.data);
+      } catch (error) {
+        console.error("Error fetching contributors:", error);
+      }
+    };
+
+    fetchContributors();
   }, []);
 
   const teamMembers = [
@@ -67,14 +82,24 @@ const AboutUs = () => {
     e.currentTarget.querySelector(".hovereffect").style.transform="scale(0)";
    }
   return (
-    <div className="about-container md:m-16 mt-8 p-8">
+    <div className="about-container md:m-16 mt-8 p-25 ">
       <Particles id="tsparticles" options={useMemo(() => particles, [])} />
       <BackToTop />
-      <div className="about-content flex items-center mb-24 gap-x-12">
+      <div className="about-content  items-center mb-24 ">
+      <span className="image-container image-container-one grid justify-center">
+          <Tilty>
+            <img
+              src={aboutImage}
+              alt="About us"
+              className="ml-10 shadow-sm shadow-sky-600 about-image w-[350px] rounded-full hover:scale-[0.9] transition"
+            />
+          </Tilty>
+        </span>
         <div className="text-container flex-1">
           <h1 className="rounded-md about-title text-4xl text-center italic font-bold p-2 mb-8 mt-[100px] bg-gradient-to-r from-sky-500">
             About Us
           </h1>
+          
           <p className="about-text italic text-lg font-light text-justify mb-4">
             {about.topTxt}
           </p>
@@ -82,26 +107,21 @@ const AboutUs = () => {
             {about.bottomTxt}
           </p>
         </div>
-        <div className="image-container image-container-one mr-8">
-          <Tilty> <img
-            src={aboutImage}
-            alt="About us"
-            className="ml-8 shadow-sm shadow-sky-600 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
-          />
-          </Tilty>
-        </div>
+       
       </div>
 
-      <div className="our-vision flex mb-28">
-        <div className="image-container image-container-two">
-          <Tilty><img
-            src={carImage}
-            alt="About us"
-            className=" shadow-sm shadow-sky-600 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
-          /></Tilty>
+      <div className="our-vision  mb-28 ">
+        <div className="image-container image-container-two grid justify-center ml-25">
+          <Tilty>
+            <img
+              src={carImage}
+              alt="About us"
+              className="shadow-sm shadow-sky-600 about-image w-[350px] rounded-full hover:scale-[0.9] transition mb-10"
+            />
+          </Tilty>
         </div>
         <div className="text-container mx-auto flex-1 text-left">
-          <h1 className="about-title rounded-md text-4xl text-center italic font-bold p-2  mb-8 bg-gradient-to-l from-sky-500">
+          <h1 className="about-title rounded-md text-4xl text-center italic font-bold p-2 mb-8 bg-gradient-to-l from-sky-500">
             Our Vision
           </h1>
           <p className="about-text italic text-lg font-light text-justify">
@@ -141,6 +161,43 @@ const AboutUs = () => {
                 </div>
               </Tilty>
             ))}
+          </div>
+        </section>
+      </div>
+
+      {/* OUR CONTRIBUTORS */}
+      <div className="w-full">
+        <section className="our-team-section max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+          <div className="rounded-md about-title text-4xl text-center italic font-bold p-2 mb-[5%] mt-[100px] bg-gradient-to-r from-sky-500 ">
+            <h1 className="our-team-heading font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-white">
+              Our Contributors
+            </h1>
+          </div>
+          <div className="marquee">
+            <div className="marquee-content">
+              {contributors.map((contributor, index) => (
+                <Tilty
+                  key={index}
+                  className="inline-block bg-sky-900/50 backdrop-blur-sm shadow-sky-100 rounded-lg shadow-lg p-12 flex flex-col justify-center items-center m-2"
+                  glare
+                  scale={1.05}
+                  maxGlare={0.5}
+                >
+                  <div className="mb-8">
+                    <img
+                      className="object-center object-cover rounded-full h-36 w-36"
+                      src={contributor.avatar_url}
+                      alt={contributor.login}
+                    />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-xl text-white font-bold mb-2">
+                      {contributor.login}
+                    </p>
+                  </div>
+                </Tilty>
+              ))}
+            </div>
           </div>
         </section>
       </div>
