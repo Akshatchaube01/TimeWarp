@@ -13,8 +13,10 @@
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@fullcalendar/core": "^6.1.13",
     "@fullcalendar/daygrid": "^6.1.13",
     "@fullcalendar/react": "^6.1.13",
