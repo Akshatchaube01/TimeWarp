@@ -74,14 +74,24 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="about-container md:m-16 mt-8 p-8">
+    <div className="about-container md:m-16 mt-8 p-25 ">
       <Particles id="tsparticles" options={useMemo(() => particles, [])} />
       <BackToTop />
-      <div className="about-content flex items-center mb-24 gap-x-12">
+      <div className="about-content  items-center mb-24 ">
+      <span className="image-container image-container-one grid justify-center">
+          <Tilty>
+            <img
+              src={aboutImage}
+              alt="About us"
+              className="ml-10 shadow-sm shadow-sky-600 about-image w-[350px] rounded-full hover:scale-[0.9] transition"
+            />
+          </Tilty>
+        </span>
         <div className="text-container flex-1">
           <h1 className="rounded-md about-title text-4xl text-center italic font-bold p-2 mb-8 mt-[100px] bg-gradient-to-r from-sky-500">
             About Us
           </h1>
+          
           <p className="about-text italic text-lg font-light text-justify mb-4">
             {about.topTxt}
           </p>
@@ -89,24 +99,16 @@ const AboutUs = () => {
             {about.bottomTxt}
           </p>
         </div>
-        <div className="image-container image-container-one mr-8">
-          <Tilty>
-            <img
-              src={aboutImage}
-              alt="About us"
-              className="ml-8 shadow-sm shadow-sky-600 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
-            />
-          </Tilty>
-        </div>
+       
       </div>
 
-      <div className="our-vision flex mb-28">
-        <div className="image-container image-container-two">
+      <div className="our-vision  mb-28 ">
+        <div className="image-container image-container-two grid justify-center ml-25">
           <Tilty>
             <img
               src={carImage}
               alt="About us"
-              className="shadow-sm shadow-sky-600 about-image w-[500px] rounded-full hover:scale-[1.1] transition"
+              className="shadow-sm shadow-sky-600 about-image w-[350px] rounded-full hover:scale-[0.9] transition mb-10"
             />
           </Tilty>
         </div>
