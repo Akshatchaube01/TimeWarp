@@ -10,7 +10,10 @@ import Himank from "../assets/Himank.jpg";
 import Akshat from "../assets/Akshat.jpg";
 import Shreya from "../assets/Shreya.jpg";
 import Naman from "../assets/Naman.jpg";
-import Footer from "./Footer";
+import Footer from './Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+// import Tilty from "react-tilty";
 import { particles } from "./Particles.jsx";
 import BackToTop from "./BottomToTop";
 
@@ -72,7 +75,12 @@ const AboutUs = () => {
     bottomTxt:
       "Through our passion for exploration and discovery, we seek to inspire curiosity and ignite imaginations, inviting individuals to embark on a journey through time where they can uncover hidden treasures, explore diverse cultures, and witness the remarkable tapestry of human experience.",
   };
-
+   const handlehover=(e)=>{
+    e.currentTarget.querySelector(".hovereffect").style.transform="scale(1)";
+   }
+   const hanleleave=(e)=>{
+    e.currentTarget.querySelector(".hovereffect").style.transform="scale(0)";
+   }
   return (
     <div className="about-container md:m-16 mt-8 p-25 ">
       <Particles id="tsparticles" options={useMemo(() => particles, [])} />
@@ -134,24 +142,22 @@ const AboutUs = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
             {teamMembers.map((member, index) => (
-              <Tilty
-                key={index}
-                className="w-full bg-sky-900/50 backdrop-blur-sm shadow-sky-100 rounded-lg shadow-lg p-12 flex flex-col justify-center items-center"
-                glare
-                scale={1.05}
-                maxGlare={0.5}
-              >
+              <Tilty key={index} className="w-full bg-sky-900/50 backdrop-blur-sm shadow-sky-100 rounded-lg shadow-lg p-12 flex flex-col justify-center items-center" glare scale={1.05} maxGlare={0.5} onMouseEnter={handlehover} onMouseLeave={hanleleave}>
+                <div className="hovereffect absolute bg-black/50 w-full h-full flex justify-center flex-col items-center gap-3 scale-0">
+                  <div className="flex flex-col items-center">
+                    <p className="text-xl text-white font-bold">{member.memberName}</p>
+                    <p className="text-xl text-white font-thin mb-2">Member</p>
+                  </div>
+                  <p className="text-xl text-gray-400 font-semibold mb-2">Tech Stack</p>
+                  <div className="flex gap-8 justify-center items-center flex-wrap">
+                    <a href="https://google.com" target="_blank"><FontAwesomeIcon icon={faLinkedin} size="lg" className="text-white text-3xl" /></a>
+                    <a href="https://github.com" target="_blank"> <FontAwesomeIcon icon={faGithub} size="lg" className="text-white text-3xl" /></a>
+                  </div>
+                </div>
                 <div className="mb-8">
-                  <img
-                    className="object-center object-cover rounded-full h-36 w-36"
-                    src={member.imgSrc}
-                    alt={member.alt}
-                  />
+                  <img className="object-center object-cover rounded-lg h-40 w-40" src={member.imgSrc} alt={member.alt} />
                 </div>
                 <div className="text-center">
-                  <p className="text-xl text-white font-bold mb-2">
-                    {member.memberName}
-                  </p>
                 </div>
               </Tilty>
             ))}
