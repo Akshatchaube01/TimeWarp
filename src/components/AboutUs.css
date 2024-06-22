@@ -242,4 +242,17 @@ h1::before {
       transform: translateX(-100%);
     }
   }
+  .copilot-icon{
+    color: rgb(18, 76, 163);
+    font-size: 200px; /* Increase the size of the icon */
+    animation: spin 6s linear infinite; /* Add animation */
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
   

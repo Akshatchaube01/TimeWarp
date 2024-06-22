@@ -13,6 +13,10 @@ import Naman from "../assets/Naman.jpg";
 import Footer from "./Footer";
 import { particles } from "./Particles.jsx";
 import BackToTop from "./BottomToTop";
+import { GiAtom } from "react-icons/gi";
+import { GiAbstract091 } from "react-icons/gi";
+import { VscCopilot } from "react-icons/vsc";
+import { GiComputerFan } from "react-icons/gi";
 
 const AboutUs = () => {
   const [contributors, setContributors] = useState([]);
@@ -78,7 +82,8 @@ const AboutUs = () => {
       <Particles id="tsparticles" options={useMemo(() => particles, [])} />
       <BackToTop />
       <div className="about-content  items-center mb-24 ">
-      <span className="image-container image-container-one grid justify-center">
+
+      {/* <span className="image-container image-container-one grid justify-center">
           <Tilty>
             <img
               src={aboutImage}
@@ -86,7 +91,13 @@ const AboutUs = () => {
               className="ml-10 shadow-sm shadow-sky-600 about-image w-[350px] rounded-full hover:scale-[0.9] transition"
             />
           </Tilty>
-        </span>
+        </span> */}
+        <div className="flex justify-center align-center">
+        <Tilty>
+        <GiAbstract091 className="copilot-icon"  />
+        </Tilty>
+        </div>
+
         <div className="text-container flex-1">
           <h1 className="rounded-md about-title text-4xl text-center italic font-bold p-2 mb-8 mt-[100px] bg-gradient-to-r from-sky-500">
             About Us
@@ -103,7 +114,12 @@ const AboutUs = () => {
       </div>
 
       <div className="our-vision  mb-28 ">
-        <div className="image-container image-container-two grid justify-center ml-25">
+      <div className="flex justify-center align-center">
+      <Tilty>
+        <GiAtom className="copilot-icon mb-10" />
+        </Tilty>
+        </div>
+        {/* <div className="image-container image-container-two grid justify-center ml-25">
           <Tilty>
             <img
               src={carImage}
@@ -111,7 +127,7 @@ const AboutUs = () => {
               className="shadow-sm shadow-sky-600 about-image w-[350px] rounded-full hover:scale-[0.9] transition mb-10"
             />
           </Tilty>
-        </div>
+        </div> */}
         <div className="text-container mx-auto flex-1 text-left">
           <h1 className="about-title rounded-md text-4xl text-center italic font-bold p-2 mb-8 bg-gradient-to-l from-sky-500">
             Our Vision
