@@ -139,6 +139,11 @@ const Footer = () => {
               </a>
             </li>
             <li style={footerStyle}>
+              <a style={footerStyle} href="/licensing" target="_blank" rel="noopener noreferrer">
+                Licensing
+              </a>
+            </li>
+            <li style={footerStyle}>
               <a style={footerStyle} href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
                 Terms & Conditions
               </a>
