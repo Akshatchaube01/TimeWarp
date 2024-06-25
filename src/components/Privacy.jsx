@@ -7,6 +7,7 @@ import Footer from "./Footer";
 
 const Privacy = () => {
   return (
+    <>
     <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8" >
             <BackToTop />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -188,9 +189,11 @@ const Privacy = () => {
           aliquip ex ea commodo consequat.
         </p>
       </div>
-      <Footer />
+      
 
     </div>
+    <Footer />
+    </>
     
   );
 };
