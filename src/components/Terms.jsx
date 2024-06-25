@@ -1,6 +1,8 @@
 import React from "react";
 import './terms.css';
 import Tilty from "react-tilty";
+import BackToTop from "./BottomToTop";
+import Footer from "./Footer";
 
 import termsImage from '../assets/terms.png'
 
@@ -113,6 +115,9 @@ const Terms = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
+            <BackToTop />
+            <Footer />
+
         </div>
     );
 }
