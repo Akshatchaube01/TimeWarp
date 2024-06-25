@@ -1,12 +1,14 @@
 import React from 'react'
 import './licensing.css'
 import Footer from './Footer';
-
+import BackToTop from "./BottomToTop";
 
 const Licensing = () => {
 
+
  return (
     <>
+                <BackToTop />
     <div className="licensing">
       <h1>Licensing</h1>
         <p>Welcome to Timewarp. The project is licensed under the MIT License. This page outlines the terms of the license and provides details on how you can use, modify, and distribute our software.</p>
