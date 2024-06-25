@@ -8,6 +8,7 @@ import termsImage from '../assets/terms.png'
 
 const Terms = () => {
     return (
+        <>
         <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -116,9 +117,11 @@ const Terms = () => {
                 </p>
             </div>
             <BackToTop />
-            <Footer />
+            
 
         </div>
+        <Footer />
+        </>
     );
 }
 
