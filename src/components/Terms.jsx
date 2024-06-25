@@ -1,11 +1,14 @@
 import React from "react";
 import './terms.css';
 import Tilty from "react-tilty";
+import BackToTop from "./BottomToTop";
+import Footer from "./Footer";
 
 import termsImage from '../assets/terms.png'
 
 const Terms = () => {
     return (
+        <>
         <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -113,7 +116,12 @@ const Terms = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
+            <BackToTop />
+            
+
         </div>
+        <Footer />
+        </>
     );
 }
 
