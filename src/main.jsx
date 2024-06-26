@@ -11,6 +11,7 @@ import Models from "./components/Models";
 import Custom404 from "./components/Custom404";
 import "./main.css";
 import Privacy from "./components/Privacy";
+import Licensing from "./components/licensing.jsx";
 import Terms from "./components/Terms";
 import ChatbotComponent from "./components/Chatbot"; // Import Chatbot
 import Preloader from "./components/Preloader";
@@ -49,6 +50,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route exact path='/ContactUs' element={<ContactUs />} />
       <Route exact path='/Models' element={<Models />} />
       <Route exact path='/privacy-policy' element={<Privacy />} />
+      <Route exact path='/licensing' element={<Licensing />} />
       <Route exact path='/terms-and-conditions' element={<Terms />} />
       <Route path='*' element={<Custom404 />} />
     </Routes>

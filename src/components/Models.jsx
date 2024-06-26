@@ -8,7 +8,7 @@ import BackToTop from "./BottomToTop";
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight, faTimes, faExpand } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faTimes, faExpand,faShareAlt } from "@fortawesome/free-solid-svg-icons";
 
 // Import images
 import AkshatImage from "../assets/Timepic.jpg";
@@ -81,6 +81,9 @@ const Models = () => {
                     />
                     <button className="view-icon" onClick={() => handleImageClick(images[currentImageIndex])}>
                         <FontAwesomeIcon icon={faExpand} />
+                    </button>
+                    <button className="share-icon">
+                        <FontAwesomeIcon icon={faShareAlt} />
                     </button>
                 </div>
                 <button onClick={nextImage} className="carousel-button">

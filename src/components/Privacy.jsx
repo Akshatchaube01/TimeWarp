@@ -1,9 +1,15 @@
 import React from "react";
 import "./privacy.css";
+import Tilty from "react-tilty";
+import BackToTop from "./BottomToTop";
+import Footer from "./Footer";
+
 
 const Privacy = () => {
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+    <>
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8" >
+            <BackToTop />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h1 className="rounded-md about-title text-4xl text-center italic font-bold p-2 mb-8 mt-[100px] bg-gradient-to-r from-sky-500">
@@ -32,20 +38,24 @@ const Privacy = () => {
           </ul>
         </div>
         <div className="flex flex-col justify-center">
+          <Tilty>
           <img
             src="https://termshub.io/v3/assets/images/products/privacy_policy_hero.svg"
             alt="Privacy"
             className="rounded-lg"
           />
+          </Tilty>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         <div className="flex flex-col justify-center">
+        <Tilty>
           <img
             src="https://static.vecteezy.com/system/resources/previews/005/843/413/original/abstract-cyber-security-privacy-information-network-concept-padlock-protection-digital-network-personal-data-cyber-data-or-information-privacy-idea-internet-link-on-hi-tech-blue-future-background-vector.jpg"
             alt="Data Protection"
             className="rounded-lg shadow-lg"
-          />
+          /> 
+          </Tilty>
         </div>
         <div>
           <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500 ">
@@ -121,20 +131,24 @@ const Privacy = () => {
         </div>
 
         <div className="flex flex-col justify-center">
+        <Tilty>
           <img
             src="https://www.nojitter.com/sites/default/files/ribkhan___0.jpg"
             alt="Information Sharing"
             className="rounded-lg shadow-lg"
           />
+          </Tilty>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         <div className="flex flex-col justify-center">
+          <Tilty>
           <img
             src="https://media.gettyimages.com/id/1345282963/photo/education-and-light-bulb-concept.jpg?s=2048x2048&w=gi&k=20&c=RcmHc2qcf_k_HHq0Qbl0a1_GlDdfKK05rsLf8LYw2Z4="
             alt="User Rights"
             className="rounded-lg shadow-lg"
           />
+          </Tilty>
         </div>
         <div>
           <h2 className="rounded-md about-title text-2xl text-center italic font-semibold bg-gradient-to-r from-sky-500  mb-8">
@@ -175,7 +189,12 @@ const Privacy = () => {
           aliquip ex ea commodo consequat.
         </p>
       </div>
+      
+
     </div>
+    <Footer />
+    </>
+    
   );
 };
 
