@@ -3,19 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .theme-light {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --navbar-text-color: #ffffff;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --navbar-text-color: #ffffff;
 }
 
 /* Dark theme */
 .theme-dark {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --navbar-text-color: #ffffff;
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --navbar-text-color: #ffffff;
 }
 
 /* .input {
@@ -25,69 +23,75 @@
 
 /* Apply styles based on theme */
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .navbar {
-    color: var(--navbar-text-color);
+  color: var(--navbar-text-color);
 }
 
-
 @keyframes border-move {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .moving-border-button {
-    position: relative;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) padding-box,
-                linear-gradient(90deg, #4bb77a, #182848) border-box;
-    border: 2px solid transparent;
-    background-size: 200% 200%;
-    animation: border-move 3s linear infinite;
-    border-radius: 0.5rem;
+  100% {
+    background-position: 100% 50%;
   }
-  
+}
+
+.moving-border-button {
+  position: relative;
+  background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      )
+      padding-box,
+    linear-gradient(90deg, #4bb77a, #182848) border-box;
+  border: 2px solid transparent;
+  background-size: 200% 200%;
+  animation: border-move 3s linear infinite;
+  border-radius: 0.5rem;
+}
 
 .futuristic-card {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
-                linear-gradient(135deg, #4b6cb7, #182848) border-box;
-    border: 2px solid transparent;
-    background-clip: padding-box, border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .futuristic-card img {
-    border-radius: 1rem;
-  }
-  
-  .futuristic-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(211, 75, 205, 0.1);
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  
-  .futuristic-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 15px 30px rgba(51, 79, 236, 0.3);
-  }
-  
-  .futuristic-card:hover::before {
-    opacity: 0.2;
-  }
-  
-  
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+      )
+      padding-box,
+    linear-gradient(135deg, #4b6cb7, #182848) border-box;
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.futuristic-card img {
+  border-radius: 1rem;
+}
+
+.futuristic-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(211, 75, 205, 0.1);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 30px rgba(51, 79, 236, 0.3);
+}
+
+.futuristic-card:hover::before {
+  opacity: 0.2;
+}
