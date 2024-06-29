@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 50px;
+/*  padding-left: 50px; */
   }
   
   .interest-item {
@@ -74,13 +74,14 @@
   button {
     margin-top: 20px;
     margin-right: 50px;
+    margin-left: 50px;
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
     background-color: #007BFF;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: none;
     transition: background-color 0.3s ease;
   }
   
