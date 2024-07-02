@@ -1,3 +1,5 @@
+/* chatbot.css */
+
 .chatbot-container {
   position: fixed;
   bottom: 20px;
@@ -6,57 +8,42 @@
 }
 
 .chatbot-toggle-button {
-  background-color: #2847c3;
-  color: white;
+  background-color: #007bff;
   border: none;
   border-radius: 50%;
+  color: white;
   padding: 10px;
   cursor: pointer;
-  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  position: relative;
-  z-index: 1001;
 }
 
 .chatbot-toggle-button:hover {
-  background-color: #4953a3;
+  background-color: #0056b3;
 }
 
 .chatbot {
-  width: 400px;
-  max-width: 90%;
-  z-index: 1000;
+  width: 280px;
+  height: 500px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 600px) {
-  .chatbot {
-    width: 100%;
-    bottom: 70px;
-    right: 0;
-    left: 45;
-  }
+.chatbot .react-chatbot-kit-chat-container {
+  height: 100%;
 }
 
-.chatbot-initial {
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+.chatbot .react-chatbot-kit-chat-message-container {
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 .chatbot .react-chatbot-kit-chat-input {
-  background-color: rgb(224, 221, 221);
-  color: black;
-}
-
-.chatbot .react-chatbot-kit-chat-input::placeholder {
-  color: #323131;
+  border-top: 1px solid #ddd;
+  padding: 10px;
 }
