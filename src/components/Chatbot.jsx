@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Chatbot } from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
-import { AiOutlineComment, AiOutlineClose } from "react-icons/ai"; // Import icons
+import { AiOutlineComment, AiOutlineClose } from "react-icons/ai";
 import config from "../utils/config";
 import MessageParser from "../utils/messageParser";
 import ActionProvider from "../utils/actionProvider";
-import "./chatbot.css"; // Import CSS for styling
+import "./chatbot.css";
 
 const ChatbotComponent = () => {
   const [showChatbot, setShowChatbot] = useState(false);
@@ -17,11 +17,19 @@ const ChatbotComponent = () => {
   return (
     <div className="chatbot-container">
       <button className="chatbot-toggle-button" onClick={toggleChatbot}>
-        {showChatbot ? <AiOutlineClose size={24} /> : <AiOutlineComment size={24} />}
+        {showChatbot ? (
+          <AiOutlineClose size={24} />
+        ) : (
+          <AiOutlineComment size={24} />
+        )}
       </button>
       {showChatbot && (
         <div className="chatbot">
-          <Chatbot config={config} messageParser={MessageParser} actionProvider={ActionProvider} />
+          <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+          />
         </div>
       )}
     </div>
