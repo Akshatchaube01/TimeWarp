@@ -1,28 +1,54 @@
-<h1 align="center">TimeWarp</h1>
+<h1 align="center" style="animation: fadeIn 2s;">TimeWarp</h1>
 <h3 align="center">Understanding history, embracing the present, and envisioning the future</h3>
 <p align="center">
- <a href="https://time-warp-two.vercel.app/">View Demo</a>
+  <a href="https://time-warp-two.vercel.app/" style="color: #0366d6; text-decoration: none;">View Demo</a>
 </p>
 <br/>
 
 ![timewarp](https://github.com/Akshatchaube01/TimeWarp/assets/133582566/d676a08a-f69a-4935-b401-9701664c2194)
 
+<p>Time Warp is an open-source web application that enables users to explore historical versions of their current location virtually. By leveraging augmented reality and historical maps, users can visualize how their surroundings appeared in different time periods and delve into the area's rich history.</p>
 
-<p>Time Wrap is an open-source web application that enables users to explore historical versions of their current location virtually. By leveraging augmented reality and historical maps, users can visualize how their surroundings appeared in different time periods and delve into the area's rich history.</p>
+---
+
+## 🏆 Featured in:
+
+<table>
+    <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+    </tr>
+    <tr>
+        <td><img src="screenshots/Gssoc Label.png" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
+        <td>GirlScript Summer of Code 2024</td>
+        <td>GirlScript Summer of Code is a three-month-long Open Source Program conducted every summer by GirlScript Foundation. It is an initiative to bring more beginners to Open-Source Software Development. 
+    </tr>
+</table>
+
+## Table of Contents
+
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [React + Vite](#react--vite)
+4. [Prerequisites](#prerequisites)
+5. [How to Contribute](#how-to-contribute)
+6. [Alternative Way](#alternative-way)
+7. [Our Vision](#our-vision)
+8. [Feedback and Support](#feedback-and-support)
+---
 
 ## Features
 
 - **Simulations:** Step into pivotal moments in history through immersive simulations.
-
 - **Historical Reenactments:** Experience the sights and sounds of bygone eras through interactive reenactments.
-
 - **Futuristic Scenarios:** Peer into potential futures with speculative scenarios and advanced technologies.
 
-With Time Wrap, the past, present, and future converge in a captivating journey through time, inviting users to explore, learn, and imagine the possibilities.
+With Time Warp, the past, present, and future converge in a captivating journey through time, inviting users to explore, learn, and imagine the possibilities.
 
 ## Tech Stack
 
-Time Wrap utilizes the following technologies:
+Time Warp utilizes the following technologies:
 
 - **HTML**: Provides the structure for web pages.
 - **CSS**: Styles the appearance of web pages, ensuring a visually appealing user experience.
@@ -31,7 +57,6 @@ Time Wrap utilizes the following technologies:
 - **React.js**: A JavaScript library for building user interfaces, enabling efficient development of dynamic and interactive web applications.
 - **Virtual Reality**: Integration of virtual reality technology to create immersive experiences.
 - **Augmented Reality Applications**: Implementation of augmented reality technology to enhance user interactions and provide innovative features such as exploring historical environments and visualizing past landscapes in real-time.
-
 
 ## React + Vite
 
@@ -42,8 +67,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-
-## 👇 Prerequisites
+## Prerequisites  
 
 Before installation, please ensure you have the following tools installed:
 
@@ -172,7 +196,7 @@ That's it! You can now use GitHub Desktop to manage this repository efficiently.
 
 With innovation as our compass and authenticity as our guide, we are committed to delivering engaging content and immersive experiences that bridge the gap between the past, present, and future. Our mission is to empower individuals to engage with history in meaningful and transformative ways, becoming stewards of their own narratives and architects of a brighter tomorrow.
 
-## ✍️ Feedback and Support
+## Feedback and Support
 
 If you encounter any issues or have any feedback or suggestions, please open an issue in the Issues section of this repository. We appreciate your feedback and will respond as soon as possible.
 
@@ -183,7 +207,7 @@ If you encounter any issues or have any feedback or suggestions, please open an 
 
 Please note that this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-## 🛡️ License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
