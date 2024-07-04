@@ -77,11 +77,11 @@ Before installation, please ensure you have the following tools installed:
 
 ## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 ## How to Contribute
 
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for detailed instructions on how to get started.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions on how to get started.
 
 If you think that you can add a new feature or want to fix a bug, we invite you to contribute to Timewarp and make this project better. To contribute:
 
