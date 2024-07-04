@@ -37,7 +37,7 @@ const Navbar = () => {
         {`@import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');`}
       </style>
       <button
-        className="block md:hidden p-2 mx-0 my-0"
+        className="block md:hidden p-2 mx-0 my-0 w-full"
         onClick={() => setMenuOpen(!isMenuOpen)}
         aria-label="Toggle navigation menu"
       >

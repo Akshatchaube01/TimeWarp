@@ -194,7 +194,9 @@ img {
   .flex {
     flex-direction: column !important;
   }
-
+  .socials {
+    flex-direction: row !important;
+  }
   .image-container-one {
     order: -1;
   }
