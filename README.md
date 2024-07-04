@@ -34,9 +34,10 @@
 3. [React + Vite](#react--vite)
 4. [Prerequisites](#prerequisites)
 5. [How to Contribute](#how-to-contribute)
-6. [Alternative Way](#alternative-way)
-7. [Our Vision](#our-vision)
-8. [Feedback and Support](#feedback-and-support)
+6. [Code of Conduct](#code-of-conduct)
+7. [Alternative Way](#alternative-way)
+8. [Our Vision](#our-vision)
+9. [Feedback and Support](#feedback-and-support)
 ---
 
 ## Features
@@ -74,7 +75,14 @@ Before installation, please ensure you have the following tools installed:
 
 - [Git](https://git-scm.com/downloads) - Learn Git step-by-step by following the instructions provided [here](https://recodehive.com/how-to-install-git-git-tutorial/).
 
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 ## How to Contribute
+
+We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for detailed instructions on how to get started.
+
 If you think that you can add a new feature or want to fix a bug, we invite you to contribute to Timewarp and make this project better. To contribute:
 
 1. Create a folder at your desire location (usually at your desktop).
@@ -234,3 +242,13 @@ Thanks to all contributors for helping this project grow! 🍻
 <div>
   Don't forget to leave a star<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31f/512.webp" width="35" height="30"> for this project!
 </div>
+<br>
+
+![GitHub stars](https://img.shields.io/github/stars/subinoybiswas/clippy?color=brightgreen)
+![GitHub forks](https://img.shields.io/github/forks/subinoybiswas/clippy?color=brightgreen)
+![GitHub issues](https://img.shields.io/github/issues/subinoybiswas/clippy?color=brightgreen)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/subinoybiswas/clippy?color=brightgreen)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/subinoybiswas/clippy?color=brightgreen)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/subinoybiswas/clippy?color=brightgreen)
+
+
