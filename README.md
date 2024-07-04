@@ -5,9 +5,10 @@
   <a href="https://time-warp-two.vercel.app/" style="color: #0366d6; text-decoration: none;">View Demo</a>
 </p>
 <br/>
-
-![timewarp](https://github.com/Akshatchaube01/TimeWarp/assets/133582566/d676a08a-f69a-4935-b401-9701664c2194)
-
+<div align="center">
+<img src="https://github.com/Akshatchaube01/TimeWarp/assets/133582566/d676a08a-f69a-4935-b401-9701664c2194" alt="timewarp" style="width:80%;  border:5px solid white;"/>
+</div>
+<br>
 <p>Time Warp is an open-source web application that enables users to explore historical versions of their current location virtually. By leveraging augmented reality and historical maps, users can visualize how their surroundings appeared in different time periods and delve into the area's rich history.</p>
 
 ---
@@ -37,7 +38,8 @@
 6. [Code of Conduct](#code-of-conduct)
 7. [Alternative Way](#alternative-way)
 8. [Our Vision](#our-vision)
-9. [Feedback and Support](#feedback-and-support)
+9. [Learn More](#learn-more)
+10. [Feedback and Support](#feedback-and-support)
 ---
 
 ## Features
@@ -204,6 +206,10 @@ That's it! You can now use GitHub Desktop to manage this repository efficiently.
 ## Our Vision
 
 With innovation as our compass and authenticity as our guide, we are committed to delivering engaging content and immersive experiences that bridge the gap between the past, present, and future. Our mission is to empower individuals to engage with history in meaningful and transformative ways, becoming stewards of their own narratives and architects of a brighter tomorrow.
+
+## Learn More
+
+For more information about the project and how it works, please refer to our [Learn Guide](LEARN.md).
 
 ## Feedback and Support
 
