@@ -1,28 +1,43 @@
-<h1 align="center">TimeWarp</h1>
+<h1 align="center" style="animation: fadeIn 2s;">TimeWarp</h1>
 <h3 align="center">Understanding history, embracing the present, and envisioning the future</h3>
+<br>
 <p align="center">
- <a href="https://time-warp-two.vercel.app/">View Demo</a>
+  <a href="https://time-warp-two.vercel.app/" style="color: #0366d6; text-decoration: none;">View Demo</a>
 </p>
 <br/>
+<div align="center">
+<img src="https://github.com/Akshatchaube01/TimeWarp/assets/133582566/d676a08a-f69a-4935-b401-9701664c2194" alt="timewarp" style="width:80%;  border:5px solid white;"/>
+</div>
+<br>
+<p>Time Warp is an open-source web application that enables users to explore historical versions of their current location virtually. By leveraging augmented reality and historical maps, users can visualize how their surroundings appeared in different time periods and delve into the area's rich history.</p>
 
-![timewarp](https://github.com/Akshatchaube01/TimeWarp/assets/133582566/d676a08a-f69a-4935-b401-9701664c2194)
+---
 
+## Table of Contents
 
-<p>Time Wrap is an open-source web application that enables users to explore historical versions of their current location virtually. By leveraging augmented reality and historical maps, users can visualize how their surroundings appeared in different time periods and delve into the area's rich history.</p>
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [React + Vite](#react--vite)
+4. [Prerequisites](#prerequisites)
+5. [How to Contribute](#how-to-contribute)
+6. [Code of Conduct](#code-of-conduct)
+7. [Alternative Way](#alternative-way)
+8. [Our Vision](#our-vision)
+9. [Learn More](#learn-more)
+10. [Feedback and Support](#feedback-and-support)
+---
 
 ## Features
 
 - **Simulations:** Step into pivotal moments in history through immersive simulations.
-
 - **Historical Reenactments:** Experience the sights and sounds of bygone eras through interactive reenactments.
-
 - **Futuristic Scenarios:** Peer into potential futures with speculative scenarios and advanced technologies.
 
-With Time Wrap, the past, present, and future converge in a captivating journey through time, inviting users to explore, learn, and imagine the possibilities.
+With Time Warp, the past, present, and future converge in a captivating journey through time, inviting users to explore, learn, and imagine the possibilities.
 
 ## Tech Stack
 
-Time Wrap utilizes the following technologies:
+Time Warp utilizes the following technologies:
 
 - **HTML**: Provides the structure for web pages.
 - **CSS**: Styles the appearance of web pages, ensuring a visually appealing user experience.
@@ -31,7 +46,6 @@ Time Wrap utilizes the following technologies:
 - **React.js**: A JavaScript library for building user interfaces, enabling efficient development of dynamic and interactive web applications.
 - **Virtual Reality**: Integration of virtual reality technology to create immersive experiences.
 - **Augmented Reality Applications**: Implementation of augmented reality technology to enhance user interactions and provide innovative features such as exploring historical environments and visualizing past landscapes in real-time.
-
 
 ## React + Vite
 
@@ -42,14 +56,20 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-
-## 👇 Prerequisites
+## Prerequisites  
 
 Before installation, please ensure you have the following tools installed:
 
 - [Git](https://git-scm.com/downloads) - Learn Git step-by-step by following the instructions provided [here](https://recodehive.com/how-to-install-git-git-tutorial/).
 
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 ## How to Contribute
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions on how to get started.
+
 If you think that you can add a new feature or want to fix a bug, we invite you to contribute to Timewarp and make this project better. To contribute:
 
 1. Create a folder at your desire location (usually at your desktop).
@@ -172,7 +192,11 @@ That's it! You can now use GitHub Desktop to manage this repository efficiently.
 
 With innovation as our compass and authenticity as our guide, we are committed to delivering engaging content and immersive experiences that bridge the gap between the past, present, and future. Our mission is to empower individuals to engage with history in meaningful and transformative ways, becoming stewards of their own narratives and architects of a brighter tomorrow.
 
-## ✍️ Feedback and Support
+## Learn More
+
+For more information about the project and how it works, please refer to our [Learn Guide](LEARN.md).
+
+## Feedback and Support
 
 If you encounter any issues or have any feedback or suggestions, please open an issue in the Issues section of this repository. We appreciate your feedback and will respond as soon as possible.
 
@@ -183,7 +207,7 @@ If you encounter any issues or have any feedback or suggestions, please open an 
 
 Please note that this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-## 🛡️ License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -209,3 +233,13 @@ Thanks to all contributors for helping this project grow! 🍻
 <div>
   Don't forget to leave a star<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31f/512.webp" width="35" height="30"> for this project!
 </div>
+<br>
+
+![GitHub stars](https://img.shields.io/github/stars/subinoybiswas/clippy?color=brightgreen)
+![GitHub forks](https://img.shields.io/github/forks/subinoybiswas/clippy?color=brightgreen)
+![GitHub issues](https://img.shields.io/github/issues/subinoybiswas/clippy?color=brightgreen)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/subinoybiswas/clippy?color=brightgreen)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/subinoybiswas/clippy?color=brightgreen)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/subinoybiswas/clippy?color=brightgreen)
+
+
