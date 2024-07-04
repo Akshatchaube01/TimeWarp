@@ -1,5 +1,6 @@
 <h1 align="center" style="animation: fadeIn 2s;">TimeWarp</h1>
 <h3 align="center">Understanding history, embracing the present, and envisioning the future</h3>
+<br>
 <p align="center">
   <a href="https://time-warp-two.vercel.app/" style="color: #0366d6; text-decoration: none;">View Demo</a>
 </p>
@@ -20,7 +21,7 @@
       <th>Event Description</th>
     </tr>
     <tr>
-        <td><img src="screenshots/Gssoc Label.png" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
+        <td><img src="src/assets/Gssoc Label.png" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
         <td>GirlScript Summer of Code 2024</td>
         <td>GirlScript Summer of Code is a three-month-long Open Source Program conducted every summer by GirlScript Foundation. It is an initiative to bring more beginners to Open-Source Software Development. 
     </tr>
