@@ -1,49 +1,58 @@
-import React from 'react'
-import "./BottomToTop.css"
-import {
-    useState,
-    useEffect
-} from 'react';
-import { animateScroll as scroll } from 'react-scroll';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { FaArrowUp } from "react-icons/fa";
 
-const BackToTop = () => {
-    const [isVisible, setIsVisible] = useState(false);
+const GoToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
     const handleScroll = () => {
-        if (window.scrollY > 100) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY > 200); // Change 200 to your desired scroll distance
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    window.addEventListener("scroll", handleScroll);
 
-    const backToTop = () => {
-        // window.scrollTo({
-        //     top: 0,
-        //     behavior: 'smooth',
-        // });
-        scroll.scrollToTop({
-            duration: 500,
-            smooth: "easeInOutQuad",
-        });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
 
-    return (<
-        div className={
-            `scroll-to-top-button ${isVisible ? 'visible' : ''}`
-        }
-        onClick={
-            backToTop
-        } >
-        <i class="ri-arrow-up-s-line" > </i> </div>
-    )
-}
+  const goToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
-export default BackToTop
+  return (
+    <>
+      {isVisible && (
+        <Wrapper onClick={goToTop}>
+          <FaArrowUp className="top-btn--icon" />
+        </Wrapper>
+      )}
+    </>
+  );
+};
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 17px;
+  right: 10px;
+  color: white;
+  background-color: rgb(59 130 246);
+  width: 48px;
+  height: 48px;
+  z-index: 9999;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #003a79;
+    transform: translateY(-5px);
+  }
+`;
+
+export default GoToTop;
