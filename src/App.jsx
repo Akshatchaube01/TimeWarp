@@ -6,6 +6,7 @@ import DemoSection from './components/DemoSection';
 import ContactUs from './components/ContactUs';
 import Models from './components/Models';
 import Preloader from './components/Preloader';
+import GoToTop from './components/BottomToTop';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ const App = () => {
         <>
       <Navbar />
       <Home />
+      <GoToTop />
       <hr/>
 
       <DemoSection />
