@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import AnimatedCursor from "react-animated-cursor";
 import AboutUs from "./components/AboutUs";
 import DemoSection from "./components/DemoSection";
 import ContactUs from "./components/ContactUs";
@@ -19,27 +18,7 @@ import App from './App.jsx';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
-    <AnimatedCursor 
-        innerSize={8}
-        outerSize={30}
-        color="0,0,280"
-        outerAlpha={.6}
-        innerScale={1.1}
-        outerScale={5}
-        clickables={[
-          'a',
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          'label[for]',
-          'select',
-          'textarea',
-          'button',
-          '.link'
-        ]}
-      />
+   
     <Preloader />
     <Navbar />{" "}
     {/* Place Navbar outside of Routes to ensure it's always visible */}
