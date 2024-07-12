@@ -1,47 +1,74 @@
-class MessageParser {
-    constructor(actionProvider) {
-      this.actionProvider = actionProvider;
-    }
-  
-    parse(message) {
-      const lowercase = message.toLowerCase();
-  
-      if (lowercase.includes("what")&&lowercase.includes("is")) {
-        this.actionProvider.handleWhat();
-      }
-      else if (lowercase.includes("how")&&lowercase.includes("work")) {
-        this.actionProvider.handleHow();
-      }
-      else if (lowercase.includes("who")&&((lowercase.includes("created"))||(lowercase.includes("made")))) {
-        this.actionProvider.handleCreate();
-      }
-      else if (lowercase.includes("thank you")||lowercase.includes("thanks")) {
-        this.actionProvider.handleThanks();
-      }
-      else if (lowercase.includes("goodbye")||lowercase.includes("bye")) {
-        this.actionProvider.handleBye();
-      }
-      else if (lowercase.includes("what")&&((lowercase.includes("do"))||(lowercase.includes("can")))&&lowercase.includes("you")) {
-        this.actionProvider.handleSelf();
-      }
-      else if (lowercase.includes("contact")) {
-        this.actionProvider.handleContact();
-      }
-      else if (((lowercase.includes("doesn't"))||(lowercase.includes("does not"))||(lowercase.includes("don't"))||(lowercase.includes("do not")))) {
-        this.actionProvider.handleWork();
-      }
-      else if (lowercase.includes("hello")) {
-        this.actionProvider.handleHello();
-      }
-      else if (lowercase.includes("okay")) {
-        this.actionProvider.handleOkay();
-      }
-      else{
-        this.actionProvider.handleDefault();
-      }
-
-    }
+class ActionProvider {
+  constructor(createChatBotMessage, setStateFunc) {
+    this.createChatBotMessage = createChatBotMessage;
+    this.setState = setStateFunc;
   }
-  
-  export default MessageParser;
-  
+
+  handleWhat() {
+    const message = this.createChatBotMessage("I'm not sure what you are asking about. Can you provide more details?");
+    this.addMessageToState(message);
+  }
+
+  handleHow() {
+    const message = this.createChatBotMessage("I can explain how it works. Please provide more context.");
+    this.addMessageToState(message);
+  }
+
+  handleCreate() {
+    const message = this.createChatBotMessage("I was created by a team of developers.");
+    this.addMessageToState(message);
+  }
+  handleCare(){
+    const message = this.createChatBotMessage("I am Fine.");
+    this.addMessageToState(message);
+  }
+
+  handleThanks() {
+    const message = this.createChatBotMessage("You're welcome! If you have any more questions, feel free to ask.");
+    this.addMessageToState(message);
+  }
+
+  handleBye() {
+    const message = this.createChatBotMessage("Goodbye! Have a great day.");
+    this.addMessageToState(message);
+  }
+
+  handleSelf() {
+    const message = this.createChatBotMessage("I am a chatbot designed to assist you with various questions and tasks.");
+    this.addMessageToState(message);
+  }
+
+  handleContact() {
+    const message = this.createChatBotMessage("You can contact us via email at support@example.com.");
+    this.addMessageToState(message);
+  }
+
+  handleWork() {
+    const message = this.createChatBotMessage("I'm sorry to hear that something isn't working. Can you provide more details so I can assist you better?");
+    this.addMessageToState(message);
+  }
+
+  handleHello() {
+    const message = this.createChatBotMessage("Hello! How can I assist you today?");
+    this.addMessageToState(message);
+  }
+
+  handleOkay() {
+    const message = this.createChatBotMessage("Okay! Let me know if there's anything else I can help with.");
+    this.addMessageToState(message);
+  }
+
+  handleDefault() {
+    const message = this.createChatBotMessage("I'm not sure I understand. Could you please clarify?");
+    this.addMessageToState(message);
+  }
+
+  addMessageToState(message) {
+    this.setState((prevState) => ({
+      ...prevState,
+      messages: [...prevState.messages, message],
+    }));
+  }
+}
+
+export default ActionProvider;
