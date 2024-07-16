@@ -13,10 +13,11 @@ const quotes = [
 ];
 
 const Footer = () => {
-  const [footerStyle, setFooterStyle] = useState({
-    color: 'black'
-  });
+  const [footerStyle, setFooterStyle] = useState({ color: 'black' });
   const [quote, setQuote] = useState(quotes[Math.floor(Math.random() * quotes.length)]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     let savedTheme = localStorage.getItem('theme') || 'light';
@@ -51,6 +52,19 @@ const Footer = () => {
 
     return () => clearInterval(intervalId); // cleanup interval on component unmount
   }, []);
+
+  const handleSubscribe = () => {
+    if (!email) {
+      setError('Please enter your email ⚠️.');
+      return;
+    }
+    setIsModalOpen(true);
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 9000); 
+    setEmail(''); 
+    setError(''); 
+  };
 
   return (
     <footer className="footer" style={footerStyle}>
@@ -149,10 +163,21 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <input type="text" placeholder="Enter your email" className="p-1 rounded-md" />
+              <input
+                type="text"
+                placeholder="Enter your email"
+                className="p-1 rounded-md"
+                id="email-input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                style={{ color: 'black' }} 
+              />
             </li>
+            {error && (
+              <li style={{ color: 'red' }}>{error}</li>
+            )}
             <li>
-              <button className="border px-2 py-1 rounded-sm">Subscribe</button>
+              <button onClick={handleSubscribe} className="border px-2 py-1 rounded-sm">Subscribe</button>
             </li>
           </ul>
         </div>
@@ -160,6 +185,16 @@ const Footer = () => {
       <div className="footer-bottom">
         <p style={footerStyle}>© 2024 TimeWarp. All rights reserved.</p>
       </div>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Thank you!</h2>
+            <p>Thank you for subscribing. <br />Stay tuned to hear about our new updates.</p>
+            <button onClick={() => setIsModalOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
