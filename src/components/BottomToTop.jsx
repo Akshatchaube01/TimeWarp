@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import { FaArrowUp } from "react-icons/fa";
 
 const GoToTop = () => {
@@ -25,34 +24,16 @@ const GoToTop = () => {
   return (
     <>
       {isVisible && (
-        <Wrapper onClick={goToTop}>
-          <FaArrowUp className="top-btn--icon" />
-        </Wrapper>
+        <div
+          onClick={goToTop}
+          className="flex justify-center items-center fixed bottom-20 right-5 w-12 h-12 bg-blue-500 text-white rounded-full cursor-pointer transition-transform transform hover:bg-blue-700 hover:-translate-y-1"
+        >
+          <FaArrowUp className="text-lg" />
+        </div>
       )}
     </>
   );
 };
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 17px;
-  right: 10px;
-  color: white;
-  background-color: rgb(59 130 246);
-  width: 48px;
-  height: 48px;
-  z-index: 9999;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  
-  &:hover {
-    background-color: #003a79;
-    transform: translateY(-5px);
-  }
-`;
-
 export default GoToTop;
+
