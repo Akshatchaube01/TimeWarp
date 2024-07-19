@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import React from 'react';
+// import React from 'react';
 import './Footer.css';
 
 const quotes = [
@@ -69,12 +69,16 @@ const Footer = () => {
   return (
     <footer className="footer" style={footerStyle}>
       <div className="footer-content">
+      <div className='footer-nav'>
         <div className="footer-section contact-details">
           <h4><strong style={footerStyle}>Contact Us</strong></h4>
           <ul className="contact-list">
             <li style={footerStyle}>
               <i className="fas fa-envelope"></i>&nbsp;&nbsp;
+              <a style={footerStyle}  href="mailto:akshatchaube22@gmail.com">akshatchaube22@gmail.com</a>
+
               <a style={footerStyle} href="mailto:akshatchaube22@gmail.com">akshatchaube22@gmail.com</a>
+
             </li>
             <li style={footerStyle}>
               <i className="fas fa-phone"></i>&nbsp;&nbsp;
@@ -142,6 +146,11 @@ const Footer = () => {
                 <i className="fab fa-linkedin-in"></i>&nbsp;&nbsp; LinkedIn
               </a>
             </li>
+            <li style={footerStyle}>
+              <a style={footerStyle} href="https://discord.com/" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-discord"></i>&nbsp;&nbsp; Discord
+              </a>
+            </li>
           </ul>
         </div>
         <div className="footer-section social-media">
@@ -181,6 +190,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+      </div>
       </div>
       <div className="footer-bottom">
         <p style={footerStyle}>© 2024 TimeWarp. All rights reserved.</p>

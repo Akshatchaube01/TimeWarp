@@ -20,7 +20,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content:space-around;
     max-width: 1200px;
     margin: auto;
     animation: fadeIn 1s ease-in-out;
@@ -28,7 +28,7 @@ a:hover {
 
 .footer-section {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -51,12 +51,17 @@ a:hover {
     position: relative;
     transition: color 0.3s, transform 0.3s;
 }
-
+/* to make the all footer section in one row  */
+.footer-nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
 /* Footer.css */
 .footer-section h4 {
     position: relative;
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 15x;
     color: #fff;
     text-decoration: none;
     overflow: hidden;
@@ -150,6 +155,29 @@ a:hover {
     color: #ddd;
     text-decoration: none;
     transition: color 0.3s, transform 0.3s;
+}
+.contact-list {
+    margin: 20px;
+}
+
+.contact-list li, .nav-list li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.contact-list li i, .nav-list li i{
+    margin-right: 10px; /* Adjust the spacing as needed */
+}
+.contact-list li a, .nav-list li a {
+    color: inherit; /* Ensure the text color matches the parent */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-list li a:hover, .nav-list li a:hover {
+    color: #90a9bb; /* Adjust the hover color as needed */
+    transform: scale(1.1);
 }
 
 .footer-section ul li a:hover,
