@@ -1,127 +1,177 @@
 .navbar {
-    background-color: rgb(0, 0, 0); 
-    margin-right: 20px;
-    padding-right: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+  margin-right: 20px;
+  padding-right: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
 .navbar-list {
-    background-color: black;
-    list-style: none;
-    margin: 0; 
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    gap: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 
 .navbar-list li a {
-    color: white;
-    text-decoration: none;
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+  border-radius: 20px; /* Rounded corners */
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-list li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Light white background on hover */
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.navbar-list li a:hover::before {
+  left: 0;
 }
 
 .navbar-list li a:hover {
-    text-decoration: none;
+  color: #00bfff; /* Light blue text color on hover */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slight background change on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.navbar-list li a span {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-list li a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(0, 191, 255, 0.3);
+  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-list li a:hover::after {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
 }
 
 .active-link {
-    text-decoration: none;
-    color: #00bfff;
-}
-
-.navbar-list a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
+  text-decoration: none;
+  color: #00bfff; /* Light blue color for active link */
 }
 
 .navbar__toggle::before {
-    display: none;
-    content: "\f0c9";
-    font-family: "FontAwesome";
-    font-size: 2rem;
-    top: 0;
-    right: 0;
-    margin: 0.5em;
+  display: none;
+  content: "\f0c9";
+  font-family: "FontAwesome";
+  font-size: 2rem;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
 }
 
 @media screen and (max-width: 768px) {
-    .navbar-list {
-        flex-direction: column;
-        font-size: 0.8rem; 
-        gap: 0;
-        height: 0;
-        display: block;
-        overflow: hidden;
-        transition: height 0.5s ease-in-out;
-    }
+  .navbar-list {
+    flex-direction: column;
+    font-size: 0.8rem;
+    gap: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+  }
 
-    .navbar__toggle::before {
-        display: block;
-    }
+  .navbar__toggle::before {
+    display: block;
+  }
 
-    .navbar-list-active {
-        height: auto;
-    }
-    .navbar-list li {
-        display: none;
-        display: flex;
-    }
-    .navbar-list-active li {
-        display: block;
-    }
+  .navbar-list-active {
+    height: auto;
+  }
+  .navbar-list li {
+    display: none;
+    display: flex;
+  }
+  .navbar-list-active li {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 929px) {
-    .navbar-list li a{
-        font-size: 1rem;
-        gap: 20px;
-        padding: 10px 2px;
-    }
+  .navbar-list li a {
+    font-size: 1rem;
+    gap: 20px;
+    padding: 10px 2px;
+  }
 }
 
 @media screen and (min-width: 930px) and (max-width: 1049px) {
-    .navbar-list li a{
-        font-size: 1.2rem;
-        gap: 20px;
-        padding: 10px 8px;
-    }
+  .navbar-list li a {
+    font-size: 1.2rem;
+    gap: 20px;
+    padding: 10px 8px;
+  }
 }
 
 @media screen and (min-width: 1050px) and (max-width: 1366px) {
-    .navbar-list li a {
-        font-size: 1.2rem;
-        gap: 30px;
-        padding: 10px 20px;
-    }
+  .navbar-list li a {
+    font-size: 1.2rem;
+    gap: 30px;
+    padding: 10px 20px;
+  }
 }
 
 @media screen and (min-width: 1367px) and (max-width: 1900px) {
-    .navbar-list li a{
-        font-size: 1.5rem;
-        gap: 35px;
-        padding: 10px 25px;
-    }
+  .navbar-list li a {
+    font-size: 1.5rem;
+    gap: 35px;
+    padding: 10px 25px;
+  }
 }
 
 @media screen and (min-width: 1900px) {
-    .navbar-list li a{
-        font-size: 30px;
-    }
-    .main-text {
-        font-size: 60px;
-    }
+  .navbar-list li a {
+    font-size: 30px;
+  }
+  .main-text {
+    font-size: 60px;
+  }
 }
 
 .navbar li:last-child i {
-    color: white; 
+  color: white;
 }
 
 .navbar a.active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar a.active::before {
-    content: none;
+  content: none;
 }

@@ -1,25 +1,71 @@
 import { useEffect, useState } from 'react';
 // import React from 'react';
 import './Footer.css';
-// import '';
+
+const quotes = [
+  "Innovation distinguishes between a leader and a follower.",
+  "Simplicity is the ultimate sophistication.",
+  "The secret of getting ahead is getting started.",
+  "All limitations are self-imposed.",
+  "Tough times never last but tough people do.",
+  "Strive for greatness.",
+  // Add more quotes as needed
+];
 
 const Footer = () => {
+  const [footerStyle, setFooterStyle] = useState({ color: 'black' });
+  const [quote, setQuote] = useState(quotes[Math.floor(Math.random() * quotes.length)]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
- 
-
-  const [footerStyle, setFooterStyle] = useState({
-    color: 'black' // Default color
-  });
-  let savedTheme;
-  // savedTheme = localStorage.getItem('theme') || 'light'; // Retrieve theme from localStorage
   useEffect(() => {
-   savedTheme = localStorage.getItem('theme') || 'light'; // Retrieve theme from localStorage
+    let savedTheme = localStorage.getItem('theme') || 'light';
     setFooterStyle({
-      color: savedTheme == 'light' ? 'white' : 'white',
+      color: savedTheme === 'light' ? 'white' : 'white',
       backgroundColor: savedTheme === 'light' ? '#0ea5e9' : '',
-      
-  }, [savedTheme]);
-  } );
+    });
+
+    const intervalId = setInterval(() => {
+      setQuote(prevQuote => {
+        const index = (quotes.indexOf(prevQuote) + 1) % quotes.length;
+        return quotes[index];
+      });
+    }, 10000); // changes every 10 seconds
+
+    // Add Google Translate script
+    const addGoogleTranslateScript = () => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      document.body.appendChild(script);
+    };
+
+    window.googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        { pageLanguage: 'en' },
+        'google_translate_element'
+      );
+    };
+
+    addGoogleTranslateScript();
+
+    return () => clearInterval(intervalId); // cleanup interval on component unmount
+  }, []);
+
+  const handleSubscribe = () => {
+    if (!email) {
+      setError('Please enter your email ⚠️.');
+      return;
+    }
+    setIsModalOpen(true);
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 9000); 
+    setEmail(''); 
+    setError(''); 
+  };
+
   return (
     <footer className="footer" style={footerStyle}>
       <div className="footer-content">
@@ -30,6 +76,9 @@ const Footer = () => {
             <li style={footerStyle}>
               <i className="fas fa-envelope"></i>&nbsp;&nbsp;
               <a style={footerStyle}  href="mailto:akshatchaube22@gmail.com">akshatchaube22@gmail.com</a>
+
+              <a style={footerStyle} href="mailto:akshatchaube22@gmail.com">akshatchaube22@gmail.com</a>
+
             </li>
             <li style={footerStyle}>
               <i className="fas fa-phone"></i>&nbsp;&nbsp;
@@ -70,8 +119,9 @@ const Footer = () => {
         <div className="footer-section quote">
           <h4><strong style={footerStyle}>Quote</strong></h4>
           <p>
-            <cite style={footerStyle}>Innovation distinguishes between a leader and a follower.</cite> - Steve Jobs
+            <cite style={footerStyle}>{quote}</cite>
           </p>
+          <div id="google_translate_element" className="mt-5 p-2 bg-white rounded-md shadow-md"></div>
         </div>
         <div className="footer-section social-media">
           <h4><strong style={footerStyle}>Follow Us</strong></h4>
@@ -108,19 +158,35 @@ const Footer = () => {
           <ul className="social-list">
             <li style={footerStyle}>
               <a style={footerStyle} href="/privacy-policy" target="_blank" rel="noopener noreferrer">
-                 Privacy policys
+                Privacy Policy
+              </a>
+            </li>
+            <li style={footerStyle}>
+              <a style={footerStyle} href="/licensing" target="_blank" rel="noopener noreferrer">
+                Licensing
               </a>
             </li>
             <li style={footerStyle}>
               <a style={footerStyle} href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
-              Terms & conditions
+                Terms & Conditions
               </a>
             </li>
             <li>
-              <input type="text" placeholder='Enter your email' className='p-1 rounded-md' />
+              <input
+                type="text"
+                placeholder="Enter your email"
+                className="p-1 rounded-md"
+                id="email-input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                style={{ color: 'black' }} 
+              />
             </li>
+            {error && (
+              <li style={{ color: 'red' }}>{error}</li>
+            )}
             <li>
-              <button className='border px-2 py-1 rounded-sm'>subscribe</button>
+              <button onClick={handleSubscribe} className="border px-2 py-1 rounded-sm">Subscribe</button>
             </li>
           </ul>
         </div>
@@ -129,11 +195,18 @@ const Footer = () => {
       <div className="footer-bottom">
         <p style={footerStyle}>© 2024 TimeWarp. All rights reserved.</p>
       </div>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Thank you!</h2>
+            <p>Thank you for subscribing. <br />Stay tuned to hear about our new updates.</p>
+            <button onClick={() => setIsModalOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
 
-
 export default Footer;
-
-

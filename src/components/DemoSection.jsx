@@ -8,14 +8,14 @@ import { FaUnity, FaVrCardboard } from "react-icons/fa";
 import { SiWebgl } from "react-icons/si";
 import Footer from './Footer';
 import Tilty from 'react-tilty';
-import BackToTop from "./BottomToTop"
 import FireFliesBackground from "./FireFlies";
+import BackToTop from "./BottomToTop";
 
 const DemoSection = () => {
   const icons = [
-    <RiReactjsLine key="react" />,
-    <TbBrandThreejs key="three" />,
-    <FaUnity key="unity" />,
+    <RiReactjsLine key="react" className="animate-spin-slow" />,
+    <TbBrandThreejs key="three" className="animate-spin-slow"/>,
+    <FaUnity key="unity" className="animate-spin-slow" />,
     <SiWebgl key="webgl" />,
     <FaVrCardboard key="arvr" />,
   ];
@@ -101,7 +101,7 @@ const DemoSection = () => {
           </li>
         </ul>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,68 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon-16x16.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Timewarp</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="styles.css">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-16x16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timewarp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.jsx"></script>
-          <p id="location"></p>  
-    </body>
-
-
-    <!-- Accessing user's Location -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            getLocation();
-        });
-
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
-
-        function showPosition(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            document.getElementById("location").innerHTML = "Latitude: " + latitude +
-            "<br>Longitude: " + longitude;
-            console.log(`${latitude} , ${longitude}`)
-        }
-
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    document.getElementById("location").innerHTML = "Location information is unavailable.";
-                    break;
-                case error.TIMEOUT:
-                    document.getElementById("location").innerHTML = "The request to get user location timed out.";
-                    break;
-                case error.UNKNOWN_ERROR:
-                    document.getElementById("location").innerHTML = "An unknown error occurred.";
-                    break;
-            }
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en' },
+                'google_translate_element'
+            );
         }
     </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- User's Location End -->
+    <style>
+        .circle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(0, 234, 255, 0.5), rgba(3, 120, 255, 0.5));
+            transition: transform 0.1s, left 0.1s, top 0.1s;
+        }
+
+        .circle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <p id="location"></p>
+
+    <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const coords = { x: 0, y: 0 };
+            const circles = document.querySelectorAll(".circle");
+
+            circles.forEach(function (circle) {
+                circle.x = 0;
+                circle.y = 0;
+            });
+
+            window.addEventListener("mousemove", function (e) {
+                coords.x = e.pageX;
+                coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
+            });
+
+            function animateCircles() {
+                let x = coords.x;
+                let y = coords.y;
+
+                circles.forEach(function (circle, index) {
+                    circle.style.left = `${x - 12}px`;
+                    circle.style.top = `${y - 12}px`;
+                    circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+                    const nextCircle = circles[index + 1] || circles[0];
+                    circle.x = x;
+                    circle.y = y;
+
+                    x += (nextCircle.x - x) * 0.3;
+                    y += (nextCircle.y - y) * 0.3;
+                });
+
+                requestAnimationFrame(animateCircles);
+            }
+
+            animateCircles();
+        });
+
+    </script>
+</body>
+
+
+<!-- Accessing user's Location -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        getLocation();
+    });
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        document.getElementById("location").innerHTML = "Latitude: " + latitude +
+            "<br>Longitude: " + longitude;
+        console.log(`${latitude} , ${longitude}`)
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                document.getElementById("location").innerHTML = "Location information is unavailable.";
+                break;
+            case error.TIMEOUT:
+                document.getElementById("location").innerHTML = "The request to get user location timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                document.getElementById("location").innerHTML = "An unknown error occurred.";
+                break;
+        }
+    }
+</script>
+
+<!-- User's Location End -->
+
 </html>

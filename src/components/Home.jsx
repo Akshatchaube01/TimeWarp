@@ -5,7 +5,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import ParticleRing from "./ParticleRing.jsx";
 import TypewriterEffect from "./Typewriter.jsx";
-
+import Preloader from "./Preloader.jsx";
 
 const Home = () => {
   useEffect(() => {
@@ -71,33 +71,39 @@ const Home = () => {
     color: "#fff", // White font color on hover
   };
 
-    // State to manage button hover
-    const [isButtonHovered, setIsButtonHovered] = useState(false);
+  // State to manage button hover
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
   return (
-    <div className="container">
-      {/* keep particles at top */}
-      {/* <Particles id="tsparticles" options={useMemo(() => lines)} /> */}
-      <ParticleRing className="z-20"/>
-      <div style={newTextStyles} className="main-text">
-        <p style={{ ...newTextStyles, margin: 0 }}>TimeWarp</p>
+    <div>
+      <div className="container">
+        {/* keep particles at top */}
+        {/* <Particles id="tsparticles" options={useMemo(() => lines)} /> */}
+        <ParticleRing className="z-20" />
+        <div style={newTextStyles} className="main-text">
+          <p style={{ ...newTextStyles, margin: 0 }}>TimeWarp</p>
+        </div>
+        <p style={paragraphStyles} className="text-xl w-screen">
+          {/* Understanding history, embracing the present, and envisioning the future */}
+          <TypewriterEffect
+            text="Understanding history, embracing the present, and envisioning the future"
+            speed={40}
+          />
+        </p>
+        <a href="/AboutUs" style={{ textDecoration: "none" }}>
+          <button
+            style={{
+              ...buttonStyles,
+              ...(isButtonHovered ? buttonHoverStyles : {}),
+            }}
+            onMouseEnter={() => setIsButtonHovered(true)}
+            onMouseLeave={() => setIsButtonHovered(false)}
+            className="mx-0"
+          >
+            Know more
+          </button>
+        </a>
       </div>
-      <p style={paragraphStyles} className="text-xl w-screen">
-        {/* Understanding history, embracing the present, and envisioning the future */}
-        <TypewriterEffect text="Understanding history, embracing the present, and envisioning the future" speed={40} />
-      </p>
-      <a href="/AboutUs" style={{ textDecoration: "none" }}>
-        <button
-          style={{
-            ...buttonStyles,
-            ...(isButtonHovered ? buttonHoverStyles : {}),
-          }}
-          onMouseEnter={() => setIsButtonHovered(true)}
-          onMouseLeave={() => setIsButtonHovered(false)}
-        >
-          Know more
-        </button>
-      </a>
-
+      <Preloader />
     </div>
   );
 };

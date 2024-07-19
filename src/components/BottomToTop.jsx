@@ -1,44 +1,39 @@
-import React from 'react'
-import "./BottomToTop.css"
-import {
-    useState,
-    useEffect
-} from 'react';
+import React, { useState, useEffect } from "react";
+import { FaArrowUp } from "react-icons/fa";
 
-const BackToTop = () => {
-    const [isVisible, setIsVisible] = useState(false);
+const GoToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
     const handleScroll = () => {
-        if (window.scrollY > 100) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY > 200); // Change 200 to your desired scroll distance
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    window.addEventListener("scroll", handleScroll);
 
-    const backToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
 
-    return ( <
-        div className = {
-            `scroll-to-top-button ${isVisible ? 'visible' : ''}`
-        }
-        onClick = {
-            backToTop
-        } >
-        <i class = "ri-arrow-up-s-line" > </i> </div>
-    )
-}
+  const goToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
-export default BackToTop
+  return (
+    <>
+      {isVisible && (
+        <div
+          onClick={goToTop}
+          className="flex justify-center items-center fixed bottom-20 right-5 w-12 h-12 bg-blue-500 text-white rounded-full cursor-pointer transition-transform transform hover:bg-blue-700 hover:-translate-y-1"
+        >
+          <FaArrowUp className="text-lg" />
+        </div>
+      )}
+    </>
+  );
+};
+
+export default GoToTop;
+

@@ -1,0 +1,49 @@
+/* chatbot.css */
+
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatbot-toggle-button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.chatbot {
+  width: 280px;
+  height: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot .react-chatbot-kit-chat-container {
+  height: 100%;
+}
+
+.chatbot .react-chatbot-kit-chat-message-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chatbot .react-chatbot-kit-chat-input {
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}

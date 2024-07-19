@@ -1,62 +1,65 @@
 .text-5xl {
-    margin-bottom: 70px; 
-  }
-  
-  .carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0; 
-    border-radius: 12px;
-  }
-  
-  .carousel-wrapper {
-    width: 95%;
-    max-width: 700px;
-    margin: 1.5em auto;
-    overflow: hidden;
-    
-  }
-
-  
-
-  .carousel-title{
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  .model-image{
-    width: 70%;
-    border-radius: 16px;
-  }
-  
-  .carousel-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 5px;
-  }
-  
-  .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  
-  .carousel-button svg {
-    font-size: 24px;
-    color: #333;
-  }
-
-  .timeline-slider {
-    margin: 2rem auto;
-    width: 80%;
-    max-width: 45rem;
+  margin-bottom: 70px;
 }
-.timeline-title{
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-radius: 12px;
+}
+
+.carousel-wrapper {
+  width: 95%;
+  max-width: 700px;
+  margin: 1.5em auto;
+  overflow: hidden;
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 70%;
+}
+
+.model-image {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.carousel-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button svg {
+  font-size: 24px;
+  color: #333;
+}
+
+.timeline-slider {
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 45rem;
+}
+
+.timeline-title {
   font-size: 2.5rem;
   font-weight: bold;
 }
-  
 
 /* Customize the rc-slider */
 .rc-slider {
@@ -96,6 +99,68 @@
 .rc-slider-mark-text-active {
   color: #007bff;
 }
-  
-  
 
+/* Models.css */
+/* Other existing styles */
+
+.popup-card {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* z-index: 1001; */
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Dark overlay for the background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* z-index: 1000; */
+}
+
+.view-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.share-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
