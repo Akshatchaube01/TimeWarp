@@ -19,7 +19,7 @@ a:hover {
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     max-width: 1200px;
     margin: auto;
@@ -154,8 +154,9 @@ a:hover {
 
 .footer-section ul li a:hover,
 .footer-section p a:hover {
-    color: #90a9bb;
-    transform: scale(1.1);
+    color: #90d0fe;
+    text-decoration:solid;
+    transform: scale(1.3);
 }
 
 .smedia {
