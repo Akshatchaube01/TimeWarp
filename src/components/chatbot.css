@@ -30,6 +30,7 @@
   border-radius: 10px;
   overflow: hidden;
   background-color: white;
+  color: black;
   display: flex;
   flex-direction: column;
 }
