@@ -1,21 +1,21 @@
-import React, { useEffect, useState, useMemo } from "react";
-import axios from "axios";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
+import axios from "axios";
+import React, { useEffect, useMemo, useState } from "react";
 import Tilty from "react-tilty";
-import "../components/AboutUs.css";
-import aboutImage from "../assets/cartoon.png";
+import { loadFull } from "tsparticles";
 import carImage from "../assets/1 1.png";
-import Himank from "../assets/Himank.jpg";
 import Akshat from "../assets/Akshat.jpg";
-import Shreya from "../assets/Shreya.jpg";
+import aboutImage from "../assets/cartoon.png";
+import Himank from "../assets/Himank.jpg";
 import Naman from "../assets/Naman.jpg";
-import Footer from './Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import Shreya from "../assets/Shreya.jpg";
+import "../components/AboutUs.css";
+import Footer from "./Footer";
 // import Tilty from "react-tilty";
-import { particles } from "./Particles.jsx";
 import BackToTop from "./BottomToTop";
+import { particles } from "./Particles.jsx";
 
 const AboutUs = () => {
   const [contributors, setContributors] = useState([]);
@@ -29,7 +29,9 @@ const AboutUs = () => {
   useEffect(() => {
     const fetchContributors = async () => {
       try {
-        const response = await axios.get('https://api.github.com/repos/Akshatchaube01/TimeWarp/contributors');
+        const response = await axios.get(
+          "https://api.github.com/repos/Akshatchaube01/TimeWarp/contributors"
+        );
         setContributors(response.data);
       } catch (error) {
         console.error("Error fetching contributors:", error);
@@ -75,18 +77,18 @@ const AboutUs = () => {
     bottomTxt:
       "Through our passion for exploration and discovery, we seek to inspire curiosity and ignite imaginations, inviting individuals to embark on a journey through time where they can uncover hidden treasures, explore diverse cultures, and witness the remarkable tapestry of human experience.",
   };
-   const handlehover=(e)=>{
-    e.currentTarget.querySelector(".hovereffect").style.transform="scale(1)";
-   }
-   const hanleleave=(e)=>{
-    e.currentTarget.querySelector(".hovereffect").style.transform="scale(0)";
-   }
+  const handlehover = (e) => {
+    e.currentTarget.querySelector(".hovereffect").style.transform = "scale(1)";
+  };
+  const hanleleave = (e) => {
+    e.currentTarget.querySelector(".hovereffect").style.transform = "scale(0)";
+  };
   return (
     <div className="about-container md:m-16 mt-8 p-25 ">
       <Particles id="tsparticles" options={useMemo(() => particles, [])} />
       <BackToTop />
       <div className="about-content  items-center mb-24 ">
-      <span className="image-container image-container-one grid justify-center">
+        <span className="image-container image-container-one grid justify-center">
           <Tilty>
             <img
               src={aboutImage}
@@ -99,15 +101,14 @@ const AboutUs = () => {
           <h1 className="rounded-md about-title text-4xl text-center italic font-bold p-2 mb-8 mt-[100px] bg-gradient-to-r from-sky-500">
             About Us
           </h1>
-          
-          <p className="about-text italic text-lg font-light text-justify mb-4">
+
+          <p className="about-text italic text-lg font-light text-justify mb-4 p-6">
             {about.topTxt}
           </p>
-          <p className="about-text italic text-lg font-light text-justify">
+          <p className="about-text italic text-lg font-light text-justify p-6">
             {about.bottomTxt}
           </p>
         </div>
-       
       </div>
 
       <div className="our-vision  mb-28 ">
@@ -124,10 +125,10 @@ const AboutUs = () => {
           <h1 className="about-title rounded-md text-4xl text-center italic font-bold p-2 mb-8 bg-gradient-to-l from-sky-500">
             Our Vision
           </h1>
-          <p className="about-text italic text-lg font-light text-justify">
+          <p className="about-text italic text-lg font-light text-justify p-6">
             {vision.topTxt}
           </p>
-          <p className="about-text italic text-lg font-light text-justify">
+          <p className="about-text italic text-lg font-light text-justify p-6">
             {vision.bottomTxt}
           </p>
         </div>
@@ -142,23 +143,51 @@ const AboutUs = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
             {teamMembers.map((member, index) => (
-              <Tilty key={index} className="w-full bg-sky-900/50 backdrop-blur-sm shadow-sky-100 rounded-lg shadow-lg p-12 flex flex-col justify-center items-center" glare scale={1.05} maxGlare={0.5} onMouseEnter={handlehover} onMouseLeave={hanleleave}>
+              <Tilty
+                key={index}
+                className="w-full bg-sky-900/50 backdrop-blur-sm shadow-sky-100 rounded-lg shadow-lg p-12 flex flex-col justify-center items-center"
+                glare
+                scale={1.05}
+                maxGlare={0.5}
+                onMouseEnter={handlehover}
+                onMouseLeave={hanleleave}
+              >
                 <div className="hovereffect absolute bg-black/50 w-full h-full flex justify-center flex-col items-center gap-3 scale-0">
                   <div className="flex flex-col items-center">
-                    <p className="text-xl text-white font-bold">{member.memberName}</p>
+                    <p className="text-xl text-white font-bold">
+                      {member.memberName}
+                    </p>
                     <p className="text-xl text-white font-thin mb-2">Member</p>
                   </div>
-                  <p className="text-xl text-gray-400 font-semibold mb-2">Tech Stack</p>
+                  <p className="text-xl text-gray-400 font-semibold mb-2">
+                    Tech Stack
+                  </p>
                   <div className="flex gap-8 justify-center items-center flex-wrap">
-                    <a href="https://google.com" target="_blank"><FontAwesomeIcon icon={faLinkedin} size="lg" className="text-white text-3xl" /></a>
-                    <a href="https://github.com" target="_blank"> <FontAwesomeIcon icon={faGithub} size="lg" className="text-white text-3xl" /></a>
+                    <a href="https://google.com" target="_blank">
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        size="lg"
+                        className="text-white text-3xl"
+                      />
+                    </a>
+                    <a href="https://github.com" target="_blank">
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        size="lg"
+                        className="text-white text-3xl"
+                      />
+                    </a>
                   </div>
                 </div>
                 <div className="mb-8">
-                  <img className="object-center object-cover rounded-lg h-40 w-40" src={member.imgSrc} alt={member.alt} />
+                  <img
+                    className="object-center object-cover rounded-lg h-40 w-40"
+                    src={member.imgSrc}
+                    alt={member.alt}
+                  />
                 </div>
-                <div className="text-center">
-                </div>
+                <div className="text-center"></div>
               </Tilty>
             ))}
           </div>
