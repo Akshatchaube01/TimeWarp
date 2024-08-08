@@ -231,7 +231,7 @@ const Contact = () => {
                 <div className="rounded-md border p-4">
                   <div className="flex items-center mb-2">
                     <i className="fas fa-envelope mr-2 text-black"></i>
-                    <p className="text-black">contact@example.com</p>
+                    <a href="mailto:contact@example.com" className="text-black">contact@example.com</a>
                   </div>
                   <div className="flex items-center mb-2">
                     <i className="fas fa-map-marker-alt mr-2 text-black"></i>
@@ -239,7 +239,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center mb-1">
                     <i className="fas fa-phone-alt mr-2 text-black"></i>
-                    <p className="text-black">+1 234 567 890</p>
+                    <a href="tel:+1234567890" className="text-black">+1 234 567 890</a>
                   </div>
                 </div>
                 <div className="mt-4">
@@ -264,17 +264,17 @@ const Contact = () => {
                   <h3 className="text-lg font-bold mb-2 text-black">
                     Follow Us
                   </h3>
-                  <div className="flex space-x-4 socials ">
-                    <a href="#" className="text-blue-500 hover:text-blue-700 ">
-                      <i className="fab fa-facebook"></i>
+                  <div className="flex space-x-4 socials" style={{fontSize: "30px"}}>
+                    <a href="#" className="text-blue-500 hover:text-blue-1000 transition-transform transform hover:scale-125 duration-300">
+                      <i className="fab fa-facebook" ></i>
                     </a>
-                    <a href="#" className="text-blue-500 hover:text-blue-700">
+                    <a href="#" className="text-blue-500 hover:text-blue-1000 transition-transform transform hover:scale-125 duration-300">
                       <i className="fab fa-twitter"></i>
                     </a>
-                    <a href="#" className="text-blue-500 hover:text-blue-700">
+                    <a href="#" className="text-blue-500 hover:text-blue-1000 transition-transform transform hover:scale-125 duration-300">
                       <i className="fab fa-instagram"></i>
                     </a>
-                    <a href="#" className="text-blue-500 hover:text-blue-700">
+                    <a href="#" className="text-blue-500 hover:text-blue-1000 transition-transform transform hover:scale-125 duration-300">
                       <i className="fab fa-linkedin"></i>
                     </a>
                   </div>
