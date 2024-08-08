@@ -27,6 +27,7 @@ const GoToTop = () => {
         <div
           onClick={goToTop}
           className="flex justify-center items-center fixed bottom-20 right-5 w-12 h-12 bg-blue-500 text-white rounded-full cursor-pointer transition-transform transform hover:bg-blue-700 hover:-translate-y-1"
+          style={{ zIndex: 9999 }} 
         >
           <FaArrowUp className="text-lg" />
         </div>
@@ -36,4 +37,3 @@ const GoToTop = () => {
 };
 
 export default GoToTop;
-
