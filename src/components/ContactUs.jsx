@@ -92,7 +92,7 @@ const Contact = () => {
 
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className=" bg-black-100 p-8 rounded-2xl"
+          className=" bg-black-100 p-8 rounded-2xl mt-24"
         >
           <p
             className={
@@ -222,7 +222,7 @@ const Contact = () => {
               ></iframe>
             </div>
           </div>
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 ">
             <div className="bg-gray-300 h-64 md:h-full">
               <div className="bg-gray-300 p-6 ">
                 <h2 className="text-black text-2xl font-bold mb-4">
