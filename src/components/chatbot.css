@@ -6,6 +6,12 @@
   right: 20px;
   z-index: 1000;
 }
+@media (max-width:481px){
+  .chatbot-container{
+  bottom: 7%;
+  right: 15%;
+  }
+}
 
 .chatbot-toggle-button {
   background-color: #007bff;

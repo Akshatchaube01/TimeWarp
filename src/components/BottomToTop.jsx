@@ -36,4 +36,47 @@ const GoToTop = () => {
   );
 };
 
+
+const Wrapper = styled.div`
+@media(max-width:481px){
+bottom:7%;
+right:12%;
+display:flex;
+justify-content:center;
+align-items:center;
+position:fixed;
+color:white;
+background-color:rgb(59,130,246);
+width:48px;
+height:48px;
+z-index:9999;
+border-radius:50%;
+cursor:pointer;
+transition:transform 0.3s ease,background-color 0.3s ease;
+&:hover{
+background-color:#003a79;
+transform:translateY(-5px);
+}
+}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;6
+  bottom: 17px;
+  right: 10px;
+  color: white;
+  background-color: rgb(59 130 246);
+  width: 48px;
+  height: 48px;
+  z-index: 9999;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #003a79;
+    transform: translateY(-5px);
+  }
+`;
+
 export default GoToTop;
