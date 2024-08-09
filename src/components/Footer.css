@@ -19,7 +19,7 @@ a:hover {
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     max-width: 1200px;
     margin: auto;
@@ -154,8 +154,9 @@ a:hover {
 
 .footer-section ul li a:hover,
 .footer-section p a:hover {
-    color: #90a9bb;
-    transform: scale(1.1);
+    color: #90d0fe;
+    text-decoration:solid;
+    transform: scale(1.3);
 }
 
 .smedia {
@@ -290,3 +291,67 @@ a:hover {
   }
   
 
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+  }
+  
+  .modal-content {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 0.5s;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    color: #072183;
+    font-weight: bold;
+  }
+
+  .modal-content p {
+    color: #000000;
+  }
+  
+  
+  .modal-content button {
+    background: #093eba;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .modal-content button:hover {
+    background: #05286f;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
