@@ -6,15 +6,19 @@ const ThemeToggle = () => {
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') || 'light';
         setTheme(savedTheme);
-        document.documentElement.classList.add(`theme-${savedTheme}`);
+        applyTheme(savedTheme);
     }, []);
+
+    const applyTheme = (selectedTheme) => {
+        document.documentElement.classList.remove(`theme-${theme}`);
+        document.documentElement.classList.add(`theme-${selectedTheme}`);
+        localStorage.setItem('theme', selectedTheme);
+    };
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
-        document.documentElement.classList.remove(`theme-${theme}`);
-        document.documentElement.classList.add(`theme-${newTheme}`);
-        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
     };
 
     return (
@@ -34,4 +38,3 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
-
